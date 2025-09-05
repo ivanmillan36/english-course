@@ -177,7 +177,7 @@ Claro, aquí está la lista ampliada con los sub-subtemas para crear una guía m
 
 ### Prompt
 
-Estoy aprendiendo ingles escrito. Necesito que sobre estos temas escribas un titulo, una descripcion y luego secciones:
+Estoy aprendiendo ingles escrito. Necesito que sobre los temas que te voy a pasar escribas un titulo, una descripcion y luego secciones:
 - Que vas a aprender en esta leccion:
 - Leson content:
     - Aca quiero un titulo, una descripcion bien explicativa y pedagogica y luego ejemplos.
