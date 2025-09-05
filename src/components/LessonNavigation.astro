@@ -1,0 +1,242 @@
+---
+// Enhanced lesson navigation component
+export interface NavigationProps {
+  lessonNumber: number;
+  totalLessons: number;
+  previousLesson?: {
+    title: string;
+    url: string;
+  };
+  nextLesson?: {
+    title: string;
+    url: string;
+  };
+}
+
+const { 
+  lessonNumber,
+  totalLessons,
+  previousLesson,
+  nextLesson
+} = Astro.props;
+
+// Calculate progress percentage
+const progressPercentage = Math.round((lessonNumber / totalLessons) * 100);
+---
+
+<!-- Enhanced Navigation Bar -->
+<div class="lesson-navigation bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-6 mb-8">
+  <!-- Navigation Header -->
+  <div class="text-center mb-6">
+    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+      Course Navigation
+    </h2>
+    <div class="flex items-center justify-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+      <span>Lesson {lessonNumber} of {totalLessons}</span>
+      <span class="text-green-500">•</span>
+      <span>{progressPercentage}% Complete</span>
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="mb-6">
+    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+      <div 
+        class="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full transition-all duration-700 ease-out"
+        style={`width: ${progressPercentage}%`}
+      ></div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+    <!-- Previous Lesson -->
+    <div class="order-2 md:order-1">
+      {previousLesson ? (
+        <a 
+          href={previousLesson.url} 
+          class="group flex items-center justify-center md:justify-start p-3 bg-gray-50 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300"
+        >
+          <div class="flex items-center">
+            <span class="text-blue-600 dark:text-blue-400 mr-2 group-hover:transform group-hover:-translate-x-1 transition-transform">
+              ←
+            </span>
+            <div class="text-left">
+              <div class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                Previous
+              </div>
+              <div class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                Lesson {lessonNumber - 1}
+              </div>
+            </div>
+          </div>
+        </a>
+      ) : (
+        <div class="flex items-center justify-center md:justify-start p-3 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 opacity-50">
+          <span class="text-gray-400 mr-2">←</span>
+          <div class="text-left">
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-wide">
+              Previous
+            </div>
+            <div class="text-sm font-semibold text-gray-400">
+              First Lesson
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+
+    <!-- Current Lesson Info -->
+    <div class="order-1 md:order-2 text-center">
+      <div class="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-lg p-4">
+        <div class="text-sm font-medium opacity-90 mb-1">Current Lesson</div>
+        <div class="text-lg font-bold">
+          Lesson {lessonNumber}
+        </div>
+        <div class="text-xs opacity-75 mt-1">
+          {progressPercentage}% Complete
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Lesson -->
+    <div class="order-3">
+      {nextLesson ? (
+        <a 
+          href={nextLesson.url} 
+          class="group flex items-center justify-center md:justify-end p-3 bg-gray-50 dark:bg-gray-700 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300"
+        >
+          <div class="flex items-center">
+            <div class="text-right">
+              <div class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                Next
+              </div>
+              <div class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors truncate">
+                Lesson {lessonNumber + 1}
+              </div>
+            </div>
+            <span class="text-green-600 dark:text-green-400 ml-2 group-hover:transform group-hover:translate-x-1 transition-transform">
+              →
+            </span>
+          </div>
+        </a>
+      ) : (
+        <div class="flex items-center justify-center md:justify-end p-3 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 opacity-50">
+          <div class="text-right">
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-wide">
+              Next
+            </div>
+            <div class="text-sm font-semibold text-gray-400">
+              Course Complete!
+            </div>
+          </div>
+          <span class="text-gray-400 ml-2">→</span>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Quick Navigation Dots -->
+  <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+    <div class="flex justify-center items-center space-x-2">
+      <span class="text-xs text-gray-500 dark:text-gray-400 mr-2">Quick Jump:</span>
+      {Array.from({ length: totalLessons }, (_, i) => i + 1).map(num => (
+        <a
+          href={num === 1 ? '/' : `/lesson-${num}`}
+          class={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all duration-300 ${
+            num === lessonNumber
+              ? 'bg-blue-600 text-white shadow-lg'
+              : num < lessonNumber
+              ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-800/50'
+              : 'bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
+          }`}
+          title={`Go to Lesson ${num}`}
+        >
+          {num}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- Keyboard Navigation -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navigation = {
+      previous: document.querySelector('a[href*="lesson-"]:not([href*="lesson-' + (parseInt(window.location.pathname.split('-')[1]) + 1) + '"])'),
+      next: document.querySelector('a[href*="lesson-' + (parseInt(window.location.pathname.split('-')[1] || '1') + 1) + '"]')
+    };
+
+    document.addEventListener('keydown', (e) => {
+      // Left arrow or 'p' for previous
+      if ((e.key === 'ArrowLeft' || e.key === 'p') && navigation.previous) {
+        e.preventDefault();
+        (navigation.previous as HTMLAnchorElement).click();
+      }
+      
+      // Right arrow or 'n' for next
+      if ((e.key === 'ArrowRight' || e.key === 'n') && navigation.next) {
+        e.preventDefault();
+        (navigation.next as HTMLAnchorElement).click();
+      }
+    });
+
+    // Show keyboard shortcuts hint
+    const showKeyboardHint = () => {
+      const hint = document.createElement('div');
+      hint.className = 'fixed bottom-4 right-4 bg-gray-800 text-white text-xs p-3 rounded-lg shadow-lg z-50 opacity-0 transition-opacity duration-300';
+      hint.innerHTML = `
+        <div class="font-semibold mb-1">Keyboard Shortcuts:</div>
+        <div>← or P: Previous lesson</div>
+        <div>→ or N: Next lesson</div>
+      `;
+      document.body.appendChild(hint);
+      
+      setTimeout(() => hint.style.opacity = '1', 100);
+      setTimeout(() => {
+        hint.style.opacity = '0';
+        setTimeout(() => hint.remove(), 300);
+      }, 3000);
+    };
+
+    // Show hint on first visit
+    if (!localStorage.getItem('keyboardHintShown')) {
+      setTimeout(showKeyboardHint, 2000);
+      localStorage.setItem('keyboardHintShown', 'true');
+    }
+  });
+</script>
+
+<style>
+  .lesson-navigation {
+    animation: slideIn 0.6s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth hover effects */
+  .lesson-navigation a:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Progress bar animation */
+  .lesson-navigation .bg-gradient-to-r {
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+</style>

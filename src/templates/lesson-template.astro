@@ -1,0 +1,88 @@
+---
+// English Learning App - Lesson Template
+// Copy this file to create new lessons: src/pages/lesson-X.astro
+import LessonPage from '../components/LessonPage.astro';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
+
+// CHANGE THIS: Set the lesson number for the new lesson
+const LESSON_NUMBER = 3; // Change this to the actual lesson number
+
+// Get lesson data
+const lessonData = getLessonById(LESSON_NUMBER);
+const navigation = generateLessonNavigation(LESSON_NUMBER);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error(`Lesson ${LESSON_NUMBER} not found`);
+}
+---
+
+<LessonPage
+  lessonNumber={LESSON_NUMBER}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description="Add your lesson description here for the welcome section"
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
+
+<!-- 
+INSTRUCTIONS FOR CREATING A NEW LESSON:
+
+1. Copy this file to: src/pages/lesson-X.astro (replace X with lesson number)
+
+2. Update the LESSON_NUMBER constant to match your lesson number
+
+3. Add your lesson data to src/data/lessons.ts following this structure:
+   {
+     id: X, // Your lesson number
+     title: "Your Lesson Title",
+     description: "Lesson description for meta tags",
+     welcomeEmoji: "🎯", // Optional emoji for the welcome section
+     pageTitle: "Custom Page Title", // Optional custom page title
+     metaDescription: "Custom meta description", // Optional custom meta description
+     learningPoints: [
+       "What students will learn point 1",
+       "What students will learn point 2",
+       // Add more learning points...
+     ],
+     content: [
+       {
+         topic: "Topic 1 Title",
+         explanation: "Detailed explanation of the topic...",
+         examples: [
+           "Example 1 with explanation",
+           "Example 2 with explanation",
+           // Add more examples...
+         ]
+       },
+       // Add more content sections...
+     ],
+     quiz: [
+       {
+         question: "Your quiz question?",
+         options: [
+           "Option A",
+           "Option B", 
+           "Option C",
+           "Option D"
+         ],
+         correctAnswer: 1, // Index of correct answer (0-based)
+         explanation: "Why this answer is correct..."
+       },
+       // Add more quiz questions...
+     ]
+   }
+
+4. Update the description prop in the LessonPage component with a custom welcome message
+
+5. Test your lesson by visiting /lesson-X in the browser
+
+That's it! The navigation, progress tracking, and all other features will work automatically.
+-->

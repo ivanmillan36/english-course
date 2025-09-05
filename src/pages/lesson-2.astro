@@ -1,23 +1,23 @@
 ---
-// English Learning App - Lesson 1: To Be and Articles
+// English Learning App - Lesson 2: Written Greetings and Introductions
 import LessonPage from '../components/LessonPage.astro';
 import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
 
 // Get lesson data
-const lessonData = getLessonById(1);
-const navigation = generateLessonNavigation(1);
+const lessonData = getLessonById(2);
+const navigation = generateLessonNavigation(2);
 const totalLessons = getTotalLessons();
 
 if (!lessonData) {
-  throw new Error('Lesson 1 not found');
+  throw new Error('Lesson 2 not found');
 }
 ---
 
 <LessonPage
-  lessonNumber={1}
+  lessonNumber={2}
   totalLessons={totalLessons}
     title={lessonData.title}
-  description="Master English grammar step by step with interactive lessons, clear explanations, and engaging quizzes. Start your journey to fluent English today!"
+  description="Master the art of written communication in English. Learn how to start conversations, introduce yourself, and end messages appropriately in different contexts."
     learningPoints={lessonData.learningPoints}
     content={lessonData.content}
     quiz={lessonData.quiz}
