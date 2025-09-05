@@ -1,5 +1,19 @@
 ---
 // Lesson screen component for English learning app
+import { marked } from 'marked';
+
+// Configure marked options
+marked.setOptions({
+  breaks: true,
+  gfm: true
+});
+
+// Function to process inline markdown
+function processMarkdown(text: string): string {
+  // Use parse method and handle async properly
+  return marked.parse(text, { async: false }) as string;
+}
+
 export interface Props {
   title: string;
   description: string;
@@ -18,7 +32,6 @@ export interface Props {
 }
 
 const { title, description, learningPoints, content, quiz } = Astro.props;
-
 
 ---
 <div class="lesson-screen bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-8 max-w-4xl mx-auto">
@@ -69,9 +82,9 @@ const { title, description, learningPoints, content, quiz } = Astro.props;
               <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4 border-l-4 border-blue-400">
                 <ul class="space-y-2">
                   {section.examples.map(example => (
-                    <li class="text-gray-800 dark:text-gray-200 font-mono text-sm">
-                      • {example}
-                    </li>
+                  <li class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed">
+                      <div set:html={processMarkdown(example)} />
+                  </li>
                   ))}
                 </ul>
               </div>
