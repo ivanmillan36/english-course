@@ -29,161 +29,120 @@ export interface LessonData {
 export const lessons: LessonData[] = [
   {
     id: 1,
-    title: "Los Cimientos del Inglés: El Verbo 'To Be' y los Artículos (A/An, The)",
-    description: "Domina los dos pilares fundamentales para empezar a formar oraciones en inglés. En esta lección, aprenderás a usar correctamente el verbo más común, \"To Be\" (Ser o Estar), en sus formas afirmativa, negativa e interrogativa. Además, entenderás la crucial diferencia entre los artículos indefinidos \"a/an\" y el definido \"the\", lo que te permitirá hablar de objetos de manera general o específica con confianza.",
-    welcomeEmoji: "🇬🇧",
-    pageTitle: "English Learning - Verbo To Be y Artículos",
-    metaDescription: "Aprende los fundamentos del inglés: el verbo To Be y los artículos a/an/the con lecciones interactivas y quizzes",
+    title: "Fundamentos del Inglés: El Alfabeto, Ortografía y Puntuación",
+    description: "Esta lección es tu primer paso sólido para dominar los fundamentos del inglés escrito. Aprenderás a reconocer y utilizar todo el alfabeto, aplicar una de las reglas de ortografía más famosas y usar correctamente los signos de puntuación esenciales para darle claridad y sentido a tus oraciones.",
+    welcomeEmoji: "🔤",
+    pageTitle: "English Learning - Alfabeto, Ortografía y Puntuación",
+    metaDescription: "Aprende los fundamentos del inglés escrito: alfabeto, reglas de ortografía y signos de puntuación básicos",
     learningPoints: [
-      "A conjugar el verbo \"To Be\" (Ser/Estar) con todos los pronombres personales",
-      "Cómo formar oraciones negativas usando \"not\" y sus contracciones comunes (isn't, aren't)",
-      "Cómo hacer preguntas correctamente invirtiendo el orden del verbo y el sujeto",
-      "La regla para elegir entre el artículo \"a\" y \"an\"",
-      "Cuándo debes usar el artículo definido \"the\" y cuándo no usar ningún artículo"
+      "A identificar y escribir todas las letras del alfabeto inglés en sus formas mayúsculas y minúsculas",
+      "La regla ortográfica \"i before e except after c\" y sus excepciones más comunes",
+      "El uso correcto del punto (.), la coma (,), el signo de interrogación (?) y el signo de exclamación (!)"
     ],
     content: [
       {
-        topic: "El Verbo \"To Be\" - Forma Afirmativa",
-        explanation: "El verbo \"To Be\" es el más importante y versátil del inglés. Se utiliza para identificar personas y cosas, describir características (nombre, edad, profesión, nacionalidad, sentimientos) y hablar de ubicaciones. Dominarlo es el primer paso para construir oraciones simples y correctas.",
+        topic: "El Alfabeto Inglés (The English Alphabet)",
+        explanation: "El alfabeto inglés contiene 26 letras, cada una con una forma mayúscula (uppercase) y una minúscula (lowercase). Es la base para formar palabras y oraciones.",
         examples: [
-          "I am a student. (Yo soy un estudiante.) - Identificación",
-          "She is happy. (Ella está feliz.) - Estado de ánimo", 
-          "He is in the kitchen. (Él está en la cocina.) - Ubicación",
-          "It is a book. (Es un libro.) - Identificación",
-          "We are friends. (Nosotros somos amigos.) - Relación",
-          "You are late. (Tú estás tarde / Ustedes están tarde.) - Situación"
+          "**Mayúsculas (Uppercase):** A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z",
+          "**Minúsculas (Lowercase):** a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z",
+          "**Ejemplo de palabra:** \"Hello\" = H (mayúscula) + e (minúscula) + l (minúscula) + l (minúscula) + o (minúscula)"
         ]
       },
       {
-        topic: "El Verbo \"To Be\" - Forma Negativa",
-        explanation: "Para formar oraciones negativas con \"To Be\", simplemente agregamos \"not\" después del verbo. También podemos usar contracciones como \"isn't\" (is not) y \"aren't\" (are not) para sonar más natural en conversaciones.",
+        topic: "Regla Ortográfica: \"I before E except after C\"",
+        explanation: "Esta es una regla mnemotécnica muy útil para recordar cómo escribir palabras que contienen las vocales \"i\" e \"e\" juntas. La regla dice: escribe \"i\" antes de \"e\" (ej: friend), excepto cuando va después de la letra \"c\" (ej: receive), donde se invierte a \"e\" antes de \"i\".",
         examples: [
-          "I am not hungry. (Yo no tengo hambre.)",
-          "He is not (isn't) a teacher. (Él no es un profesor.)",
-          "They are not (aren't) here. (Ellos no están aquí.)",
-          "She isn't from Spain. (Ella no es de España.)",
-          "We aren't ready yet. (No estamos listos todavía.)"
+          "**\"I\" antes de \"E\":** believe, field, piece, friend",
+          "**Excepto después de \"C\":** receive, ceiling, deceive, conceive",
+          "**Excepciones importantes:** La regla no es perfecta. Algunas palabras comunes no la siguen, como: weird, height, science, species, leisure"
         ]
       },
       {
-        topic: "El Verbo \"To Be\" - Forma Interrogativa",
-        explanation: "Para hacer preguntas con \"To Be\", invertimos el orden: colocamos el verbo antes del sujeto. Esta inversión es fundamental para formar preguntas correctas en inglés.",
+        topic: "Signos de Puntuación Básicos",
+        explanation: "Los signos de puntuación son símbolos que se utilizan para dar estructura y significado a las oraciones, indicando pausas, preguntas o énfasis.",
         examples: [
-          "Am I right? (¿Estoy en lo correcto?)",
-          "Is she your sister? (¿Es ella tu hermana?)",
-          "Are you from Mexico? (¿Eres de México? / ¿Son de México?)",
-          "Is it cold today? (¿Hace frío hoy?)",
-          "Are they at home? (¿Están ellos en casa?)"
-        ]
-      },
-      {
-        topic: "Los Artículos Indefinidos: A/An",
-        explanation: "Los artículos indefinidos \"a\" y \"an\" se usan para hablar de cosas no específicas o que mencionamos por primera vez. La regla es simple: \"a\" va antes de sonidos de consonante y \"an\" va antes de sonidos de vocal (no letras, sino sonidos).",
-        examples: [
-          "I need a pencil. (Necesito un lápiz.) - No importa cuál",
-          "She is an architect. (Ella es una arquitecta.) - Profesión general",
-          "He bought a car and a house. (Él compró un coche y una casa.) - Primera mención",
-          "It's an honor. (Es un honor.) - 'h' es muda, suena como vocal",
-          "A university student. (Un estudiante universitario.) - 'u' suena como 'yu'"
-        ]
-      },
-      {
-        topic: "El Artículo Definido: The",
-        explanation: "\"The\" se usa para cosas específicas que tanto el hablante como el oyente conocen, cosas únicas, o cuando mencionamos algo por segunda vez. Es el artículo más usado en inglés.",
-        examples: [
-          "The car he bought is red. (El coche que compró es rojo.) - Específico",
-          "The sun is bright today. (El sol está brillante hoy.) - Único",
-          "We went to a park. The park was beautiful. (Fuimos a un parque. El parque era hermoso.) - Segunda mención",
-          "Open the door, please. (Abre la puerta, por favor.) - Ambos saben cuál",
-          "The President of Mexico. (El Presidente de México.) - Posición única"
+          "**Punto (Period - .):** Marca el final de una oración afirmativa.",
+          "*Ejemplo:* \"I like to read books.\" (Me gusta leer libros.)",
+          "**Coma (Comma - ,):** Indica una pausa breve en una oración, separa items en una lista o une cláusulas.",
+          "*Ejemplo:* \"I need to buy apples, bread, and milk.\" (Necesito comprar manzanas, pan y leche.)",
+          "**Signo de Interrogación (Question Mark - ?):** Se coloca al final de una oración para formar una pregunta.",
+          "*Ejemplo:* \"What is your name?\" (¿Cuál es tu nombre?)",
+          "**Signo de Exclamación (Exclamation Mark - !):** Expresa emoción, sorpresa, énfasis o un comando fuerte.",
+          "*Ejemplo:* \"That's amazing!\" (¡Eso es increíble!)"
         ]
       }
     ],
     quiz: [
       {
-        question: "¿Cuál es la forma correcta del verbo \"to be\" para \"he\" en una oración afirmativa?",
-        options: ["he am", "he are", "he is", "he be"],
-        correctAnswer: 2,
-        explanation: "La forma afirmativa para la tercera persona del singular (he, she, it) es \"is\"."
-      },
-      {
-        question: "Selecciona la oración negativa correcta.",
-        options: [
-          "We are not happy.",
-          "We not are happy.",
-          "We am not happy.",
-          "We isn't happy."
-        ],
+        question: "¿Cuál es la forma minúscula correcta de la letra 'G'?",
+        options: ["g", "q", "j", "y"],
         correctAnswer: 0,
-        explanation: "La estructura correcta para la negativa con \"we\" es \"we are not\" o \"we aren't\"."
+        explanation: "La forma minúscula de la letra 'G' es \"g\". \"q\" es otra letra, \"j\" es la minúscula de J, y \"y\" es la minúscula de Y."
       },
       {
-        question: "¿Cómo se forma la pregunta correctamente para \"you / a teacher\"?",
-        options: [
-          "You are a teacher?",
-          "Are you a teacher?",
-          "Do you are a teacher?",
-          "Is you a teacher?"
-        ],
+        question: "Según la regla \"i before e except after c\", ¿cuál es la ortografía correcta?",
+        options: ["recieve", "receive", "receve", "reciive"],
         correctAnswer: 1,
-        explanation: "Para formar una pregunta con el verbo \"to be\", se invierte el orden: Verbo + Sujeto + ..."
+        explanation: "Después de la letra \"c\", el orden correcto es \"e\" antes de \"i\"."
       },
       {
-        question: "Completa la oración: She is _____ honest person.",
-        options: ["a", "an", "the", "(sin artículo)"],
-        correctAnswer: 1,
-        explanation: "Se usa \"an\" antes de palabras que comienzan con un **sonido** de vocal. \"Honest\" se pronuncia /ˈɒn.ɪst/, por lo que la \"h\" es muda y la palabra comienza con un sonido de vocal."
-      },
-      {
-        question: "¿Cuál de estas oraciones usa el artículo \"the\" correctamente?",
-        options: [
-          "I need to buy the new phone. No importa cuál.",
-          "Look at the moon! It's so bright tonight.",
-          "She is the doctor. Es su profesión en general.",
-          "I love the pizzas. Me gusta la pizza en general."
-        ],
-        correctAnswer: 1,
-        explanation: "Usamos \"the\" con cosas únicas en el universo, como la luna, el sol, el cielo."
-      },
-      {
-        question: "Escoge la opción que completa el diálogo correctamente: \"I bought ___ car yesterday.\" \"Oh really? What color is ___ car?\"",
-        options: ["a / a", "the / the", "a / the", "the / a"],
+        question: "¿Qué signo de puntuación debería usarse al final de esta oración? \"How old are you\"",
+        options: [". (punto)", ", (coma)", "? (signo de interrogación)", "! (signo de exclamación)"],
         correctAnswer: 2,
-        explanation: "La primera mención de \"car\" es indefinida (un coche, no específico). La segunda mención es definida (el coche que acabo de comprar, ya es específico)."
+        explanation: "La oración es una pregunta directa, por lo que debe terminar con un signo de interrogación."
       },
       {
-        question: "¿Cuál es la contracción (forma corta) de \"you are not\"?",
+        question: "¿Cuál de estas palabras es una EXCEPCIÓN a la regla \"i before e except after c\"?",
+        options: ["believe", "ceiling", "weird", "piece"],
+        correctAnswer: 2,
+        explanation: "\"Weird\" no sigue la regla (es \"e\" antes de \"i\") y es una de sus excepciones más conocidas."
+      },
+      {
+        question: "¿Para qué se utiliza principalmente una coma ( , )?",
         options: [
-          "you'nt",
-          "you aren't",
-          "you're not",
-          "both b and c are correct"
-        ],
-        correctAnswer: 3,
-        explanation: "\"You aren't\" y \"You're not\" son ambas contracciones correctas de \"you are not\"."
-      },
-      {
-        question: "Completa la oración: They are _____ from Italy.",
-        options: ["a", "an", "the", "(sin artículo)"],
-        correctAnswer: 3,
-        explanation: "Los países, ciudades y nacionalidades generalmente no llevan artículo. Decimos \"They are from Italy\", no \"They are from the Italy\"."
-      },
-      {
-        question: "¿Cuál de estas preguntas está gramaticalmente incorrecta?",
-        options: [
-          "Am I late?",
-          "Is we ready?",
-          "Are they friends?",
-          "Is she at home?"
+          "Para terminar un párrafo.",
+          "Para indicar una pausa breve o separar elementos en una lista.",
+          "Para mostrar emoción extrema.",
+          "Para comenzar una cita."
         ],
         correctAnswer: 1,
-        explanation: "La forma correcta del verbo \"to be\" para el pronombre \"we\" es \"are\". La pregunta correcta es \"Are we ready?\"."
+        explanation: "Esa es la función principal de la coma."
       },
       {
-        question: "Completa la oración: I need to go to _____ bank to deposit some money. (La persona sabe específicamente a qué banco va).",
-        options: ["a", "an", "the", "(sin artículo)"],
+        question: "Elige la oración que esté puntuada correctamente.",
+        options: [
+          "My favorite colors are blue green and red.",
+          "My favorite colors are blue, green and red?",
+          "My favorite colors are blue, green, and red.",
+          "My favorite colors are blue, green, and red!"
+        ],
         correctAnswer: 2,
-        explanation: "Usamos el artículo definido \"the\" cuando nos referimos a algo específico que tanto el hablante como el oyente pueden identificar. En este caso, se refiere a un banco en particular al que la persona siempre va."
+        explanation: "Utiliza comas para separar los elementos de la lista y un punto para terminar la oración afirmativa."
+      },
+      {
+        question: "Identifica la palabra que está mal escrita según la regla ortográfica.",
+        options: ["thief", "achieve", "seize", "nieghbor"],
+        correctAnswer: 3,
+        explanation: "La ortografía correcta es \"neighbor\". Sigue la regla \"i before e\" (aunque no va después de c), por lo que debería ser \"nei\"."
+      },
+      {
+        question: "¿Qué letra viene después de 'V' en el alfabeto inglés?",
+        options: ["U", "W", "X", "Y"],
+        correctAnswer: 1,
+        explanation: "El orden del alfabeto es ... T, U, V, W, X, Y, Z."
+      },
+      {
+        question: "¿Qué signo de puntuación es más apropiado para esta oración? \"Wow that is a huge dog\"",
+        options: [". (punto)", ", (coma)", "? (signo de interrogación)", "! (signo de exclamación)"],
+        correctAnswer: 3,
+        explanation: "La palabra \"Wow\" indica sorpresa o asombro, por lo que un signo de exclamación es el más adecuado: \"Wow, that is a huge dog!\""
+      },
+      {
+        question: "La regla \"i before e\" se aplica siempre sin excepciones.",
+        options: ["Verdadero", "Falso"],
+        correctAnswer: 1,
+        explanation: "La regla tiene varias excepciones importantes, como \"weird\", \"science\", \"height\", y \"leisure\". Es una guía útil, pero no es absoluta."
       }
     ]
   },
