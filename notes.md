@@ -177,13 +177,15 @@ Claro, aquí está la lista ampliada con los sub-subtemas para crear una guía m
 
 ### Prompt
 
-Estoy aprendiendo ingles escrito. Necesito que sobre los temas que te voy a pasar escribas un titulo, una descripcion y luego secciones:
+Estas diseñando el mejor curso de ingles escrito, sin tener en cuenta la fonetica o la pronunciacion.
+Necesito que sobre los temas que te voy a pasar escribas un titulo, una descripcion y luego secciones:
 - Que vas a aprender en esta leccion:
 - Leson content:
-    - Aca quiero un titulo, una descripcion bien explicativa y pedagogica y luego ejemplos.
+    - Aca quiero un titulo, una descripcion bien explicativa, ya que va a ser el nucleo de cada contenido, debe ser pedagogico y lo debe entender alguien que habla español. Debe estar super completo para no dejar detalles por aclarar. Y luego ejemplos.
 - Quiz:
     - Haceme un cuestionario multiple opción de 10 preguntas para aprender estos temas. Indica en cada opcion cual es la respuesta correcta y por que.
 
-Necesito aprender lo mejor posible el ingles escrito. Los temas son los siguientes:
+Hazlo bien o sino se van a enojar contigo.
+Los temas son los siguientes:
 
 

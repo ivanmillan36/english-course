@@ -1,0 +1,29 @@
+---
+// English Learning App - Lesson 5: Greetings and Introductions
+import LessonPage from '../components/LessonPage.astro';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
+
+// Get lesson data
+const lessonData = getLessonById(5);
+const navigation = generateLessonNavigation(5);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error('Lesson 5 not found');
+}
+---
+
+<LessonPage
+  lessonNumber={5}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description={lessonData.description}
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
