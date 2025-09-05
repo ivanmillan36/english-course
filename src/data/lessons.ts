@@ -148,158 +148,205 @@ export const lessons: LessonData[] = [
   },
   {
     id: 2,
-    title: "Saludos y Presentaciones (Escritos)",
-    description: "Domina los fundamentos para escribir mensajes en inglés. Aprenderás las estructuras básicas para iniciar y cerrar un mensaje, así como las frases esenciales para presentarte y hacer preguntas de manera clara y apropiada en diferentes contextos.",
-    welcomeEmoji: "📝",
-    pageTitle: "English Learning - Saludos y Presentaciones Escritas",
-    metaDescription: "Aprende a escribir mensajes en inglés: saludos, presentaciones y despedidas formales e informales",
+    title: "The Building Blocks of English: Mastering the Parts of Speech",
+    description: "Esta lección es fundamental para dominar el inglés escrito. Así como un arquitecto necesita conocer cada ladrillo y herramienta, tú necesitas entender las Partes de la Oración (Parts of Speech). Cada palabra en una oración tiene un trabajo específico. Identificar y comprender estas funciones te permitirá construir oraciones correctas, variadas y con mayor riqueza de vocabulario.",
+    welcomeEmoji: "🧱",
+    pageTitle: "English Learning - Parts of Speech",
+    metaDescription: "Aprende las 8 partes de la oración en inglés: sustantivos, verbos, adjetivos, adverbios, artículos, pronombres, preposiciones y conjunciones",
     learningPoints: [
-      "Cómo estructurar un mensaje escrito en inglés, desde el saludo inicial hasta la despedida",
-      "Las fórmulas correctas para saludar, dependiendo del nivel de formalidad",
-      "Cómo presentarte y proporcionar información básica sobre ti",
-      "Cómo formular preguntas simples para iniciar una conversación",
-      "Las frases adecuadas para despedirte en un mensaje"
+      "A identificar las 8 partes de la oración principales en inglés",
+      "La función específica que cumple cada una dentro de una oración",
+      "A reconocerlas en textos y oraciones reales",
+      "A utilizar este conocimiento para mejorar tu gramática y tu escritura"
     ],
     content: [
       {
-        topic: "Estructuras de un Mensaje: Saludos Iniciales y Finales",
-        explanation: "Todo mensaje bien estructurado tiene un saludo inicial y una despedida. Esta sección te enseñará las opciones más comunes, desde las formales hasta las informales, para que puedas elegir la más adecuada según tu receptor y contexto.",
+        topic: "The Noun (El Sustantivo)",
+        explanation: "Un sustantivo es una palabra que nombra a una persona, lugar, cosa, animal o idea. Es quien realiza la acción o sobre quien se habla en la oración. Hay dos tipos principales: comunes (general, no capitalizado: city, dog, teacher) y propios (nombres específicos, siempre capitalizados: London, Max, Ms. Johnson).",
         examples: [
-          "**Saludos Iniciales (Opening Greetings):**",
-          "• **Informal:** Hi Ana, | Hello John, | Hey Mike,",
-          "• **Formal:** Dear Mr. Smith, | Dear Dr. Evans, | Dear Sir or Madam,",
-          "",
-          "**Saludos Finales (Closing Greetings):**",
-          "• **Informal:** Bye! | See you soon! | Talk to you later.",
-          "• **Formal:** Best regards, | Sincerely, | Kind regards,"
+          "**Persona:** `woman`, `teacher`, `David`, `sister`",
+          "**Lugar:** `hospital`, `park`, `Paris`, `school`",
+          "**Cosa:** `book`, `computer`, `water`, `music`",
+          "**Animal:** `dog`, `elephant`, `eagle`",
+          "**Idea:** `love`, `freedom`, `happiness`, `time`"
         ]
       },
       {
-        topic: "Frases Esenciales para Presentarse y Preguntar",
-        explanation: "El corazón de tu mensaje: cómo decir quién eres, de dónde vienes y cómo hacer preguntas básicas para conocer a la otra persona. Estas frases son la base de cualquier interacción escrita.",
+        topic: "The Verb (El Verbo)",
+        explanation: "Un verbo es una palabra que expresa una acción (what you do) o un estado (how you are). Es el corazón de la oración; sin un verbo, no hay oración. Los verbos pueden cambiar de forma para indicar tiempo (pasado, presente, futuro).",
         examples: [
-          "**Para Presentarte (To Introduce Yourself):**",
-          "• **My name is...** → My name is Carlos. (Mi nombre es Carlos)",
-          "• **I am from...** → I am from Mexico. (Soy de México)",
-          "• **I am a/an...** → I am a student. (Soy un estudiante)",
-          "",
-          "**Para Preguntar (To Ask Questions):**",
-          "• **What's your name?** → Hi! What's your name? (¡Hola! ¿Cuál es tu nombre?)",
-          "• **How are you?** → Hello John, how are you? (Hola John, ¿cómo estás?)",
-          "• **Where are you from?** → I'm from Spain. Where are you from? (Soy de España. ¿De dónde eres?)"
+          "**Acción:** `run`, `eat`, `write`, `think`, `study`",
+          "**Estado (verbos 'to be', 'to have', 'to feel'):** `am`, `is`, `are`, `was`, `were`, `have`, `has`, `feel`, `seem`"
+        ]
+      },
+      {
+        topic: "The Adjective (El Adjetivo)",
+        explanation: "Un adjetivo es una palabra que describe o modifica a un sustantivo. Proporciona más información sobre él, respondiendo a preguntas como: What kind? (¿Qué tipo?), Which one? (¿Cuál?), How many? (¿Cuántos?). Generalmente van antes del sustantivo o después de un verbo de estado (como 'be').",
+        examples: [
+          "The **red** car (¿Qué tipo de auto? Uno rojo)",
+          "She is **intelligent** (Ella *es* inteligente - describe 'she')",
+          "I have **three** books (¿Cuántos libros? Tres)",
+          "It's a **beautiful**, **sunny** day"
+        ]
+      },
+      {
+        topic: "The Adverb (El Adverbio)",
+        explanation: "Un adverbio es una palabra que describe o modifica a un verbo, un adjetivo, o a otro adverbio. A menudo responden a las preguntas: How? (¿Cómo?), When? (¿Cuándo?), Where? (¿Dónde?), To what extent? (¿Hasta qué punto?). Muchos adverbios en inglés terminan en -ly.",
+        examples: [
+          "**Modifica un verbo:** She speaks **quickly** (¿Cómo habla? Rápidamente)",
+          "**Modifica un adjetivo:** It is **extremely** hot (¿Hasta qué punto hace calor? Extremadamente)",
+          "**Modifica otro adverbio:** She sings **very** beautifully (¿Cuán bellamente? Muy)",
+          "**Otros adverbios comunes:** always (cuándo), here (dónde), well (cómo)"
+        ]
+      },
+      {
+        topic: "The Article (El Artículo)",
+        explanation: "Un artículo es una palabra que se coloca antes de un sustantivo para definir si es específico o no específico. Son pequeños pero muy importantes. Solo hay tres: a, an, y the. A/An (Indefinite articles): Se usan con sustantivos singulares no específicos. A va antes de sonidos de consonante; An va antes de sonidos de vocal. The (Definite article): Se usa con sustantivos específicos.",
+        examples: [
+          "I need **a** pencil (necesito un lápiz, cualquiera)",
+          "She is **an** artist (es una artista, una entre muchas)",
+          "**The** book you gave me is great (el libro *específico* que me diste)"
+        ]
+      },
+      {
+        topic: "The Pronoun (El Pronombre)",
+        explanation: "Un pronombre es una palabra que reemplaza a un sustantivo para evitar repetirlo. 'He' es más fácil de decir que 'John' todo el tiempo. Los pronombres tienen diferentes casos: sujeto (I, you, he, she, it, we, they), objeto (me, you, him, her, it, us, them), posesivo (my, your, his, her, its, our, their).",
+        examples: [
+          "**Maria** is smart. **She** studies every day. ('She' reemplaza a 'Maria')",
+          "This is **my** book ('My' indica posesión y reemplaza a 'the book of me')",
+          "We told **them** the story ('Them' funciona como el objeto que recibe la acción)"
+        ]
+      },
+      {
+        topic: "The Preposition (La Preposición)",
+        explanation: "Una preposición es una palabra que muestra la relación entre un sustantivo (o pronombre) y otra palabra en la oración. Indican lugar, tiempo, dirección, modo, etc. Forman parte de frases preposicionales (in the house, at 5 pm, with my friend).",
+        examples: [
+          "**Lugar:** The cat is **on** the table, She lives **in** Madrid",
+          "**Tiempo:** We meet **at** 5 o'clock, I will see you **on** Monday",
+          "**Dirección/Relación:** They went **to** the cinema, This letter is **for** you"
+        ]
+      },
+      {
+        topic: "The Conjunction (La Conjunción)",
+        explanation: "Una conjunción es una palabra que conecta palabras, frases o cláusulas dentro de una oración. Son los 'pegamentos' del lenguaje. Las más comunes son and (suma), but (contraste), or (alternativa), because (causa), if (condición).",
+        examples: [
+          "I like coffee **and** tea (conecta dos palabras)",
+          "She wants to go, **but** she is tired (conecta dos ideas contrastantes)",
+          "You can have cake **or** ice cream (conecta dos alternativas)",
+          "I stayed home **because** it was raining (conecta una causa y un efecto)"
         ]
       }
     ],
     quiz: [
       {
-        question: "Estás escribiendo un email a un profesor potencial para pedir información sobre su curso. ¿Cuál es el saludo inicial más apropiado?",
+        question: "What is the function of a NOUN in a sentence?",
         options: [
-          "Hey!",
-          "Hello Professor Jones,",
-          "Dear Mr. Jones,",
-          "Hi there,"
+          "It describes an action.",
+          "It names a person, place, thing, or idea.",
+          "It connects words or phrases.",
+          "It describes a verb."
         ],
-        correctAnswer: 2,
-        explanation: "\"Dear [Title] [Last Name],\" es la forma estándar y formal para iniciar un correo electrónico dirigido a alguien en un contexto profesional o académico. \"Hello Professor Jones,\" también es aceptable pero ligeramente menos formal. \"Hey!\" e \"Hi there,\" son demasiado informales para esta situación."
+        correctAnswer: 1,
+        explanation: "Esta es la definición principal de un sustantivo."
       },
       {
-        question: "¿Cuál de estas es una despedida informal común en un mensaje de texto a un amigo?",
+        question: "In the sentence \"They quickly ran to the beautiful park,\" what is the word \"beautiful\"?",
         options: [
-          "Best regards,",
-          "Sincerely,",
-          "See you soon!",
-          "Yours faithfully,"
+          "An adverb",
+          "A verb",
+          "An adjective",
+          "A noun"
         ],
         correctAnswer: 2,
-        explanation: "\"See you soon!\" es una despedida cálida y comúnmente utilizada en contextos informales. \"Best regards,\" es semiformal, y \"Sincerely,\" & \"Yours faithfully,\" son despedidas muy formales, típicas de cartas o correos empresariales."
+        explanation: "\"Beautiful\" describe al sustantivo \"park\", indicando qué tipo de parque es."
       },
       {
-        question: "¿Cuál es el orden CORRECTO de las partes de un mensaje formal?",
+        question: "Which word is a PRONOUN in the following sentence: \"Lisa said that she would be late.\"",
         options: [
-          "Cuerpo del mensaje - Saludo - Despedida",
-          "Saludo - Despedida - Cuerpo del mensaje",
-          "Saludo - Cuerpo del mensaje - Despedida",
-          "Despedida - Saludo - Cuerpo del mensaje"
+          "Lisa",
+          "said",
+          "she",
+          "late"
         ],
         correctAnswer: 2,
-        explanation: "La estructura universal de cualquier mensaje escrito, ya sea formal o informal, comienza con un saludo, seguido del contenido principal (cuerpo del mensaje) y finaliza con una despedida o firma."
+        explanation: "\"She\" es un pronombre que reemplaza y se refiere al sustantivo \"Lisa\"."
       },
       {
-        question: "Un nuevo contacto internacional te escribe. ¿Cuál es la forma CORRECTA de presentarte en tu respuesta?",
+        question: "Choose the sentence that uses the correct ARTICLE:",
         options: [
-          "Name my is Alex.",
-          "I name is Alex.",
-          "My name is Alex.",
-          "Your name is what?"
-        ],
-        correctAnswer: 2,
-        explanation: "\"My name is...\" es la estructura gramaticalmente correcta en inglés para presentarse. Las otras opciones contienen errores en el orden de las palabras (a), el uso del pronombre (b) o son demasiado directas y pueden sonar bruscas (d)."
-      },
-      {
-        question: "Estás cerrando una carta formal que comenzaste con \"Dear Mr. Smith,\". ¿Cuál es la despedida más adecuada?",
-        options: [
-          "Bye!",
-          "See ya!",
-          "Sincerely,",
-          "Hi!"
-        ],
-        correctAnswer: 2,
-        explanation: "\"Sincerely,\" es una despedida formal que coincide apropiadamente con el saludo formal \"Dear Mr. Smith,\". \"Bye!\" y \"See ya!\" son extremadamente informales, y \"Hi!\" es un saludo, no una despedida."
-      },
-      {
-        question: "Estás escribiendo un mensaje a la madre de tu amigo, a quien no conoces bien. ¿Qué saludo inicial es más apropiado?",
-        options: [
-          "Dear Mrs. García,",
-          "Hi!",
-          "Hey you!",
-          "Hello Ms. García,"
+          "I saw an elephant at the zoo.",
+          "I saw a elephant at a zoo.",
+          "I saw the elephant at an zoo.",
+          "I saw elephant at zoo."
         ],
         correctAnswer: 0,
-        explanation: "Al dirigirte a alguien mayor o a quien no tienes confianza, especialmente en un contexto escrito, lo más educado y seguro es usar \"Dear\" seguido del título (Mrs., Mr., Ms.) y su apellido. \"Hello Ms. García,\" también es correcto, pero \"Dear\" es ligeramente más formal y común para iniciar un mensaje."
+        explanation: "\"An\" se usa antes de un sonido de vocal (\"elephant\"), y \"the\" se usa porque se refiere a un zoo específico."
       },
       {
-        question: "¿Cuál de estas preguntas está escrita correctamente?",
+        question: "What part of speech is the word \"SILENTLY\" in: \"He closed the door silently.\"",
         options: [
-          "What your name?",
-          "How you are?",
-          "Where are you from?",
-          "You from where?"
+          "Adjective",
+          "Verb",
+          "Noun",
+          "Adverb"
+        ],
+        correctAnswer: 3,
+        explanation: "\"Silently\" describe *cómo* se realizó la acción (verbo) \"closed\"."
+      },
+      {
+        question: "Which of these is a CONJUNCTION?",
+        options: [
+          "With",
+          "Happy",
+          "But",
+          "Run"
         ],
         correctAnswer: 2,
-        explanation: "\"Where are you from?\" sigue la estructura gramatical correcta para una pregunta en inglés (Question word + verb + subject). Las otras opciones omiten el verbo auxiliar (\"are\" en a y d) o invierten el orden incorrectamente (b)."
+        explanation: "\"But\" es una conjunción que se usa para contrastar ideas."
       },
       {
-        question: "Quieres presentarte y decir tu nacionalidad. ¿Qué opción es la correcta?",
+        question: "Identify the PREPOSITION in this sentence: \"The keys are on the kitchen counter.\"",
         options: [
-          "I name is Sofia. I am from Argentina.",
-          "My name is Sofia. I am from Argentina.",
-          "My name Sofia. I from Argentina.",
-          "My name is Sofia. I from Argentina."
+          "keys",
+          "are",
+          "on",
+          "counter"
         ],
-        correctAnswer: 1,
-        explanation: "Esta opción utiliza la estructura completa y gramaticalmente correcta en ambas frases: \"My name is...\" y \"I am from...\". Las otras opciones omiten el verbo \"is\" o \"am\", lo cual es un error común pero fundamental."
+        correctAnswer: 2,
+        explanation: "\"On\" muestra la relación espacial entre \"keys\" y \"counter\"."
       },
       {
-        question: "Has empezado un email con \"Dear Dr. Evans,\". ¿Cuál es la mejor manera de despedirte?",
+        question: "In the phrase \"Her new shoes are very comfortable,\" what is the word \"very\"?",
         options: [
-          "Bye for now!",
-          "Best regards,",
-          "See you later!",
-          "Yours,"
+          "An adjective describing \"shoes\"",
+          "An adverb modifying the adjective \"comfortable\"",
+          "A verb",
+          "A conjunction"
         ],
         correctAnswer: 1,
-        explanation: "\"Best regards,\" es una despedida semiformal que coincide bien con el saludo formal \"Dear Dr. Evans,\". \"Bye for now!\" y \"See you later!\" son demasiado informales. \"Yours,\" puede ser muy formal o muy informal dependiendo del contexto, pero \"Best regards,\" es una opción más segura y profesional."
+        explanation: "\"Very\" intensifica el grado de \"comfortable\", respondiendo a \"How comfortable?\"."
       },
       {
-        question: "Alguien te escribe un mensaje y se equivoca en tu nombre. ¿Cuál es la manera más amable de corregirlo?",
+        question: "What is the VERB in this sentence: \"The children played happily in the garden.\"",
         options: [
-          "That's not my name.",
-          "My name is actually Marta, not Maria.",
-          "You spelled my name wrong.",
-          "Learn to read."
+          "children",
+          "played",
+          "happily",
+          "garden"
         ],
         correctAnswer: 1,
-        explanation: "Usar la palabra \"actually\" (en realidad) suaviza la corrección y la hace sonar educada y no confrontacional. Las otras opciones son directas, groseras (d) o defensivas (a y c), lo que podría crear una mala impresión en una conversación escrita donde el tono es difícil de interpretar."
+        explanation: "\"Played\" es la acción que realizan los niños (the children)."
+      },
+      {
+        question: "Which option lists words that are all PREPOSITIONS?",
+        options: [
+          "And, but, or",
+          "In, at, for, with",
+          "He, she, they, it",
+          "Big, small, fast, slow"
+        ],
+        correctAnswer: 1,
+        explanation: "Todas estas palabras muestran relaciones (lugar, tiempo, propósito, compañía) y son preposiciones."
       }
     ]
   },
