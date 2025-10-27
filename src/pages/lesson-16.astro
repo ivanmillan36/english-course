@@ -1,0 +1,30 @@
+---
+import LessonPage from '../components/LessonPage.astro';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
+
+const LESSON_NUMBER = 16;
+const lessonData = getLessonById(LESSON_NUMBER);
+const navigation = generateLessonNavigation(LESSON_NUMBER);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error(`Lesson ${LESSON_NUMBER} not found`);
+}
+---
+
+<LessonPage
+  lessonNumber={LESSON_NUMBER}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description="Aprende a expresar el futuro en inglés de tres formas diferentes: will para decisiones espontáneas y predicciones, be going to para planes e intenciones, y presente continuo para eventos confirmados. Domina las diferencias y usa cada forma correctamente."
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
+
+
