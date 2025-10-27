@@ -1,0 +1,30 @@
+---
+import LessonPage from '../components/LessonPage.astro';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
+
+const LESSON_NUMBER = 19;
+const lessonData = getLessonById(LESSON_NUMBER);
+const navigation = generateLessonNavigation(LESSON_NUMBER);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error(`Lesson ${LESSON_NUMBER} not found`);
+}
+---
+
+<LessonPage
+  lessonNumber={LESSON_NUMBER}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description="Aprende a usar las preposiciones in, on y at para expresar lugar y tiempo, y las conjunciones and, but, because, so, although para conectar ideas. Domina estas herramientas esenciales para hablar y escribir con fluidez en inglés."
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
+
+
