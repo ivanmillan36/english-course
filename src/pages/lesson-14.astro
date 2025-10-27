@@ -1,0 +1,30 @@
+---
+import LessonPage from '../components/LessonPage.astro';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
+
+const LESSON_NUMBER = 14;
+const lessonData = getLessonById(LESSON_NUMBER);
+const navigation = generateLessonNavigation(LESSON_NUMBER);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error(`Lesson ${LESSON_NUMBER} not found`);
+}
+---
+
+<LessonPage
+  lessonNumber={LESSON_NUMBER}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description="Domina las estructuras esenciales del inglés: There is/There are para describir existencia, Have got para hablar de posesión, y Can/Can't para expresar habilidades. Aprende a usarlas correctamente en conversaciones cotidianas."
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
+
+
