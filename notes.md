@@ -187,5 +187,3 @@ Necesito que sobre los temas que te voy a pasar escribas un titulo, una descripc
 
 Hazlo bien o sino se van a enojar contigo.
 Los temas son los siguientes:
-
-
