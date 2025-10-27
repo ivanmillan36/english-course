@@ -13,6 +13,7 @@ export { lesson11 } from './lesson-11';
 export { lesson12 } from './lesson-12';
 export { lesson13 } from './lesson-13';
 export { lesson14 } from './lesson-14';
+export { lesson15 } from './lesson-15';
 
 // Import all lessons for the lessons array
 import { lesson1 } from './lesson-1';
@@ -29,6 +30,7 @@ import { lesson11 } from './lesson-11';
 import { lesson12 } from './lesson-12';
 import { lesson13 } from './lesson-13';
 import { lesson14 } from './lesson-14';
+import { lesson15 } from './lesson-15';
 
 import type { LessonData } from '../lessons';
 
@@ -47,5 +49,6 @@ export const allLessons: LessonData[] = [
   lesson11,
   lesson12,
   lesson13,
-  lesson14
+  lesson14,
+  lesson15
 ];
