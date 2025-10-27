@@ -1,28 +1,29 @@
 ---
 import LessonPage from '../components/LessonPage.astro';
-import { lesson18 } from '../data/lessons/lesson-18';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
 
-const lesson = lesson18;
+const LESSON_NUMBER = 18;
+const lessonData = getLessonById(LESSON_NUMBER);
+const navigation = generateLessonNavigation(LESSON_NUMBER);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error(`Lesson ${LESSON_NUMBER} not found`);
+}
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={lesson.metaDescription} />
-  <title>{lesson.pageTitle}</title>
-</head>
-<body>
-  <LessonPage
-    lessonId={lesson.id}
-    title={lesson.title}
-    description={lesson.description}
-    learningPoints={lesson.learningPoints}
-    content={lesson.content}
-    quiz={lesson.quiz}
-    welcomeEmoji={lesson.welcomeEmoji}
-  />
-</body>
-</html>
+<LessonPage
+  lessonNumber={LESSON_NUMBER}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description={lessonData.description}
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
 

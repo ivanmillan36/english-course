@@ -138,7 +138,7 @@ const progressPercentage = Math.round((lessonNumber / totalLessons) * 100);
 
   <!-- Quick Navigation Dots -->
   <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-    <div class="flex justify-center items-center space-x-2">
+    <div class="flex flex-wrap justify-center items-center gap-2">
       <span class="text-xs text-gray-500 dark:text-gray-400 mr-2">Quick Jump:</span>
       {Array.from({ length: totalLessons }, (_, i) => i + 1).map(num => (
         <a
