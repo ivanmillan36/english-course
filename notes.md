@@ -148,7 +148,7 @@ Claro, aquí está la lista ampliada con los sub-subtemas para crear una guía m
     *   **Segundo:** `If + Past Simple, would + infinitive` (hipotéticas presentes/improbables: If I won the lottery, I would travel the world).
     *   **Tercero:** `If + Past Perfect, would have + past participle` (hipotéticas sobre el pasado: If I had studied, I would have passed the exam).
     *   **`I wish` / `If only`:** Para expresar deseos o arrepentimientos (`I wish I knew the answer` [presente], `I wish I had known` [pasado]).
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Hasta aca llegue>>>>>>>
 *   **5. Estructuras de Énfasis:**
     *   **Inversión:** `Never have I seen such a beautiful place`. `Rarely does he arrive on time`.
     *   **Cleft Sentences:**

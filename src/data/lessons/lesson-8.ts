@@ -1,181 +1,214 @@
 import type { LessonData } from '../lessons';
 
-export const lesson8: LessonData = {
+export const lesson12: LessonData = {
   id: 8,
-  title: "La Voz Pasiva en Inglés (Passive Voice)",
-  description: "En esta lección aprenderás la Voz Pasiva, uno de los temas más importantes para redactar inglés formal, técnico o académico. La voz pasiva se utiliza cuando queremos dar más importancia a la acción o al resultado que al sujeto que la realiza. Aprenderás cómo construirla correctamente en todos los tiempos verbales más usados, cómo identificar cuándo aplicarla y cómo transformar oraciones activas en pasivas.",
-  welcomeEmoji: "🧾",
-  pageTitle: "English Learning - La Voz Pasiva",
-  metaDescription: "Domina la Voz Pasiva en inglés. Aprende cuándo y cómo usar la estructura 'to be + participio pasado' en todos los tiempos verbales con ejemplos prácticos.",
+  title: "Adjetivos y Pronombres — Cómo describir, poseer y reemplazar palabras correctamente",
+  description: "Los adjetivos y pronombres son esenciales para comunicarse con claridad. Mientras los adjetivos describen o califican sustantivos, los pronombres reemplazan a un sustantivo para evitar repeticiones. Aprende a usarlos correctamente según el contexto.",
+  welcomeEmoji: "🧩",
+  pageTitle: "English Learning - Adjetivos y Pronombres",
+  metaDescription: "Domina los adjetivos y pronombres en inglés. Aprende a usar adjetivos posesivos, pronombres posesivos, pronombres de objeto y el orden correcto de los adjetivos.",
   learningPoints: [
-    "Qué es la voz pasiva y en qué se diferencia de la voz activa",
-    "Cómo formar oraciones pasivas en distintos tiempos verbales",
-    "Cuándo usar y cuándo evitar la voz pasiva",
-    "La estructura: sujeto + verbo to be + participio pasado (+ by + agente opcional)",
-    "Las estructuras más comunes: is done, was done, has been done, will be done, must be done",
-    "Cómo transformar oraciones activas en pasivas paso a paso"
+    "La diferencia entre adjetivos posesivos y pronombres posesivos",
+    "Cómo usarlos correctamente según la persona (my/mine, your/yours, etc.)",
+    "Qué son los pronombres de objeto y en qué se diferencian de los de sujeto",
+    "Dónde se colocan los adjetivos en la oración (posición y orden)",
+    "Cómo combinar varios adjetivos sin sonar raro en inglés",
+    "Los errores más comunes y cómo evitarlos"
   ],
   content: [
     {
-      topic: "¿Qué es la Voz Pasiva?",
-      explanation: "La **voz pasiva** es una forma gramatical que se usa para **enfatizar la acción o su resultado**, no a la persona que la realiza. Se forma con el verbo **to be** (en el tiempo correspondiente) + el **participio pasado** del verbo principal. La estructura general es: **Objeto (de la voz activa) + verbo to be + participio pasado** (+ *by* + sujeto opcional). En la voz activa, el **sujeto hace la acción**. En la voz pasiva, el **sujeto recibe la acción**. El agente (la persona que realiza la acción) **puede omitirse** si no es importante o es evidente.",
+      topic: "Adjetivos posesivos (my, your, his, her, its, our, their)",
+      explanation: "Los **adjetivos posesivos** se usan **para mostrar a quién pertenece algo**, y **siempre acompañan a un sustantivo**. No se usan solos: **necesitan un nombre después**.",
       examples: [
-        "**Estructura general:**",
-        "**`Sujeto + to be + participio pasado (+ by + agente)`**",
+        "**Estructura:**",
+        "👉 `adjetivo posesivo + sustantivo`",
         "",
-        "**Comparación básica:**",
-        "• **Activa:** The company published the report.",
-        "• **Pasiva:** The report **was published** (by the company).",
+        "**Lista completa:**",
         "",
-        "• **Activa:** Someone cleaned the office.",
-        "• **Pasiva:** The office **was cleaned**.",
+        "| Persona | Adjetivo posesivo | Ejemplo                       |",
+        "| ------- | ----------------- | ----------------------------- |",
+        "| I       | my                | This is **my** house.         |",
+        "| You     | your              | Where is **your** bag?        |",
+        "| He      | his               | **His** car is fast.          |",
+        "| She     | her               | I like **her** dress.         |",
+        "| It      | its               | The dog wagged **its** tail.  |",
+        "| We      | our               | **Our** teacher is kind.      |",
+        "| They    | their             | **Their** children are smart. |",
         "",
-        "• **Activa:** They will build a new school.",
-        "• **Pasiva:** A new school **will be built**.",
+        "💡 **Importante:**",
+        "• 'Its' **no lleva apóstrofe** (no confundir con 'it's' = *it is*).",
+        "• Se usa 'its' solo para **animales o cosas**, no personas.",
         "",
-        "**Ejemplo sin agente:**",
-        "• \"The bridge **was built** in 1990.\"",
-        "  (No es necesario decir quién lo construyó)"
+        "**Ejemplos:**",
+        "• My phone is new. → *Mi teléfono es nuevo.*",
+        "• Their house is big. → *Su casa es grande.*",
+        "• The cat is licking its paw. → *El gato está lamiendo su pata.*"
       ]
     },
     {
-      topic: "Estructura en distintos tiempos verbales",
-      explanation: "El verbo \"**to be**\" cambia según el tiempo verbal, pero el **participio pasado** del verbo principal **permanece igual**. El tiempo de la oración pasiva se determina por la forma del verbo 'to be' que usemos. Esta es la clave para formar correctamente la voz pasiva en cualquier tiempo.",
+      topic: "Pronombres posesivos (mine, yours, his, hers, its, ours, theirs)",
+      explanation: "Los **pronombres posesivos** **reemplazan** al sustantivo para **evitar repetirlo**. A diferencia de los adjetivos posesivos, **no van seguidos de un nombre**.",
       examples: [
-        "**Presente Simple:** `am/is/are + participio pasado`",
-        "• The work **is done** every day.",
-        "  (El trabajo **se hace** todos los días)",
+        "**Estructura:**",
+        "👉 `pronombre posesivo` (sin sustantivo después)",
         "",
-        "**Pasado Simple:** `was/were + participio pasado`",
-        "• The letter **was sent** yesterday.",
-        "  (La carta **fue enviada** ayer)",
+        "**Lista completa:**",
         "",
-        "**Presente Perfecto:** `has/have been + participio pasado`",
-        "• The house **has been sold**.",
-        "  (La casa **ha sido vendida**)",
+        "| Persona | Pronombre posesivo | Ejemplo                   |",
+        "| ------- | ------------------ | ------------------------- |",
+        "| I       | mine               | The book is **mine**.     |",
+        "| You     | yours              | This seat is **yours**.   |",
+        "| He      | his                | That jacket is **his**.   |",
+        "| She     | hers               | The blue one is **hers**. |",
+        "| It      | its                | (raro, casi no se usa)    |",
+        "| We      | ours               | The victory was **ours**. |",
+        "| They    | theirs             | The house is **theirs**.  |",
         "",
-        "**Futuro Simple:** `will be + participio pasado`",
-        "• The results **will be announced** tomorrow.",
-        "  (Los resultados **serán anunciados** mañana)",
+        "💡 **Comparación clave:**",
         "",
-        "**Verbos Modales:** `modal + be + participio pasado`",
-        "• The form **must be completed**.",
-        "  (El formulario **debe ser completado**)"
-      ]
-    },
-    {
-      topic: "Cómo transformar oraciones activas en pasivas",
-      explanation: "Para transformar una oración de voz activa a voz pasiva sigue estos pasos: 1) **Identifica el objeto** de la voz activa (la cosa o persona que recibe la acción). 2) Ese objeto se convierte en el **nuevo sujeto** de la oración pasiva. 3) Agrega el verbo **to be** en el tiempo adecuado. 4) Usa el **participio pasado** del verbo principal. 5) Si quieres mencionar quién hizo la acción, usa **by + agente** (opcional).",
-      examples: [
-        "**Proceso paso a paso:**",
-        "",
-        "**Ejemplo 1:**",
-        "• **Activa:** The chef cooked the meal.",
-        "• **Pasiva:** The meal **was cooked** (by the chef).",
-        "",
-        "**Ejemplo 2:**",
-        "• **Activa:** They have finished the project.",
-        "• **Pasiva:** The project **has been finished**.",
-        "",
-        "**Ejemplo 3:**",
-        "• **Activa:** Someone must do the report.",
-        "• **Pasiva:** The report **must be done**.",
-        "",
-        "**Ejemplo 4:**",
-        "• **Activa:** The teacher will explain the lesson.",
-        "• **Pasiva:** The lesson **will be explained** (by the teacher).",
-        "",
-        "**Ejemplo 5:**",
-        "• **Activa:** People speak English worldwide.",
-        "• **Pasiva:** English **is spoken** worldwide."
-      ]
-    },
-    {
-      topic: "Cuándo usar la voz pasiva",
-      explanation: "Usamos la voz pasiva cuando: **No sabemos** quién realizó la acción, **no importa** quién la realizó, **queremos sonar más formales o impersonales**, o **queremos enfocarnos en el resultado o la acción**. Es muy común en contextos formales, periodísticos, científicos y administrativos. Evítala si la oración se vuelve **innecesariamente complicada o poco natural**. En inglés conversacional, la voz activa suele ser más común.",
-      examples: [
-        "**Cuándo usar la voz pasiva:**",
-        "",
-        "**1. No sabemos quién hizo la acción:**",
-        "• \"My car **was stolen**.\" (No sé quién lo hizo)",
-        "",
-        "**2. No importa quién la hizo:**",
-        "• \"The streets **are cleaned** every morning.\"",
-        "",
-        "**3. Para sonar más formal:**",
-        "• \"The law **was approved** in 2010.\"",
-        "",
-        "**4. Para enfocarse en el resultado:**",
-        "• \"The new hospital **has been opened**.\"",
+        "| Adjetivo posesivo | Pronombre posesivo | Ejemplo                                                |",
+        "| ----------------- | ------------------ | ------------------------------------------------------ |",
+        "| my book           | mine               | This is **my book**. / This book is **mine**.          |",
+        "| your car          | yours              | That is **your car**. / That car is **yours**.         |",
+        "| their house       | theirs             | **Their** house is big. / The big house is **theirs**. |",
         "",
         "**Ejemplos adicionales:**",
-        "• A new bridge **was built**. (Gobierno construyó)",
-        "• A new store **has been opened**. (Alguien abrió)",
-        "• The road **will be repaired** soon. (Trabajadores repararán)",
-        "• This room **must be cleaned**. (Alguien debe limpiar)"
+        "• The blue jacket is mine. → *La chaqueta azul es mía.*",
+        "• This seat is yours. → *Este asiento es tuyo.*",
+        "• The victory was ours. → *La victoria fue nuestra.*"
+      ]
+    },
+    {
+      topic: "Pronombres de objeto (me, you, him, her, it, us, them)",
+      explanation: "Los **pronombres de objeto** se usan para **reemplazar al sustantivo que recibe la acción** del verbo. Mientras que los **pronombres de sujeto** (I, you, he, she, etc.) hacen la acción, los **de objeto** la reciben.",
+      examples: [
+        "**Estructura:**",
+        "👉 `Sujeto + verbo + pronombre de objeto`",
+        "",
+        "**Lista completa:**",
+        "",
+        "| Sujeto | Objeto | Ejemplo                     |",
+        "| ------ | ------ | --------------------------- |",
+        "| I      | me     | He loves **me**.            |",
+        "| You    | you    | I see **you**.              |",
+        "| He     | him    | She knows **him**.          |",
+        "| She    | her    | I called **her** yesterday. |",
+        "| It     | it     | We found **it**.            |",
+        "| We     | us     | They invited **us**.        |",
+        "| They   | them   | I saw **them** at the park. |",
+        "",
+        "💡 **Ejemplos comparativos:**",
+        "• **He** calls **me** every day. → *Él me llama todos los días.*",
+        "• **We** love **them** very much. → *Los amamos mucho.*",
+        "• **I** gave **her** the keys. → *Le di las llaves.*",
+        "",
+        "💬 **Nota práctica:**",
+        "En inglés, los pronombres de objeto **siempre van después del verbo o preposición**, nunca antes:",
+        "",
+        "> ✅ She is looking at **him**.",
+        "> ❌ She is looking **he**."
+      ]
+    },
+    {
+      topic: "Orden del adjetivo — Cómo ordenar varios adjetivos",
+      explanation: "En inglés, los **adjetivos van siempre antes del sustantivo** (a diferencia del español, donde van después). Además, cuando hay **más de un adjetivo**, existe un **orden específico** que los hablantes nativos siguen de manera natural.",
+      examples: [
+        "**Estructura general:**",
+        "👉 `Cantidad → Opinión → Tamaño → Edad → Forma → Color → Origen → Material → Propósito + Sustantivo`",
+        "",
+        "**Ejemplo completo:**",
+        "> a beautiful small old round red Italian wooden dining table",
+        "",
+        "(una **hermosa mesa de comedor italiana, redonda, vieja, pequeña y de madera roja**)",
+        "",
+        "No es obligatorio usar tantos adjetivos, pero **mantener el orden** hace que la frase suene natural.",
+        "",
+        "**Ejemplos más comunes:**",
+        "• a big red car → *un auto rojo grande*",
+        "• an interesting new movie → *una película nueva interesante*",
+        "• a small black dog → *un perro negro pequeño*",
+        "• two beautiful Spanish paintings → *dos pinturas españolas hermosas*",
+        "",
+        "💡 **Consejo:**",
+        "Si no estás seguro del orden, pon primero el **adjetivo más general (opinión)** y luego los más **concretos (color, tamaño, material)**.",
+        "",
+        "**Tabla de orden detallada:**",
+        "",
+        "| Posición | Tipo      | Ejemplo         |",
+        "| -------- | --------- | --------------- |",
+        "| 1        | Cantidad  | two, three, one |",
+        "| 2        | Opinión   | beautiful, nice |",
+        "| 3        | Tamaño    | big, small      |",
+        "| 4        | Edad      | old, new        |",
+        "| 5        | Forma     | round, square   |",
+        "| 6        | Color     | red, blue       |",
+        "| 7        | Origen    | Italian, French |",
+        "| 8        | Material  | wooden, metal   |",
+        "| 9        | Propósito | dining, sports  |"
       ]
     }
   ],
   quiz: [
     {
-      question: "The cake ___ by my mom yesterday.",
-      options: ["is made", "was made", "has been made", "will be made"],
+      question: "This is ___ car.",
+      options: ["my", "mine", "me", "I"],
+      correctAnswer: 0,
+      explanation: "Adjetivo posesivo, seguido de un sustantivo → usamos 'my'. Los adjetivos posesivos siempre van antes de un sustantivo."
+    },
+    {
+      question: "The blue jacket is ___.",
+      options: ["my", "mine", "me", "I"],
       correctAnswer: 1,
-      explanation: "\"Yesterday\" indica pasado → **was made** (Pasado Simple Pasivo)."
+      explanation: "Pronombre posesivo, reemplaza al sustantivo → usamos 'mine'. Los pronombres posesivos van solos, sin sustantivo después."
     },
     {
-      question: "The project ___ by next week.",
-      options: ["will be finished", "was finished", "is finished", "has been finished"],
-      correctAnswer: 0,
-      explanation: "\"By next week\" (para la próxima semana) indica **futuro con will be + participio**."
-    },
-    {
-      question: "The documents ___ already ___.",
-      options: ["has / been sent", "have / been sent", "were / sent", "are / sent"],
+      question: "I called ___ yesterday.",
+      options: ["she", "her", "hers", "she's"],
       correctAnswer: 1,
-      explanation: "\"Documents\" es plural → \"have been sent\" (Presente Perfecto Pasivo)."
+      explanation: "Pronombre de objeto, recibe la acción → usamos 'her'. El pronombre de objeto va después del verbo 'called'."
     },
     {
-      question: "The meeting ___ now.",
-      options: ["is being held", "was held", "has held", "will hold"],
-      correctAnswer: 0,
-      explanation: "\"Is being held\" indica una acción en curso **en el presente pasivo**."
-    },
-    {
-      question: "The form ___ carefully before submission.",
-      options: ["must be filled", "is filled", "was filled", "has been filled"],
-      correctAnswer: 0,
-      explanation: "\"Must be filled\" usa un **verbo modal + be + participio pasado** (obligación)."
-    },
-    {
-      question: "The report ___ yesterday morning.",
-      options: ["is published", "was published", "has been published", "will be published"],
+      question: "They gave ___ a gift.",
+      options: ["we", "us", "ours", "our"],
       correctAnswer: 1,
-      explanation: "\"Yesterday\" = pasado → **was published**."
+      explanation: "Pronombre de objeto → usamos 'us'. El pronombre de objeto recibe la acción del verbo 'gave'."
     },
     {
-      question: "English ___ in many countries.",
-      options: ["speaks", "is spoken", "was spoken", "has spoken"],
+      question: "That is ___ house. (de ellos)",
+      options: ["they", "theirs", "their", "them"],
+      correctAnswer: 2,
+      explanation: "Adjetivo posesivo antes del sustantivo → usamos 'their'. Los adjetivos posesivos siempre van seguidos de un sustantivo."
+    },
+    {
+      question: "The red car is ___. (de ellos)",
+      options: ["their", "theirs", "them", "they"],
       correctAnswer: 1,
-      explanation: "En presente, el verbo pasivo es **is spoken** (Presente Simple Pasivo)."
+      explanation: "Pronombre posesivo, reemplaza 'car' → usamos 'theirs'. Los pronombres posesivos sustituyen al sustantivo para evitar repetición."
     },
     {
-      question: "The results ___ tomorrow.",
-      options: ["will be announced", "were announced", "have been announced", "are announced"],
-      correctAnswer: 0,
-      explanation: "\"Tomorrow\" = futuro → **will be + participio pasado**."
+      question: "She loves ___.",
+      options: ["he", "him", "his", "he's"],
+      correctAnswer: 1,
+      explanation: "Pronombre de objeto → usamos 'him'. El pronombre de objeto recibe la acción del verbo 'loves'."
     },
     {
-      question: "The room ___ since early morning.",
-      options: ["has been cleaned", "is cleaned", "was cleaned", "will be cleaned"],
-      correctAnswer: 0,
-      explanation: "Acción reciente con efecto actual → **has been cleaned** (Presente Perfecto Pasivo)."
+      question: "It was a ___ small old wooden box.",
+      options: ["wooden old small", "small wooden old", "small old wooden", "old small wooden"],
+      correctAnswer: 2,
+      explanation: "Orden correcto: tamaño → edad → material. El orden natural de los adjetivos en inglés sigue esta secuencia específica."
     },
     {
-      question: "The movie ___ by millions of people.",
-      options: ["has been seen", "is seeing", "was seeing", "will see"],
-      correctAnswer: 0,
-      explanation: "Acción que comenzó en el pasado y sigue siendo relevante → **has been seen**."
+      question: "The cat is licking ___ tail.",
+      options: ["it's", "its", "his", "it"],
+      correctAnswer: 1,
+      explanation: "Adjetivo posesivo sin apóstrofe → usamos 'its'. 'It's' significa 'it is', mientras que 'its' es el adjetivo posesivo."
+    },
+    {
+      question: "This book is not ___, it's ___.",
+      options: ["your / my", "yours / mine", "you / me", "your / mine"],
+      correctAnswer: 1,
+      explanation: "Pronombres posesivos reemplazan al sustantivo 'book' → usamos 'yours' y 'mine'. Ambos son pronombres posesivos que van sin sustantivo después."
     }
   ]
 };
+

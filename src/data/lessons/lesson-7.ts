@@ -1,182 +1,214 @@
 import type { LessonData } from '../lessons';
 
-export const lesson7: LessonData = {
+export const lesson11: LessonData = {
   id: 7,
-  title: "Los Tiempos Perfectos y Continuos en Inglés",
-  description: "En esta lección aprenderás a dominar los tiempos perfectos y continuos en inglés, que son fundamentales para expresar acciones en progreso o completadas en distintos momentos del tiempo. Comprenderás cómo y cuándo se usan estructuras como had + past participle, will be doing, will have done, have been doing y had been doing. Estas formas te permitirán describir secuencias temporales, duración de acciones y relaciones entre eventos pasados, presentes y futuros con precisión.",
-  welcomeEmoji: "🧠",
-  pageTitle: "English Learning - Tiempos Perfectos y Continuos",
-  metaDescription: "Domina los tiempos perfectos y continuos en inglés. Aprende Past Perfect, Future Continuous, Future Perfect, Present Perfect Continuous y Past Perfect Continuous con ejemplos prácticos.",
+  title: "Sustantivos y Artículos — Cómo nombrar, contar y expresar posesión correctamente",
+  description: "Los sustantivos (nouns) son las palabras que usamos para nombrar personas, lugares, cosas o ideas. Son el corazón de casi todas las oraciones. Aprende a usar artículos, formar plurales y expresar posesión correctamente.",
+  welcomeEmoji: "🧩",
+  pageTitle: "English Learning - Sustantivos y Artículos",
+  metaDescription: "Domina los sustantivos y artículos en inglés. Aprende a usar a/an/the, formar plurales regulares e irregulares, y usar el genitivo sajón ('s) para expresar posesión.",
   learningPoints: [
-    "La estructura y el uso del Pasado Perfecto (Past Perfect)",
-    "Cómo expresar acciones que estaban ocurriendo en el pasado, presente o futuro con los Tiempos Continuos",
-    "Cómo usar los Tiempos Perfectos para indicar finalización o relación entre eventos",
-    "La combinación de ambos: los Tiempos Perfectos Continuos, para expresar duración hasta un punto en el tiempo",
-    "Diferencias entre cada uno y sus equivalentes en español",
-    "Ejemplos reales y situaciones cotidianas para aplicarlos correctamente"
+    "Qué son los sustantivos y cómo se clasifican",
+    "Cómo usar correctamente los artículos a/an y the",
+    "Cómo formar el plural de los sustantivos (regulares e irregulares)",
+    "Cómo usar el genitivo sajón ('s) para expresar posesión",
+    "Cuándo no usar artículos (casos especiales)",
+    "Los errores más comunes y cómo evitarlos"
   ],
   content: [
     {
-      topic: "Past Perfect (Pasado Perfecto)",
-      explanation: "El Pasado Perfecto se usa para hablar de una acción que ocurrió antes de otra en el pasado. La estructura es: **had + participio pasado**. Se usa normalmente junto con el Pasado Simple, para establecer una secuencia de eventos. En español, se traduce como \"había hecho\", \"habías ido\", \"habían terminado\", etc. **Regla clave:** El evento más antiguo va en Pasado Perfecto, y el más reciente en Pasado Simple.",
+      topic: "Artículos en inglés: a / an / the",
+      explanation: "En inglés, los **artículos** son palabras que acompañan a los sustantivos para indicar si estamos hablando de **algo general o algo específico**. Hay dos tipos: artículos indefinidos (a/an) y el artículo definido (the).",
       examples: [
-        "**Estructura:**",
-        "**`had + participio pasado`**",
+        "**1. Artículos indefinidos (a / an)**",
+        "",
+        "Se usan cuando **mencionamos algo por primera vez** o **no es específico**.",
+        "",
+        "• **'A'** se usa antes de palabras que **empiezan con sonido consonante**.",
+        "• **'An'** se usa antes de palabras que **empiezan con sonido vocal** (a, e, i, o, u).",
+        "",
+        "👉 **Estructura:** `a / an + sustantivo singular contable`",
         "",
         "**Ejemplos:**",
-        "• When I arrived, the meeting **had already started**.",
-        "  (Cuando llegué, la reunión **ya había comenzado**.)",
-        "• She **had finished** her homework before dinner.",
-        "  (Ella **había terminado** su tarea antes de la cena.)",
-        "• They **had never seen** snow before that trip.",
-        "  (Ellos **nunca habían visto** nieve antes de ese viaje.)",
-        "• By the time we got there, the movie **had ended**.",
-        "  (Para cuando llegamos allí, la película **había terminado**.)",
-        "• I **had studied** French before I moved to Paris.",
-        "  (Yo **había estudiado** francés antes de mudarme a París.)"
+        "• a cat → *un gato*",
+        "• an apple → *una manzana*",
+        "• a university → *una universidad* (empieza con sonido /ju/, no con vocal)",
+        "• an hour → *una hora* (empieza con sonido vocálico /aʊ/)",
+        "",
+        "💡 **Nota:** 'A' y 'an' **solo se usan con sustantivos singulares contables.**",
+        "No se dicen cosas como ❌ *an information* o ❌ *a water*.",
+        "",
+        "**2. Artículo definido (the)**",
+        "",
+        "Se usa cuando hablamos de **algo específico o conocido** por el hablante y el oyente.",
+        "Funciona igual en singular y plural.",
+        "",
+        "**Ejemplos:**",
+        "• The cat is sleeping. → *El gato está durmiendo.*",
+        "• The apples are fresh. → *Las manzanas están frescas.*",
+        "• The sun is bright today. → *El sol brilla hoy.*",
+        "",
+        "💡 **Casos donde no se usa 'the':**",
+        "• Antes de nombres propios: ❌ *The Maria*",
+        "• Antes de idiomas o comidas en general: ❌ *The English is hard*, ✅ *English is hard.*",
+        "• Antes de países (salvo excepciones como *the United States*, *the Netherlands*)."
       ]
     },
     {
-      topic: "Future Continuous (Futuro Continuo)",
-      explanation: "El Futuro Continuo se usa para describir acciones que estarán en progreso en un momento específico del futuro. La estructura es: **will be + verbo en -ing**. Se utiliza para hablar de una acción que estará ocurriendo y hacer planes o predicciones sobre una acción en curso. En español se traduce como \"estaré haciendo\", \"estará trabajando\", etc.",
+      topic: "Plurales regulares",
+      explanation: "La mayoría de los sustantivos forman el plural **añadiendo una terminación al final**. Sin embargo, hay pequeñas variaciones según cómo termina la palabra.",
       examples: [
-        "**Estructura:**",
-        "**`will be + verbo en -ing`**",
+        "**Reglas principales:**",
         "",
-        "**Ejemplos:**",
-        "• This time tomorrow, I **will be traveling** to London.",
-        "  (A esta hora mañana, **estaré viajando** a Londres.)",
-        "• Don't call me at 8; I **will be studying**.",
-        "  (No me llames a las 8; **estaré estudiando**.)",
-        "• They **will be working** all weekend.",
-        "  (Ellos **estarán trabajando** todo el fin de semana.)",
-        "• At 3 PM, she **will be presenting** her project.",
-        "  (A las 3 PM, ella **estará presentando** su proyecto.)",
-        "• We **will be flying** over the ocean at midnight.",
-        "  (Nosotros **estaremos volando** sobre el océano a medianoche.)"
+        "**1. Palabras que terminan en consonante + nada especial:**",
+        "➜ Agregamos **-s**",
+        "• cat → cats",
+        "• car → cars",
+        "• table → tables",
+        "",
+        "**2. Palabras que terminan en -s, -ss, -sh, -ch, -x, o -z:**",
+        "➜ Agregamos **-es**",
+        "• bus → buses",
+        "• box → boxes",
+        "• watch → watches",
+        "",
+        "**3. Palabras que terminan en consonante + 'y':**",
+        "➜ Cambiamos la 'y' por 'ies'",
+        "• city → cities",
+        "• baby → babies",
+        "",
+        "**4. Palabras que terminan en vocal + 'y':**",
+        "➜ Solo agregamos 's'",
+        "• boy → boys",
+        "• day → days",
+        "",
+        "💡 **Importante:**",
+        "En inglés **no se agrega un artículo plural indefinido** (no existe *a cats*). Solo se usa **'some'** o **nada**:",
+        "> I have **some cats**. / I have **cats**."
       ]
     },
     {
-      topic: "Future Perfect (Futuro Perfecto)",
-      explanation: "El Futuro Perfecto indica que una acción estará completada antes de un momento específico en el futuro. Estructura: **will have + participio pasado**. Sirve para proyectar hacia el futuro una acción terminada antes de otra acción o fecha. En español: \"habré hecho\", \"habrás terminado\", \"habrán llegado\", etc.",
+      topic: "Plurales irregulares",
+      explanation: "Algunos sustantivos **no siguen las reglas regulares** y cambian completamente su forma en plural. Estos son muy frecuentes, por lo que conviene memorizarlos.",
       examples: [
-        "**Estructura:**",
-        "**`will have + participio pasado`**",
+        "**Tabla de plurales irregulares comunes:**",
         "",
-        "**Ejemplos:**",
-        "• By 2026, I **will have graduated** from university.",
-        "  (Para 2026, **me habré graduado** de la universidad.)",
-        "• She **will have finished** the project by Friday.",
-        "  (Ella **habrá terminado** el proyecto para el viernes.)",
-        "• They **will have left** before you arrive.",
-        "  (Ellos **se habrán ido** antes de que llegues.)",
-        "• By next year, we **will have saved** enough money.",
-        "  (Para el próximo año, **habremos ahorrado** suficiente dinero.)",
-        "• The train **will have departed** by the time we get there.",
-        "  (El tren **habrá partido** para cuando lleguemos allí.)"
+        "| Singular | Plural   | Ejemplo                               |",
+        "| -------- | -------- | ------------------------------------- |",
+        "| man      | men      | The men are working.                  |",
+        "| woman    | women    | The women are doctors.                |",
+        "| child    | children | There are three children in the park. |",
+        "| foot     | feet     | My feet hurt.                         |",
+        "| tooth    | teeth    | I brush my teeth every day.           |",
+        "| person   | people   | People are friendly here.             |",
+        "",
+        "**Ejemplos en contexto:**",
+        "• The **men** are working. → *Los hombres están trabajando.*",
+        "• The **women** are doctors. → *Las mujeres son doctoras.*",
+        "• There are three **children** in the park. → *Hay tres niños en el parque.*",
+        "• My **feet** hurt. → *Me duelen los pies.*",
+        "• I brush my **teeth** every day. → *Me lavo los dientes todos los días.*",
+        "• **People** are friendly here. → *La gente es amable aquí.*",
+        "",
+        "💡 **Tip:**",
+        "La palabra **'people'** es plural de 'person', aunque muchas veces se usa como plural general ('personas' en español)."
       ]
     },
     {
-      topic: "Present Perfect Continuous (Presente Perfecto Continuo)",
-      explanation: "El Presente Perfecto Continuo se usa para expresar acciones que comenzaron en el pasado y continúan en el presente, o que acaban de terminar y tienen efecto ahora. Estructura: **have/has been + verbo en -ing**. Expresa duración y conexión con el presente. En español: \"he estado haciendo\", \"ha estado trabajando\", etc.",
+      topic: "El Genitivo Sajón ('s) — Posesión",
+      explanation: "El **genitivo sajón** es una forma muy natural en inglés de expresar **pertenencia** o **relación**. En español usamos 'de': *el libro de María*. En inglés, cambiamos el orden: *Maria's book* → 'el libro de María'.",
       examples: [
         "**Estructura:**",
-        "**`have/has been + verbo en -ing`**",
+        "👉 `Sujeto + 's + objeto poseído`",
         "",
-        "**Ejemplos:**",
-        "• I **have been studying** English for three years.",
-        "  (**He estado estudiando** inglés durante tres años.)",
-        "• She **has been waiting** for you all morning.",
-        "  (**Ha estado esperando** por ti toda la mañana.)",
-        "• We **have been working** on this project since January.",
-        "  (**Hemos estado trabajando** en este proyecto desde enero.)",
-        "• It **has been raining** all day.",
-        "  (**Ha estado lloviendo** todo el día.)",
-        "• They **have been living** here for five years.",
-        "  (**Han estado viviendo** aquí durante cinco años.)"
-      ]
-    },
-    {
-      topic: "Past Perfect Continuous (Pasado Perfecto Continuo)",
-      explanation: "El Pasado Perfecto Continuo se usa para mostrar la duración de una acción que estaba ocurriendo antes de otra en el pasado. Estructura: **had been + verbo en -ing**. Se enfoca en cuánto tiempo duró la acción hasta cierto punto pasado. En español: \"había estado haciendo\", \"habías estado esperando\", etc.",
-      examples: [
-        "**Estructura:**",
-        "**`had been + verbo en -ing`**",
+        "**Ejemplos básicos:**",
+        "• Maria's book → *el libro de María*",
+        "• The company's website → *el sitio web de la empresa*",
+        "• My brother's car → *el auto de mi hermano*",
         "",
-        "**Ejemplos:**",
-        "• I **had been studying** for two hours when she arrived.",
-        "  (**Había estado estudiando** durante dos horas cuando ella llegó.)",
-        "• They **had been living** in Paris before moving to Rome.",
-        "  (**Habían estado viviendo** en París antes de mudarse a Roma.)",
-        "• He **had been working** all day, so he was tired.",
-        "  (**Había estado trabajando** todo el día, así que estaba cansado.)",
-        "• We **had been waiting** for an hour before the bus came.",
-        "  (**Habíamos estado esperando** durante una hora antes de que llegara el autobús.)",
-        "• She **had been cooking** when the power went out.",
-        "  (**Había estado cocinando** cuando se fue la luz.)"
+        "**Reglas especiales:**",
+        "",
+        "**1. Si el sustantivo termina en -s (como 'James'):**",
+        "Se puede escribir de dos formas:",
+        "• James's car ✅ o James' car ✅ (ambas son aceptadas).",
+        "",
+        "**2. Si hay varios poseedores:**",
+        "El apóstrofo va **después de la 's' plural**:",
+        "• The teachers' lounge → *el salón de los profesores*.",
+        "",
+        "**3. También puede encadenarse para varias posesiones:**",
+        "• My sister's friend's house → *la casa del amigo de mi hermana*.",
+        "",
+        "💡 **Comparación con 'of':**",
+        "Usamos ''s' generalmente con **personas, animales o grupos vivos**.",
+        "Usamos **of** con **cosas o conceptos inanimados**:",
+        "",
+        "> The door of the car ✅ / The car's door ✅ (ambos posibles)",
+        "> The name of the book ✅ / ❌ The book's name (poco común)"
       ]
     }
   ],
   quiz: [
     {
-      question: "When I got home, my parents ___ dinner.",
-      options: ["have made", "had made", "were making", "will make"],
-      correctAnswer: 1,
-      explanation: "\"Had made\" indica que ya habían hecho la cena antes de que llegara (Pasado Perfecto)."
-    },
-    {
-      question: "By next month, we ___ the new system.",
-      options: ["will have installed", "have installed", "had installed", "are installing"],
+      question: "She has ___ cat.",
+      options: ["a", "an", "the", "some"],
       correctAnswer: 0,
-      explanation: "\"Will have installed\" se usa para una acción que estará completada en el futuro (Futuro Perfecto)."
+      explanation: "Sustantivo singular que empieza con sonido consonante → usamos 'a'. Es la primera vez que mencionamos el gato, por lo que es indefinido."
     },
     {
-      question: "I ___ English for two years before I moved to Canada.",
-      options: ["had been studying", "have been studying", "was studying", "will study"],
-      correctAnswer: 0,
-      explanation: "\"Had been studying\" expresa una acción continua antes de otra pasada (Pasado Perfecto Continuo)."
-    },
-    {
-      question: "Don't call her at 9. She ___ a meeting.",
-      options: ["will be having", "will have", "has", "had"],
-      correctAnswer: 0,
-      explanation: "\"Will be having\" muestra una acción en progreso en el futuro (Futuro Continuo)."
-    },
-    {
-      question: "She looks tired. She ___ all day.",
-      options: ["was working", "has been working", "had worked", "will work"],
+      question: "I saw ___ elephant at the zoo.",
+      options: ["a", "an", "the", "some"],
       correctAnswer: 1,
-      explanation: "\"Has been working\" indica que ha estado trabajando recientemente, con efecto en el presente."
+      explanation: "Comienza con sonido vocal → usamos 'an'. Es la primera vez que mencionamos el elefante, por lo que es indefinido."
     },
     {
-      question: "They ___ for hours before the train finally arrived.",
-      options: ["had been waiting", "have waited", "waited", "will wait"],
-      correctAnswer: 0,
-      explanation: "\"Had been waiting\" describe una espera continua previa a un evento pasado."
-    },
-    {
-      question: "By 10 o'clock, we ___ our homework.",
-      options: ["will be finishing", "will have finished", "have been finishing", "had finished"],
+      question: "___ sun rises in the east.",
+      options: ["A", "The", "An", "Some"],
       correctAnswer: 1,
-      explanation: "\"Will have finished\" indica una tarea completada antes de un momento futuro específico."
+      explanation: "Único y específico: el sol → usamos 'the'. Solo hay un sol, por lo que es definido y específico."
     },
     {
-      question: "I ___ in this company since 2018.",
-      options: ["have worked", "have been working", "had worked", "will work"],
+      question: "I have two ___ (child).",
+      options: ["childs", "children", "childrens", "child"],
       correctAnswer: 1,
-      explanation: "\"Have been working\" enfatiza la duración continua desde 2018 hasta el presente."
+      explanation: "Plural irregular de 'child' → 'children'. No se agrega solo 's', sino que cambia completamente la forma."
     },
     {
-      question: "The children ___ TV when their father arrived.",
-      options: ["had been watching", "have been watching", "watched", "will watch"],
-      correctAnswer: 0,
-      explanation: "\"Had been watching\" muestra que llevaban un tiempo viendo TV antes de que él llegara."
-    },
-    {
-      question: "This time tomorrow, I ___ on the beach.",
-      options: ["will have been relaxing", "will be relaxing", "am relaxing", "had been relaxing"],
+      question: "My ___ names are Tom and Jerry.",
+      options: ["brother", "brothers'", "brother's", "brothers"],
       correctAnswer: 1,
-      explanation: "\"Will be relaxing\" expresa una acción en progreso en el futuro cercano."
+      explanation: "Plural poseedor → apóstrofe después de la 's': 'brothers''. Hay varios hermanos y queremos mostrar posesión, por eso el apóstrofe va después de la 's' del plural."
+    },
+    {
+      question: "This is my ___ (woman - plural).",
+      options: ["womans", "women", "womanes", "womens"],
+      correctAnswer: 1,
+      explanation: "Plural irregular de 'woman' → 'women'. No se agrega solo 's', la 'a' cambia a 'e'."
+    },
+    {
+      question: "There are many ___ in the room. (box)",
+      options: ["boxs", "boxes", "boxies", "box"],
+      correctAnswer: 1,
+      explanation: "Termina en 'x', se agrega '-es' → 'boxes'. Las palabras que terminan en -s, -ss, -sh, -ch, -x, o -z forman el plural con '-es'."
+    },
+    {
+      question: "___ water in the glass is cold.",
+      options: ["A", "The", "An", "Some"],
+      correctAnswer: 1,
+      explanation: "Agua específica, ya mencionada o visible → usamos 'the'. Es el agua en el vaso (específica), no cualquier agua."
+    },
+    {
+      question: "___ book on the table is mine.",
+      options: ["A", "The", "An", "Some"],
+      correctAnswer: 1,
+      explanation: "Libro específico, ya identificado → usamos 'the'. Es el libro en la mesa (específico), no cualquier libro."
+    },
+    {
+      question: "That is Maria___ car.",
+      options: ["s", "s'", "'s", ""],
+      correctAnswer: 2,
+      explanation: "Genitivo sajón → Maria's car = el auto de María. Para expresar posesión, agregamos 's con apóstrofe antes de la 's'."
     }
   ]
 };
+
