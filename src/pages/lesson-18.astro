@@ -1,0 +1,28 @@
+---
+import LessonPage from '../components/LessonPage.astro';
+import { lesson18 } from '../data/lessons/lesson-18';
+
+const lesson = lesson18;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={lesson.metaDescription} />
+  <title>{lesson.pageTitle}</title>
+</head>
+<body>
+  <LessonPage
+    lessonId={lesson.id}
+    title={lesson.title}
+    description={lesson.description}
+    learningPoints={lesson.learningPoints}
+    content={lesson.content}
+    quiz={lesson.quiz}
+    welcomeEmoji={lesson.welcomeEmoji}
+  />
+</body>
+</html>
+
