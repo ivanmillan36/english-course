@@ -25,60 +25,68 @@ const progressPercentage = Math.round((lessonNumber / totalLessons) * 100);
 ---
 
 <!-- Enhanced Navigation Bar -->
-<div class="lesson-navigation bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-6 mb-8">
+<div class="lesson-navigation bg-white dark:bg-gray-800 rounded-2xl shadow-modern-xl border border-gray-200 dark:border-gray-700 p-6 md:p-8 mb-8 animate-fade-in">
   <!-- Navigation Header -->
-  <div class="text-center mb-6">
-    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+  <div class="text-center mb-8">
+    <h2 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">
       Course Navigation
     </h2>
-    <div class="flex items-center justify-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-      <span>Lesson {lessonNumber} of {totalLessons}</span>
-      <span class="text-green-500">•</span>
-      <span>{progressPercentage}% Complete</span>
+    <div class="flex items-center justify-center space-x-3 text-sm md:text-base">
+      <span class="px-3 py-1.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-lg font-semibold">
+        Lesson {lessonNumber} of {totalLessons}
+      </span>
+      <span class="text-indigo-500 dark:text-indigo-400 text-xl">•</span>
+      <span class="px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg font-semibold">
+        {progressPercentage}% Complete
+      </span>
     </div>
   </div>
 
   <!-- Progress Bar -->
-  <div class="mb-6">
-    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+  <div class="mb-8">
+    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 md:h-5 shadow-modern overflow-hidden">
       <div 
-        class="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full transition-all duration-700 ease-out"
+        class="progress-animation bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-full rounded-full transition-all duration-1000 ease-out shadow-lg relative"
         style={`width: ${progressPercentage}%`}
-      ></div>
+      >
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+      </div>
     </div>
   </div>
 
   <!-- Navigation Buttons -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-center">
     <!-- Previous Lesson -->
     <div class="order-2 md:order-1">
       {previousLesson ? (
         <a 
           href={previousLesson.url} 
-          class="group flex items-center justify-center md:justify-start p-3 bg-gray-50 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300"
+          class="group flex items-center justify-center md:justify-start p-4 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded-xl border-2 border-blue-200 dark:border-blue-800 hover:border-indigo-400 dark:hover:border-indigo-600 transition-all duration-300 shadow-modern hover:shadow-modern-lg hover:scale-105 active:scale-95"
         >
           <div class="flex items-center">
-            <span class="text-blue-600 dark:text-blue-400 mr-2 group-hover:transform group-hover:-translate-x-1 transition-transform">
-              ←
-            </span>
+            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white mr-3 shadow-lg group-hover:scale-110 transition-transform">
+              <span class="text-lg">←</span>
+            </div>
             <div class="text-left">
-              <div class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+              <div class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1">
                 Previous
               </div>
-              <div class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+              <div class="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                 Lesson {lessonNumber - 1}
               </div>
             </div>
           </div>
         </a>
       ) : (
-        <div class="flex items-center justify-center md:justify-start p-3 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 opacity-50">
-          <span class="text-gray-400 mr-2">←</span>
+        <div class="flex items-center justify-center md:justify-start p-4 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 opacity-50">
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-gray-500 mr-3">
+            <span class="text-lg">←</span>
+          </div>
           <div class="text-left">
-            <div class="text-xs font-medium text-gray-400 uppercase tracking-wide">
+            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
               Previous
             </div>
-            <div class="text-sm font-semibold text-gray-400">
+            <div class="text-base font-bold text-gray-400">
               First Lesson
             </div>
           </div>
@@ -88,12 +96,12 @@ const progressPercentage = Math.round((lessonNumber / totalLessons) * 100);
 
     <!-- Current Lesson Info -->
     <div class="order-1 md:order-2 text-center">
-      <div class="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-lg p-4">
-        <div class="text-sm font-medium opacity-90 mb-1">Current Lesson</div>
-        <div class="text-lg font-bold">
-          Lesson {lessonNumber}
+      <div class="bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-600 text-white rounded-2xl p-6 shadow-modern-xl transform hover:scale-105 transition-transform duration-300">
+        <div class="text-sm font-semibold opacity-90 mb-2 uppercase tracking-wider">Current Lesson</div>
+        <div class="text-3xl md:text-4xl font-bold mb-2">
+          {lessonNumber}
         </div>
-        <div class="text-xs opacity-75 mt-1">
+        <div class="text-xs md:text-sm opacity-80 font-medium">
           {progressPercentage}% Complete
         </div>
       </div>
@@ -104,51 +112,55 @@ const progressPercentage = Math.round((lessonNumber / totalLessons) * 100);
       {nextLesson ? (
         <a 
           href={nextLesson.url} 
-          class="group flex items-center justify-center md:justify-end p-3 bg-gray-50 dark:bg-gray-700 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300"
+          class="group flex items-center justify-center md:justify-end p-4 bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 rounded-xl border-2 border-green-200 dark:border-green-800 hover:border-emerald-400 dark:hover:border-emerald-600 transition-all duration-300 shadow-modern hover:shadow-modern-lg hover:scale-105 active:scale-95"
         >
           <div class="flex items-center">
-            <div class="text-right">
-              <div class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+            <div class="text-right mr-3">
+              <div class="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider mb-1">
                 Next
               </div>
-              <div class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors truncate">
+              <div class="text-base font-bold text-gray-800 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 Lesson {lessonNumber + 1}
               </div>
             </div>
-            <span class="text-green-600 dark:text-green-400 ml-2 group-hover:transform group-hover:translate-x-1 transition-transform">
-              →
-            </span>
+            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+              <span class="text-lg">→</span>
+            </div>
           </div>
         </a>
       ) : (
-        <div class="flex items-center justify-center md:justify-end p-3 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 opacity-50">
-          <div class="text-right">
-            <div class="text-xs font-medium text-gray-400 uppercase tracking-wide">
+        <div class="flex items-center justify-center md:justify-end p-4 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 opacity-50">
+          <div class="text-right mr-3">
+            <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
               Next
             </div>
-            <div class="text-sm font-semibold text-gray-400">
+            <div class="text-base font-bold text-gray-400">
               Course Complete!
             </div>
           </div>
-          <span class="text-gray-400 ml-2">→</span>
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-gray-500">
+            <span class="text-lg">→</span>
+          </div>
         </div>
       )}
     </div>
   </div>
 
   <!-- Quick Navigation Dots -->
-  <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-    <div class="flex flex-wrap justify-center items-center gap-2">
-      <span class="text-xs text-gray-500 dark:text-gray-400 mr-2">Quick Jump:</span>
+  <div class="mt-8 pt-6 border-t border-gray-200/50 dark:border-gray-700/50">
+    <div class="text-center mb-4">
+      <span class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Quick Jump:</span>
+    </div>
+    <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3">
       {Array.from({ length: totalLessons }, (_, i) => i + 1).map(num => (
         <a
           href={num === 1 ? '/' : `/lesson-${num}`}
-          class={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all duration-300 ${
+          class={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 shadow-modern hover:scale-110 active:scale-95 ${
             num === lessonNumber
-              ? 'bg-blue-600 text-white shadow-lg'
+              ? 'bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-modern-lg scale-110 ring-2 ring-indigo-300 dark:ring-indigo-600'
               : num < lessonNumber
-              ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-800/50'
-              : 'bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
+              ? 'bg-gradient-to-br from-green-400 to-emerald-500 text-white hover:from-green-500 hover:to-emerald-600 shadow-modern hover:shadow-modern-lg'
+              : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
           }`}
           title={`Go to Lesson ${num}`}
         >
@@ -160,83 +172,132 @@ const progressPercentage = Math.round((lessonNumber / totalLessons) * 100);
 </div>
 
 <!-- Keyboard Navigation -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navigation = {
-      previous: document.querySelector('a[href*="lesson-"]:not([href*="lesson-' + (parseInt(window.location.pathname.split('-')[1]) + 1) + '"])'),
-      next: document.querySelector('a[href*="lesson-' + (parseInt(window.location.pathname.split('-')[1] || '1') + 1) + '"]')
-    };
+<script is:inline>
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      const lessonNumber = parseInt(window.location.pathname.split('-')[1] || '1');
+      const navigation = {
+        previous: document.querySelector('a[href*="lesson-' + (lessonNumber - 1) + '"]'),
+        next: document.querySelector('a[href*="lesson-' + (lessonNumber + 1) + '"]')
+      };
 
-    document.addEventListener('keydown', (e) => {
-      // Left arrow or 'p' for previous
-      if ((e.key === 'ArrowLeft' || e.key === 'p') && navigation.previous) {
-        e.preventDefault();
-        (navigation.previous as HTMLAnchorElement).click();
+      document.addEventListener('keydown', function(e) {
+        // Left arrow or 'p' for previous
+        if ((e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') && navigation.previous) {
+          e.preventDefault();
+          (navigation.previous).click();
+        }
+        
+        // Right arrow or 'n' for next
+        if ((e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') && navigation.next) {
+          e.preventDefault();
+          (navigation.next).click();
+        }
+      });
+
+      // Show keyboard shortcuts hint
+      function showKeyboardHint() {
+        const hint = document.createElement('div');
+        hint.className = 'fixed bottom-4 right-4 glass backdrop-blur-modern text-gray-800 dark:text-gray-200 text-xs p-4 rounded-xl shadow-modern-xl z-50 opacity-0 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50';
+        
+        // Create elements safely instead of using innerHTML
+        const title = document.createElement('div');
+        title.className = 'font-bold mb-2 text-indigo-600 dark:text-indigo-400';
+        title.textContent = '⌨️ Keyboard Shortcuts:';
+        hint.appendChild(title);
+        
+        const shortcuts = document.createElement('div');
+        shortcuts.className = 'space-y-1';
+        
+        const prevShortcut = document.createElement('div');
+        prevShortcut.textContent = '← or P: Previous lesson';
+        shortcuts.appendChild(prevShortcut);
+        
+        const nextShortcut = document.createElement('div');
+        nextShortcut.textContent = '→ or N: Next lesson';
+        shortcuts.appendChild(nextShortcut);
+        
+        hint.appendChild(shortcuts);
+        document.body.appendChild(hint);
+        
+        setTimeout(function() {
+          hint.style.opacity = '1';
+        }, 100);
+        
+        setTimeout(function() {
+          hint.style.opacity = '0';
+          hint.style.transform = 'translateY(20px)';
+          setTimeout(function() {
+            hint.remove();
+          }, 300);
+        }, 3000);
       }
-      
-      // Right arrow or 'n' for next
-      if ((e.key === 'ArrowRight' || e.key === 'n') && navigation.next) {
-        e.preventDefault();
-        (navigation.next as HTMLAnchorElement).click();
+
+      // Show hint on first visit
+      if (!localStorage.getItem('keyboardHintShown')) {
+        setTimeout(showKeyboardHint, 2000);
+        localStorage.setItem('keyboardHintShown', 'true');
       }
     });
-
-    // Show keyboard shortcuts hint
-    const showKeyboardHint = () => {
-      const hint = document.createElement('div');
-      hint.className = 'fixed bottom-4 right-4 bg-gray-800 text-white text-xs p-3 rounded-lg shadow-lg z-50 opacity-0 transition-opacity duration-300';
-      hint.innerHTML = `
-        <div class="font-semibold mb-1">Keyboard Shortcuts:</div>
-        <div>← or P: Previous lesson</div>
-        <div>→ or N: Next lesson</div>
-      `;
-      document.body.appendChild(hint);
-      
-      setTimeout(() => hint.style.opacity = '1', 100);
-      setTimeout(() => {
-        hint.style.opacity = '0';
-        setTimeout(() => hint.remove(), 300);
-      }, 3000);
-    };
-
-    // Show hint on first visit
-    if (!localStorage.getItem('keyboardHintShown')) {
-      setTimeout(showKeyboardHint, 2000);
-      localStorage.setItem('keyboardHintShown', 'true');
-    }
-  });
+  })();
 </script>
 
 <style>
   .lesson-navigation {
-    animation: slideIn 0.6s ease-out;
+    animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @keyframes slideIn {
     from {
       opacity: 0;
-      transform: translateY(-20px);
+      transform: translateY(-30px) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
   /* Smooth hover effects */
-  .lesson-navigation a:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  .lesson-navigation a {
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Progress bar animation */
-  .lesson-navigation .bg-gradient-to-r {
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
+  .lesson-navigation a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
   }
 
+  .lesson-navigation a:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Progress bar shimmer animation */
   @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+  }
+
+  /* Navigation dots hover effect */
+  .lesson-navigation a[href*="lesson"]:hover {
+    transform: translateY(-2px);
   }
 </style>

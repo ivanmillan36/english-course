@@ -9,7 +9,7 @@ const { title, description = "Una aplicación web moderna con Astro" } = Astro.p
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -17,60 +17,225 @@ const { title, description = "Una aplicación web moderna con Astro" } = Astro.p
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     
+    <!-- Apply theme immediately to prevent flash -->
+    <script is:inline>
+      (function() {
+        try {
+          // Check for saved theme preference or default to system preference
+          const savedTheme = localStorage.getItem('theme');
+          const html = document.documentElement;
+          
+          let themeToApply = savedTheme;
+          
+          // If no saved theme, check system preference
+          if (!themeToApply && window.matchMedia) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            themeToApply = prefersDark ? 'dark' : 'light';
+          } else if (!themeToApply) {
+            themeToApply = 'light';
+          }
+          
+          // Apply theme immediately before page renders - this affects entire website
+          if (themeToApply === 'dark') {
+            html.classList.add('dark');
+            html.setAttribute('data-theme', 'dark');
+          } else {
+            html.classList.remove('dark');
+            html.setAttribute('data-theme', 'light');
+          }
+        } catch(e) {
+          console.error('Theme initialization error:', e);
+          // Fallback: ensure HTML element exists and apply light theme
+          if (document.documentElement) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        }
+      })();
+    </script>
+    
     <!-- Import Tailwind styles -->
     <style is:global>
       @import '../styles/global.css';
     </style>
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-    <header class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-10">
+  <body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-950 dark:via-gray-900 dark:to-slate-900 page-transition">
+    <!-- Modern Header with Glass Morphism -->
+    <header class="glass sticky top-0 z-50 border-b border-gray-200/50 dark:border-gray-800/50 shadow-modern">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center">
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
-              🇬🇧 English Learning
+        <div class="flex justify-between items-center h-18 md:h-20">
+          <div class="flex items-center space-x-3">
+            <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg">
+              <span class="text-xl">🇬🇧</span>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+              English Learning
             </h1>
           </div>
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-3">
             <button 
               id="theme-toggle" 
-              class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110 active:scale-95 shadow-modern focus-ring"
               aria-label="Toggle theme"
             >
-              <span class="dark:hidden">🌙</span>
-              <span class="hidden dark:inline">☀️</span>
+              <span class="dark:hidden text-lg">🌙</span>
+              <span class="hidden dark:inline text-lg">☀️</span>
             </button>
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Main Content with Modern Spacing -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 animate-fade-in">
       <slot />
     </main>
 
-    <footer class="mt-16 border-t border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <p class="text-center text-gray-600 dark:text-gray-400">
-          Learn English step by step • Creado con ❤️ usando <strong>Astro</strong> y <strong>Tailwind CSS</strong>
-        </p>
+    <!-- Modern Footer -->
+    <footer class="mt-20 border-t border-gray-200/50 dark:border-gray-800/50 glass backdrop-blur-modern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p class="text-center md:text-left text-gray-600 dark:text-gray-400 text-sm md:text-base">
+            Learn English step by step
+          </p>
+          <p class="text-center md:text-right text-gray-500 dark:text-gray-500 text-xs md:text-sm">
+            Creado con <span class="text-red-500">❤️</span> usando <strong class="text-indigo-600 dark:text-indigo-400">Astro</strong> y <strong class="text-cyan-600 dark:text-cyan-400">Tailwind CSS</strong>
+          </p>
+        </div>
       </div>
     </footer>
 
     <script>
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
-      const html = document.documentElement;
-      
-      // Check for saved theme preference or default to 'light'
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      html.classList.toggle('dark', savedTheme === 'dark');
-      
-      themeToggle?.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
-      });
+      // Enhanced theme toggle functionality - apply to entire website
+      (function() {
+        'use strict';
+        
+        function applyTheme(theme: string) {
+          const html = document.documentElement;
+          const body = document.body;
+          
+          // Remove any existing theme classes from both html and body
+          html.classList.remove('dark', 'light');
+          if (body) {
+            body.classList.remove('dark', 'light');
+          }
+          
+          if (theme === 'dark') {
+            // Add dark class to html element - Tailwind v4 requires this on html
+            html.classList.add('dark');
+            html.setAttribute('data-theme', 'dark');
+            // Also add to body for compatibility
+            if (body) {
+              body.setAttribute('data-theme', 'dark');
+            }
+            localStorage.setItem('theme', 'dark');
+          } else {
+            // Remove dark class from html
+            html.classList.remove('dark');
+            html.setAttribute('data-theme', 'light');
+            // Also update body
+            if (body) {
+              body.setAttribute('data-theme', 'light');
+            }
+            localStorage.setItem('theme', 'light');
+          }
+          
+          // Force multiple reflows to ensure Tailwind detects the change
+          void html.offsetHeight;
+          void body?.offsetHeight;
+          
+          // Trigger style recalculation on multiple elements to force Tailwind update
+          requestAnimationFrame(function() {
+            // Query selector to force style recalculation
+            const testEl = document.querySelector('body');
+            if (testEl) {
+              void testEl.offsetHeight;
+            }
+            
+            // Dispatch custom event for other scripts that might need to react
+            try {
+              const event = new CustomEvent('themechange', { 
+                detail: { theme: theme },
+                bubbles: true,
+                cancelable: true
+              });
+              window.dispatchEvent(event);
+              document.dispatchEvent(event);
+            } catch(e) {
+              console.error('Error dispatching theme event:', e);
+            }
+          });
+        }
+        
+        // Initialize theme toggle when DOM is ready
+        function initThemeToggle() {
+          const themeToggle = document.getElementById('theme-toggle');
+          const html = document.documentElement;
+          
+          if (!themeToggle) {
+            // Retry if button not found yet
+            setTimeout(initThemeToggle, 100);
+            return;
+          }
+          
+          // Get current theme from localStorage or detect system preference
+          let currentTheme = localStorage.getItem('theme');
+          
+          if (!currentTheme && window.matchMedia) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            currentTheme = prefersDark ? 'dark' : 'light';
+          } else if (!currentTheme) {
+            currentTheme = 'light';
+          }
+          
+          // Ensure initial theme is applied (in case script in head didn't work)
+          if (currentTheme) {
+            applyTheme(currentTheme);
+          }
+          
+          // Set up theme toggle button click handler
+          themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle theme based on current state
+            const isDark = html.classList.contains('dark');
+            const newTheme = isDark ? 'light' : 'dark';
+            
+            // Apply theme immediately
+            applyTheme(newTheme);
+            
+            return false;
+          });
+          
+          // Listen for system theme changes (only if user hasn't set a preference)
+          if (window.matchMedia) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            const handleSystemThemeChange = function(e: MediaQueryListEvent) {
+              // Only auto-switch if user hasn't manually set a preference
+              if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+              }
+            };
+            
+            if (mediaQuery.addEventListener) {
+              mediaQuery.addEventListener('change', handleSystemThemeChange);
+            } else {
+              // Fallback for older browsers
+              mediaQuery.addListener(handleSystemThemeChange);
+            }
+          }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initThemeToggle);
+        } else {
+          // DOM already ready, initialize immediately
+          initThemeToggle();
+        }
+      })();
     </script>
   </body>
 </html>
