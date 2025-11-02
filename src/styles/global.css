@@ -402,3 +402,12 @@ body {
   background-color: rgba(99, 102, 241, 0.3);
   color: inherit;
 }
+
+/* Header hide/show on scroll */
+#main-header {
+  transform: translateY(0);
+}
+
+#main-header.header-hidden {
+  transform: translateY(-100%);
+}

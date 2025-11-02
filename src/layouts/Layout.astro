@@ -61,7 +61,7 @@ const { title, description = "Una aplicación web moderna con Astro" } = Astro.p
   </head>
   <body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-950 dark:via-gray-900 dark:to-slate-900 page-transition">
     <!-- Modern Header with Glass Morphism -->
-    <header class="glass sticky top-0 z-50 border-b border-gray-200/50 dark:border-gray-800/50 shadow-modern">
+    <header id="main-header" class="glass fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50 dark:border-gray-800/50 shadow-modern transition-transform duration-300 ease-in-out">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-18 md:h-20">
           <div class="flex items-center space-x-3">
@@ -87,7 +87,7 @@ const { title, description = "Una aplicación web moderna con Astro" } = Astro.p
     </header>
 
     <!-- Main Content with Modern Spacing -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 animate-fade-in">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 animate-fade-in pt-24 md:pt-28">
       <slot />
     </main>
 
@@ -235,6 +235,44 @@ const { title, description = "Una aplicación web moderna con Astro" } = Astro.p
           // DOM already ready, initialize immediately
           initThemeToggle();
         }
+      })();
+      
+      // Hide/show header on scroll
+      (function() {
+        'use strict';
+        
+        let lastScrollTop = 0;
+        let ticking = false;
+        const header = document.getElementById('main-header');
+        
+        if (!header) return;
+        
+        function updateHeader() {
+          const headerElement = document.getElementById('main-header');
+          if (!headerElement) return;
+          
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down - hide header
+            headerElement.classList.add('header-hidden');
+          } else {
+            // Scrolling up - show header
+            headerElement.classList.remove('header-hidden');
+          }
+          
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+          ticking = false;
+        }
+        
+        function onScroll() {
+          if (!ticking) {
+            window.requestAnimationFrame(updateHeader);
+            ticking = true;
+          }
+        }
+        
+        window.addEventListener('scroll', onScroll, { passive: true });
       })();
     </script>
   </body>
