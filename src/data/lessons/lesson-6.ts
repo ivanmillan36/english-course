@@ -2,7 +2,7 @@ import type { LessonData } from '../lessons';
 
 export const lesson6: LessonData = {
   id: 6,
-  title: "Módulo 1 - Los Cimientos: Dominando el Verbo \"To Be\" (Ser/Estar)",
+  title: "Los Cimientos: Dominando el Verbo \"To Be\" (Ser/Estar)",
   description: "Bienvenido a la piedra angular del inglés. En esta lección, desglosaremos completamente el verbo más importante y versátil del idioma: \"To Be\". Aprenderás a usarlo en sus formas afirmativa, negativa e interrogativa, entenderás las contracciones (como I'm, isn't, aren't) y podrás formar tus primeras oraciones con confianza. Sin este verbo, no puedes construir nada; con él, puedes construir todo.",
   welcomeEmoji: "🏗️",
   pageTitle: "English Learning - Dominando el Verbo To Be",
