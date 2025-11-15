@@ -1,6 +1,7 @@
 ---
 // Lesson screen component for English learning app
 import { marked } from 'marked';
+import type { ExampleItem, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../data/lessons';
 
 // Configure marked options
 marked.setOptions({
@@ -17,6 +18,100 @@ function processInlineMarkdown(text: string): string {
   return marked.parseInline(text, { async: false }) as string;
 }
 
+// Helper function to render TextPart
+function renderTextPart(part: TextPart): string {
+  let result = part.text;
+  if (part.bold) result = `<strong class="font-semibold">${result}</strong>`;
+  if (part.italic) result = `<em class="italic">${result}</em>`;
+  if (part.code) result = `<code class="px-1.5 py-0.5 bg-indigo-100 dark:bg-indigo-900/50 rounded text-sm font-mono text-indigo-800 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-800">${result}</code>`;
+  if (part.emoji) result = `${part.emoji} ${result}`;
+  return result;
+}
+
+// Helper function to render example items
+function renderExampleItem(item: ExampleItem): string {
+  if (typeof item === 'string') {
+    return processMarkdown(item);
+  }
+  
+  switch (item.type) {
+    case 'table':
+      return renderTable(item as TableData);
+    case 'title':
+      return renderTitle(item as TitleData);
+    case 'paragraph':
+      return renderParagraph(item as ParagraphData);
+    case 'code':
+      return renderCode(item as CodeData);
+    case 'list':
+      return renderList(item as ListData);
+    case 'separator':
+      return renderSeparator(item as SeparatorData);
+    default:
+      return '';
+  }
+}
+
+function renderTable(data: TableData): string {
+  const alignments = data.alignments || data.headers.map(() => 'left');
+  const headerRow = data.headers.map((header, i) => 
+    `<th class="px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 border-b-2 border-gray-300 dark:border-gray-600 first:rounded-tl-lg last:rounded-tr-lg" style="text-align: ${alignments[i]}">${processInlineMarkdown(header)}</th>`
+  ).join('');
+  
+  const rows = data.rows.map((row, rowIndex) => {
+    const isLastRow = rowIndex === data.rows.length - 1;
+    return `<tr class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors ${isLastRow ? 'last:border-b-0' : ''}">${row.map((cell, i) => 
+      `<td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300" style="text-align: ${alignments[i]}">${processInlineMarkdown(cell)}</td>`
+    ).join('')}</tr>`;
+  }).join('');
+  
+  return `<div class="overflow-x-auto my-4 rounded-lg border border-gray-300 dark:border-gray-600 shadow-modern"><table class="min-w-full border-collapse"><thead><tr>${headerRow}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function renderTitle(data: TitleData): string {
+  const level = data.level || 3;
+  const emoji = data.emoji ? `${data.emoji} ` : '';
+  const headingTag = `h${level}`;
+  const classes = {
+    1: 'text-2xl md:text-3xl font-bold mb-4 mt-6 text-indigo-700 dark:text-indigo-300',
+    2: 'text-xl md:text-2xl font-bold mb-3 mt-5 text-indigo-700 dark:text-indigo-300',
+    3: 'text-lg md:text-xl font-bold mb-3 mt-4 text-indigo-600 dark:text-indigo-400',
+    4: 'text-base md:text-lg font-semibold mb-2 mt-3 text-indigo-600 dark:text-indigo-400',
+    5: 'text-sm md:text-base font-semibold mb-2 mt-2 text-indigo-600 dark:text-indigo-400',
+    6: 'text-sm font-semibold mb-1 mt-2 text-indigo-600 dark:text-indigo-400'
+  };
+  
+  return `<${headingTag} class="${classes[level]}">${emoji}${processInlineMarkdown(data.text)}</${headingTag}>`;
+}
+
+function renderParagraph(data: ParagraphData): string {
+  const content = data.content.map(part => renderTextPart(part)).join('');
+  return `<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">${content}</p>`;
+}
+
+function renderCode(data: CodeData): string {
+  if (data.inline) {
+    return `<code class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/50 rounded text-sm font-mono text-indigo-800 dark:text-indigo-200 border border-indigo-200 dark:border-indigo-800">${data.code}</code>`;
+  }
+  const language = data.language || '';
+  return `<pre class="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto my-4 border border-gray-700 dark:border-gray-800 shadow-modern"><code class="text-gray-100 font-mono text-sm ${language ? `language-${language}` : ''}">${data.code}</code></pre>`;
+}
+
+function renderList(data: ListData): string {
+  const items = data.items.map(item => {
+    const content = item.map(part => renderTextPart(part)).join('');
+    return `<li class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">${content}</li>`;
+  }).join('');
+  
+  const tag = data.ordered ? 'ol' : 'ul';
+  const listClass = data.ordered ? 'list-decimal' : 'list-disc';
+  return `<${tag} class="${listClass} space-y-2 my-3">${items}</${tag}>`;
+}
+
+function renderSeparator(data: SeparatorData): string {
+  return `<hr class="my-6 border-gray-300 dark:border-gray-600 border-t-2" />`;
+}
+
 export interface Props {
   title: string;
   description: string;
@@ -24,7 +119,7 @@ export interface Props {
   content: {
     topic: string;
     explanation: string;
-    examples?: string[];
+    examples?: ExampleItem[];
   }[];
   quiz: {
     question: string;
@@ -129,16 +224,24 @@ const { title, description, learningPoints, content, quiz } = Astro.props;
                 Examples:
               </h4>
               <div class="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-5 md:p-6 border-l-4 border-indigo-500 shadow-modern">
-                <ul class="space-y-3">
-                  {section.examples.map(example => (
-                  <li class="text-gray-800 dark:text-gray-200 leading-relaxed">
-                      <div class="flex items-start space-x-2">
-                        <span class="text-indigo-500 dark:text-indigo-400 font-bold mt-1">•</span>
-                        <div set:html={processMarkdown(example)} class="flex-1" />
-                      </div>
-                  </li>
-                  ))}
-                </ul>
+                <div class="space-y-4">
+                  {section.examples.map((example) => {
+                    const renderedContent = renderExampleItem(example);
+                    // Only wrap in list item if it's a string (backward compatibility)
+                    if (typeof example === 'string') {
+                      return (
+                        <div class="flex items-start space-x-2">
+                          <span class="text-indigo-500 dark:text-indigo-400 font-bold mt-1">•</span>
+                          <div set:html={renderedContent} class="flex-1" />
+                        </div>
+                      );
+                    }
+                    // For structured elements, render directly
+                    return (
+                      <div set:html={renderedContent} />
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}

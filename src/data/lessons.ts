@@ -1,8 +1,59 @@
 // Centralized lesson data configuration
+export interface TableData {
+  type: 'table';
+  headers: string[];
+  rows: string[][];
+  alignments?: ('left' | 'center' | 'right')[];
+}
+
+export interface TitleData {
+  type: 'title';
+  text: string;
+  emoji?: string;
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  className?: string;
+}
+
+export interface ParagraphData {
+  type: 'paragraph';
+  content: TextPart[];
+  className?: string;
+}
+
+export interface CodeData {
+  type: 'code';
+  code: string;
+  inline?: boolean;
+  language?: string;
+  className?: string;
+}
+
+export interface ListData {
+  type: 'list';
+  items: TextPart[][];
+  ordered?: boolean;
+  className?: string;
+}
+
+export interface SeparatorData {
+  type: 'separator';
+  className?: string;
+}
+
+export interface TextPart {
+  text: string;
+  bold?: boolean;
+  italic?: boolean;
+  code?: boolean;
+  emoji?: string;
+}
+
+export type ExampleItem = string | TableData | TitleData | ParagraphData | CodeData | ListData | SeparatorData;
+
 export interface LessonContent {
   topic: string;
   explanation: string;
-  examples?: string[];
+  examples?: ExampleItem[];
 }
 
 export interface QuizQuestion {
