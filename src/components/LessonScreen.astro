@@ -37,6 +37,22 @@ export interface Props {
 const { title, description, learningPoints, content, quiz } = Astro.props;
 
 ---
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926927753782454"
+     crossorigin="anonymous"></script>
+
+<!-- Anuncio vertical fijo a la izquierda -->
+<div class="ad-container-left">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:160px;height:600px"
+       data-ad-client="ca-pub-6926927753782454"
+       data-ad-slot="5203566698"
+       data-ad-format="vertical"></ins>
+  <script is:inline>
+     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 <div class="lesson-screen bg-white dark:bg-gray-800 rounded-2xl shadow-modern-xl border border-gray-200 dark:border-gray-700 p-8 md:p-10 max-w-5xl mx-auto animate-scale-in">
   <!-- Lesson Header -->
   <header class="mb-10 pb-8 border-b border-gray-200/50 dark:border-gray-700/50">
@@ -475,6 +491,38 @@ const { title, description, learningPoints, content, quiz } = Astro.props;
     }
     100% {
       transform: translateX(100%);
+    }
+  }
+
+  /* Estilos para el anuncio fijo a la izquierda */
+  .ad-container-left {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 160px;
+    height: 600px;
+    background-color: transparent;
+  }
+
+  .ad-container-left ins {
+    display: inline-block !important;
+    width: 160px !important;
+    height: 600px !important;
+  }
+
+  /* Ocultar el anuncio en pantallas pequeñas y medianas */
+  @media (max-width: 1400px) {
+    .ad-container-left {
+      display: none;
+    }
+  }
+
+  /* Asegurar que el anuncio no interfiera con el contenido */
+  @media (min-width: 1401px) {
+    body {
+      padding-left: 0;
     }
   }
 </style>
