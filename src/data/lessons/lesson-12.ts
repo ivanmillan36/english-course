@@ -477,7 +477,7 @@ export const lesson16: LessonData = {
           type: 'list',
           items: [
             [
-              { text: "I'm going to answer the phone at 3 p.m.", italic: true },
+              { text: "I'm going to study English tomorrow evening.", italic: true },
               { text: ' (Plan previo)' }
             ],
             [
