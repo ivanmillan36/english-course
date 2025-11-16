@@ -48,12 +48,12 @@ export interface TextPart {
   emoji?: string;
 }
 
-export type ExampleItem = string | TableData | TitleData | ParagraphData | CodeData | ListData | SeparatorData;
+export type ItemType = string | TableData | TitleData | ParagraphData | CodeData | ListData | SeparatorData;
 
 export interface LessonContent {
   topic: string;
   explanation: string;
-  examples?: ExampleItem[];
+  examples?: ItemType[];
 }
 
 export interface QuizQuestion {

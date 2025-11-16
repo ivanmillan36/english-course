@@ -3,7 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import LessonScreen from './LessonScreen.astro';
 import LessonNavigation from './LessonNavigation.astro';
-import type { ExampleItem } from '../data/lessons';
+import type { ItemType } from '../data/lessons';
 
 export interface LessonPageProps {
   lessonNumber: number;
@@ -14,7 +14,7 @@ export interface LessonPageProps {
   content: {
     topic: string;
     explanation: string;
-    examples?: ExampleItem[];
+    examples?: ItemType[];
   }[];
   quiz: {
     question: string;
