@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson20: LessonData = {
   id: 20,
@@ -20,98 +20,345 @@ export const lesson20: LessonData = {
       topic: "Zero Conditional (Condicional Cero) — Hechos universales o verdades generales",
       explanation: "El **zero conditional** se usa para hablar de cosas que **siempre son verdaderas** o que siguen una **ley natural o científica**. En este tipo de condicional, tanto la condición como el resultado están en **Present Simple**, porque no se trata de posibilidades ni hipótesis, sino de hechos.",
       examples: [
-        "**Estructura:**",
-        "👉 `If + Present Simple, Present Simple`",
-        "",
-        "**Ejemplos:**",
-        "• If you heat ice, it melts. → *Si calientas hielo, se derrite.*",
-        "• If water reaches 100°C, it boils. → *Si el agua alcanza 100°C, hierve.*",
-        "• If people don't eat, they die. → *Si la gente no come, muere.*",
-        "",
-        "**💡 Nota importante:**",
-        "El \"if\" puede ir al principio o en el medio de la oración, pero si va al principio, **separá las dos partes con una coma**:",
-        "",
-        "• If you mix red and blue, you get purple. ✅",
-        "• You get purple if you mix red and blue. ✅"
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'If + Present Simple, Present Simple',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'If you heat ice, it melts.', italic: true },
+              { text: ' → Si calientas hielo, se derrite.' }
+            ],
+            [
+              { text: 'If water reaches 100°C, it boils.', italic: true },
+              { text: ' → Si el agua alcanza 100°C, hierve.' }
+            ],
+            [
+              { text: "If people don't eat, they die.", italic: true },
+              { text: ' → Si la gente no come, muere.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota importante: ', bold: true },
+            { text: 'El "if" puede ir al principio o en el medio de la oración, pero si va al principio, ' },
+            { text: 'separá las dos partes con una coma', bold: true },
+            { text: ':' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'If you mix red and blue, you get purple.', italic: true },
+              { text: ' ✅' }
+            ],
+            [
+              { text: 'You get purple if you mix red and blue.', italic: true },
+              { text: ' ✅' }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "First Conditional (Primer Condicional) — Posibilidades reales en el futuro",
       explanation: "El **first conditional** se usa para hablar de **situaciones posibles o probables** en el futuro, siempre que **la condición se cumpla**. Usamos el **Present Simple** después de \"if\" y **will + infinitive** en la otra parte.",
       examples: [
-        "**Estructura:**",
-        "👉 `If + Present Simple, will + infinitive`",
-        "",
-        "**Ejemplos:**",
-        "• If it rains, I will stay home. → *Si llueve, me quedaré en casa.*",
-        "• If I study, I will pass the exam. → *Si estudio, aprobaré el examen.*",
-        "• If they invite me, I will go. → *Si me invitan, iré.*",
-        "",
-        "**💡 Consejo importante:**",
-        "No uses \"will\" en la parte del \"if\". En inglés, se considera un error decir:",
-        "• ❌ If it will rain, I will stay home.",
-        "• ✅ If it rains, I will stay home."
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'If + Present Simple, will + infinitive',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'If it rains, I will stay home.', italic: true },
+              { text: ' → Si llueve, me quedaré en casa.' }
+            ],
+            [
+              { text: 'If I study, I will pass the exam.', italic: true },
+              { text: ' → Si estudio, aprobaré el examen.' }
+            ],
+            [
+              { text: 'If they invite me, I will go.', italic: true },
+              { text: ' → Si me invitan, iré.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Consejo importante: ', bold: true },
+            { text: 'No uses "will" en la parte del "if". En inglés, se considera un error decir:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: 'If it will rain, I will stay home.', italic: true }
+            ],
+            [
+              { text: '✅ ', emoji: '✅' },
+              { text: 'If it rains, I will stay home.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Second Conditional (Segundo Condicional) — Situaciones hipotéticas o poco probables",
       explanation: "El **second conditional** se usa para hablar de **situaciones imaginarias, hipotéticas o improbables** en el presente o el futuro. Se construye con el **Past Simple** después de \"if\" y **would + infinitive** en la otra parte.",
       examples: [
-        "**Estructura:**",
-        "👉 `If + Past Simple, would + infinitive`",
-        "",
-        "**Ejemplos:**",
-        "• If I won the lottery, I would travel the world. → *Si ganara la lotería, viajaría por el mundo.*",
-        "• If I were you, I would take that job. → *Si fuera tú, aceptaría ese trabajo.*",
-        "• If she studied more, she would get better grades. → *Si estudiara más, tendría mejores notas.*",
-        "",
-        "**💡 Nota importante:**",
-        "En inglés formal o estándar, se usa **\"were\"** en lugar de \"was\" con \"I/he/she/it\" para mantener la forma hipotética:",
-        "",
-        "• If I **were** rich, I would buy a castle. ✅ (formal/estándar)",
-        "• If I **was** rich, I would buy a castle. (informal/coloquial)"
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'If + Past Simple, would + infinitive',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'If I won the lottery, I would travel the world.', italic: true },
+              { text: ' → Si ganara la lotería, viajaría por el mundo.' }
+            ],
+            [
+              { text: 'If I were you, I would take that job.', italic: true },
+              { text: ' → Si fuera tú, aceptaría ese trabajo.' }
+            ],
+            [
+              { text: 'If she studied more, she would get better grades.', italic: true },
+              { text: ' → Si estudiara más, tendría mejores notas.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota importante: ', bold: true },
+            { text: 'En inglés formal o estándar, se usa ' },
+            { text: '"were"', code: true },
+            { text: ' en lugar de "was" con "I/he/she/it" para mantener la forma hipotética:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'If I ', italic: true },
+              { text: 'were', bold: true },
+              { text: ' rich, I would buy a castle.', italic: true },
+              { text: ' ✅ (formal/estándar)' }
+            ],
+            [
+              { text: 'If I ', italic: true },
+              { text: 'was', bold: true },
+              { text: ' rich, I would buy a castle.', italic: true },
+              { text: ' (informal/coloquial)' }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Third Conditional (Tercer Condicional) — Situaciones hipotéticas del pasado",
       explanation: "El **third conditional** se usa para hablar de **cosas que no ocurrieron en el pasado**, pero que **habrían tenido otro resultado si hubieran ocurrido**. Se construye con el **Past Perfect** después de \"if\" y **would have + past participle** en la otra parte.",
       examples: [
-        "**Estructura:**",
-        "👉 `If + Past Perfect, would have + past participle`",
-        "",
-        "**Ejemplos:**",
-        "• If I had studied, I would have passed the exam. → *Si hubiera estudiado, habría aprobado el examen.*",
-        "• If they had left earlier, they would have caught the train. → *Si se hubieran ido antes, habrían tomado el tren.*",
-        "• If we had known about it, we would have come. → *Si lo hubiéramos sabido, habríamos venido.*",
-        "",
-        "**💡 Clave para recordar:**",
-        "Este condicional **no se usa para el presente o el futuro**, solo para **hablar de arrepentimientos o resultados pasados**."
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'If + Past Perfect, would have + past participle',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'If I had studied, I would have passed the exam.', italic: true },
+              { text: ' → Si hubiera estudiado, habría aprobado el examen.' }
+            ],
+            [
+              { text: 'If they had left earlier, they would have caught the train.', italic: true },
+              { text: ' → Si se hubieran ido antes, habrían tomado el tren.' }
+            ],
+            [
+              { text: 'If we had known about it, we would have come.', italic: true },
+              { text: ' → Si lo hubiéramos sabido, habríamos venido.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Clave para recordar: ', bold: true },
+            { text: 'Este condicional ' },
+            { text: 'no se usa para el presente o el futuro', bold: true },
+            { text: ', solo para ' },
+            { text: 'hablar de arrepentimientos o resultados pasados', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "I wish / If only — Deseos y arrepentimientos",
       explanation: "Las expresiones **I wish** e **If only** se usan para **expresar deseos** o **arrepentimientos**. La estructura que sigue depende de si el deseo es sobre el presente o el pasado.",
       examples: [
-        "**✳️ Deseos sobre el presente o situaciones que quisiéramos cambiar:**",
-        "👉 `I wish / If only + Past Simple`",
-        "",
-        "**Ejemplos:**",
-        "• I wish I knew the answer. → *Ojalá supiera la respuesta.*",
-        "• If only I had more time. → *Si tan solo tuviera más tiempo.*",
-        "",
-        "**✳️ Deseos sobre el pasado (arrepentimientos):**",
-        "👉 `I wish / If only + Past Perfect`",
-        "",
-        "**Ejemplos:**",
-        "• I wish I had studied harder. → *Ojalá hubiera estudiado más.*",
-        "• If only I had told her the truth. → *Si tan solo le hubiera dicho la verdad.*",
-        "",
-        "**💡 Comparación rápida:**",
-        "",
-        "| Tipo | Tiempo verbal | Ejemplo | Significado |",
-        "|------|---------------|---------|-------------|",
-        "| Presente | Past Simple | I wish I had a car. | Desearía tener un auto (pero no lo tengo). |",
-        "| Pasado | Past Perfect | I wish I had bought a car. | Desearía haber comprado un auto (pero no lo hice). |"
+        {
+          type: 'title',
+          text: 'Deseos sobre el presente o situaciones que quisiéramos cambiar',
+          emoji: '⭐',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'I wish / If only + Past Simple',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I wish I knew the answer.', italic: true },
+              { text: ' → Ojalá supiera la respuesta.' }
+            ],
+            [
+              { text: 'If only I had more time.', italic: true },
+              { text: ' → Si tan solo tuviera más tiempo.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Deseos sobre el pasado (arrepentimientos)',
+          emoji: '⭐',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'I wish / If only + Past Perfect',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I wish I had studied harder.', italic: true },
+              { text: ' → Ojalá hubiera estudiado más.' }
+            ],
+            [
+              { text: 'If only I had told her the truth.', italic: true },
+              { text: ' → Si tan solo le hubiera dicho la verdad.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Comparación rápida',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Tipo', 'Tiempo verbal', 'Ejemplo', 'Significado'],
+          rows: [
+            [
+              'Presente',
+              'Past Simple',
+              'I wish I had a car.',
+              'Desearía tener un auto (pero no lo tengo).'
+            ],
+            [
+              'Pasado',
+              'Past Perfect',
+              'I wish I had bought a car.',
+              'Desearía haber comprado un auto (pero no lo hice).'
+            ]
+          ]
+        } as TableData
       ]
     }
   ],
