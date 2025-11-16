@@ -1,6 +1,6 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
-export const lesson8: LessonData = {
+export const lesson18: LessonData = {
   id: 18,
   title: "La Voz Pasiva en Inglés (Passive Voice)",
   description: "En esta lección aprenderás la Voz Pasiva, uno de los temas más importantes para redactar inglés formal, técnico o académico. La voz pasiva se utiliza cuando queremos dar más importancia a la acción o al resultado que al sujeto que la realiza. Aprenderás cómo construirla correctamente en todos los tiempos verbales más usados, cómo identificar cuándo aplicarla y cómo transformar oraciones activas en pasivas.",
@@ -20,99 +20,466 @@ export const lesson8: LessonData = {
       topic: "¿Qué es la Voz Pasiva?",
       explanation: "La **voz pasiva** es una forma gramatical que se usa para **enfatizar la acción o su resultado**, no a la persona que la realiza. Se forma con el verbo **to be** (en el tiempo correspondiente) + el **participio pasado** del verbo principal. La estructura general es: **Objeto (de la voz activa) + verbo to be + participio pasado** (+ *by* + sujeto opcional). En la voz activa, el **sujeto hace la acción**. En la voz pasiva, el **sujeto recibe la acción**. El agente (la persona que realiza la acción) **puede omitirse** si no es importante o es evidente.",
       examples: [
-        "**Estructura general:**",
-        "**`Sujeto + to be + participio pasado (+ by + agente)`**",
-        "",
-        "**Comparación básica:**",
-        "• **Activa:** The company published the report.",
-        "• **Pasiva:** The report **was published** (by the company).",
-        "",
-        "• **Activa:** Someone cleaned the office.",
-        "• **Pasiva:** The office **was cleaned**.",
-        "",
-        "• **Activa:** They will build a new school.",
-        "• **Pasiva:** A new school **will be built**.",
-        "",
-        "**Ejemplo sin agente:**",
-        "• \"The bridge **was built** in 1990.\"",
-        "  (No es necesario decir quién lo construyó)"
+        {
+          type: 'title',
+          text: 'Estructura general',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'Sujeto + to be + participio pasado (+ by + agente)',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Comparación básica',
+          emoji: '⚖️',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'The company published the report.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'The report ', italic: true },
+              { text: 'was published', bold: true, italic: true },
+              { text: ' (by the company).', italic: true }
+            ],
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'Someone cleaned the office.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'The office ', italic: true },
+              { text: 'was cleaned', bold: true, italic: true },
+              { text: '.', italic: true }
+            ],
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'They will build a new school.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'A new school ', italic: true },
+              { text: 'will be built', bold: true, italic: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo sin agente',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'The bridge ', italic: true },
+            { text: 'was built', bold: true, italic: true },
+            { text: ' in 1990.', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '(No es necesario decir quién lo construyó)' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "Estructura en distintos tiempos verbales",
       explanation: "El verbo \"**to be**\" cambia según el tiempo verbal, pero el **participio pasado** del verbo principal **permanece igual**. El tiempo de la oración pasiva se determina por la forma del verbo 'to be' que usemos. Esta es la clave para formar correctamente la voz pasiva en cualquier tiempo.",
       examples: [
-        "**Presente Simple:** `am/is/are + participio pasado`",
-        "• The work **is done** every day.",
-        "  (El trabajo **se hace** todos los días)",
-        "",
-        "**Pasado Simple:** `was/were + participio pasado`",
-        "• The letter **was sent** yesterday.",
-        "  (La carta **fue enviada** ayer)",
-        "",
-        "**Presente Perfecto:** `has/have been + participio pasado`",
-        "• The house **has been sold**.",
-        "  (La casa **ha sido vendida**)",
-        "",
-        "**Futuro Simple:** `will be + participio pasado`",
-        "• The results **will be announced** tomorrow.",
-        "  (Los resultados **serán anunciados** mañana)",
-        "",
-        "**Verbos Modales:** `modal + be + participio pasado`",
-        "• The form **must be completed**.",
-        "  (El formulario **debe ser completado**)"
+        {
+          type: 'title',
+          text: 'Presente Simple',
+          emoji: '⏰',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'am/is/are + participio pasado',
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The work ', italic: true },
+              { text: 'is done', bold: true, italic: true },
+              { text: ' every day.', italic: true },
+              { text: ' (El trabajo se hace todos los días)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Pasado Simple',
+          emoji: '⏰',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'was/were + participio pasado',
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The letter ', italic: true },
+              { text: 'was sent', bold: true, italic: true },
+              { text: ' yesterday.', italic: true },
+              { text: ' (La carta fue enviada ayer)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Presente Perfecto',
+          emoji: '⏰',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'has/have been + participio pasado',
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The house ', italic: true },
+              { text: 'has been sold', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (La casa ha sido vendida)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Futuro Simple',
+          emoji: '⏰',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'will be + participio pasado',
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The results ', italic: true },
+              { text: 'will be announced', bold: true, italic: true },
+              { text: ' tomorrow.', italic: true },
+              { text: ' (Los resultados serán anunciados mañana)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Verbos Modales',
+          emoji: '⏰',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'modal + be + participio pasado',
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The form ', italic: true },
+              { text: 'must be completed', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (El formulario debe ser completado)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Resumen de estructuras por tiempo verbal',
+          emoji: '📊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Tiempo Verbal', 'Estructura Pasiva', 'Ejemplo'],
+          rows: [
+            ['Presente Simple', 'am/is/are + participio pasado', 'The work is done every day.'],
+            ['Pasado Simple', 'was/were + participio pasado', 'The letter was sent yesterday.'],
+            ['Presente Perfecto', 'has/have been + participio pasado', 'The house has been sold.'],
+            ['Futuro Simple', 'will be + participio pasado', 'The results will be announced tomorrow.'],
+            ['Verbos Modales', 'modal + be + participio pasado', 'The form must be completed.']
+          ]
+        } as TableData
       ]
     },
     {
       topic: "Cómo transformar oraciones activas en pasivas",
       explanation: "Para transformar una oración de voz activa a voz pasiva sigue estos pasos: 1) **Identifica el objeto** de la voz activa (la cosa o persona que recibe la acción). 2) Ese objeto se convierte en el **nuevo sujeto** de la oración pasiva. 3) Agrega el verbo **to be** en el tiempo adecuado. 4) Usa el **participio pasado** del verbo principal. 5) Si quieres mencionar quién hizo la acción, usa **by + agente** (opcional).",
       examples: [
-        "**Proceso paso a paso:**",
-        "",
-        "**Ejemplo 1:**",
-        "• **Activa:** The chef cooked the meal.",
-        "• **Pasiva:** The meal **was cooked** (by the chef).",
-        "",
-        "**Ejemplo 2:**",
-        "• **Activa:** They have finished the project.",
-        "• **Pasiva:** The project **has been finished**.",
-        "",
-        "**Ejemplo 3:**",
-        "• **Activa:** Someone must do the report.",
-        "• **Pasiva:** The report **must be done**.",
-        "",
-        "**Ejemplo 4:**",
-        "• **Activa:** The teacher will explain the lesson.",
-        "• **Pasiva:** The lesson **will be explained** (by the teacher).",
-        "",
-        "**Ejemplo 5:**",
-        "• **Activa:** People speak English worldwide.",
-        "• **Pasiva:** English **is spoken** worldwide."
+        {
+          type: 'title',
+          text: 'Proceso paso a paso',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [{ text: '1. Identifica el objeto de la voz activa (la cosa o persona que recibe la acción)', bold: true }],
+            [{ text: '2. Ese objeto se convierte en el nuevo sujeto de la oración pasiva', bold: true }],
+            [{ text: '3. Agrega el verbo to be en el tiempo adecuado', bold: true }],
+            [{ text: '4. Usa el participio pasado del verbo principal', bold: true }],
+            [{ text: '5. Si quieres mencionar quién hizo la acción, usa by + agente (opcional)', bold: true }]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo 1',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'The chef cooked the meal.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'The meal ', italic: true },
+              { text: 'was cooked', bold: true, italic: true },
+              { text: ' (by the chef).', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo 2',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'They have finished the project.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'The project ', italic: true },
+              { text: 'has been finished', bold: true, italic: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo 3',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'Someone must do the report.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'The report ', italic: true },
+              { text: 'must be done', bold: true, italic: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo 4',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'The teacher will explain the lesson.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'The lesson ', italic: true },
+              { text: 'will be explained', bold: true, italic: true },
+              { text: ' (by the teacher).', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo 5',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Activa: ', bold: true },
+              { text: 'People speak English worldwide.', italic: true }
+            ],
+            [
+              { text: 'Pasiva: ', bold: true },
+              { text: 'English ', italic: true },
+              { text: 'is spoken', bold: true, italic: true },
+              { text: ' worldwide.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Cuándo usar la voz pasiva",
       explanation: "Usamos la voz pasiva cuando: **No sabemos** quién realizó la acción, **no importa** quién la realizó, **queremos sonar más formales o impersonales**, o **queremos enfocarnos en el resultado o la acción**. Es muy común en contextos formales, periodísticos, científicos y administrativos. Evítala si la oración se vuelve **innecesariamente complicada o poco natural**. En inglés conversacional, la voz activa suele ser más común.",
       examples: [
-        "**Cuándo usar la voz pasiva:**",
-        "",
-        "**1. No sabemos quién hizo la acción:**",
-        "• \"My car **was stolen**.\" (No sé quién lo hizo)",
-        "",
-        "**2. No importa quién la hizo:**",
-        "• \"The streets **are cleaned** every morning.\"",
-        "",
-        "**3. Para sonar más formal:**",
-        "• \"The law **was approved** in 2010.\"",
-        "",
-        "**4. Para enfocarse en el resultado:**",
-        "• \"The new hospital **has been opened**.\"",
-        "",
-        "**Ejemplos adicionales:**",
-        "• A new bridge **was built**. (Gobierno construyó)",
-        "• A new store **has been opened**. (Alguien abrió)",
-        "• The road **will be repaired** soon. (Trabajadores repararán)",
-        "• This room **must be cleaned**. (Alguien debe limpiar)"
+        {
+          type: 'title',
+          text: 'Cuándo usar la voz pasiva',
+          emoji: '🎯',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '1. No sabemos quién hizo la acción:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'My car ', italic: true },
+              { text: 'was stolen', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (No sé quién lo hizo)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '2. No importa quién la hizo:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The streets ', italic: true },
+              { text: 'are cleaned', bold: true, italic: true },
+              { text: ' every morning.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '3. Para sonar más formal:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The law ', italic: true },
+              { text: 'was approved', bold: true, italic: true },
+              { text: ' in 2010.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '4. Para enfocarse en el resultado:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The new hospital ', italic: true },
+              { text: 'has been opened', bold: true, italic: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos adicionales',
+          emoji: '📚',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'A new bridge ', italic: true },
+              { text: 'was built', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (Gobierno construyó)' }
+            ],
+            [
+              { text: 'A new store ', italic: true },
+              { text: 'has been opened', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (Alguien abrió)' }
+            ],
+            [
+              { text: 'The road ', italic: true },
+              { text: 'will be repaired', bold: true, italic: true },
+              { text: ' soon.', italic: true },
+              { text: ' (Trabajadores repararán)' }
+            ],
+            [
+              { text: 'This room ', italic: true },
+              { text: 'must be cleaned', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (Alguien debe limpiar)' }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

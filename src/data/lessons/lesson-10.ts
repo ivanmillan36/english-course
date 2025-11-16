@@ -1,6 +1,6 @@
 import type { LessonData } from '../lessons';
 
-export const lesson14: LessonData = {
+export const lesson10: LessonData = {
   id: 10,
   title: "Otras Estructuras Esenciales del Inglés",
   description: "Aprende tres estructuras fundamentales que aparecen constantemente en inglés cotidiano: 'There is / There are' para describir lo que existe en un lugar, 'Have got' para hablar de posesión y relaciones, y 'Can / Can't' para expresar habilidades y capacidades.",

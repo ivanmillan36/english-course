@@ -1,6 +1,6 @@
 import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
-export const lesson15: LessonData = {
+export const lesson11: LessonData = {
   id: 11,
   title: "Tiempos Verbales del Pasado",
   description: "Domina los tres tiempos verbales más importantes del pasado en inglés: Past Simple para acciones completadas, Past Continuous para acciones en progreso en el pasado, y Present Perfect para conectar el pasado con el presente. Aprende sus estructuras, usos, marcadores de tiempo y cómo diferenciarlos correctamente.",

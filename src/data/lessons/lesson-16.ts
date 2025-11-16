@@ -1,6 +1,6 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
-export const lesson20: LessonData = {
+export const lesson16: LessonData = {
   id: 16,
   title: "Expresar Gustos, Hábitos Pasados y Cantidad (Likes, Past Habits and Quantity)",
   description: "En esta lección aprenderás a expresar lo que te gusta o no te gusta hacer, a hablar de hábitos que tenías en el pasado pero que ya no tienes, y a usar correctamente palabras como much, many, some, any, a lot of, etc., según si el sustantivo es contable o incontable. Estas estructuras son fundamentales para comunicarte con naturalidad en inglés en situaciones cotidianas, desde conversaciones informales hasta textos escritos.",
@@ -20,217 +20,797 @@ export const lesson20: LessonData = {
       topic: "Expresar Gustos y Preferencias: like / love / hate / enjoy + verb-ing",
       explanation: "En inglés, cuando quieres decir que te gusta, amas, odias o disfrutas **hacer algo**, **no usas el verbo en infinitivo** (como en español: *'me gusta leer'*). En cambio, **se usa el verbo en forma de gerundio**: es decir, el verbo base + **-ing**.",
       examples: [
-        "**📘 Verbos más comunes:**",
-        "",
-        "Los verbos más comunes para expresar gustos son:",
-        "",
-        "• **like** → gustar",
-        "• **love** → encantar",
-        "• **hate** → odiar",
-        "• **enjoy** → disfrutar",
-        "",
-        "---",
-        "",
-        "**⚠️ Reglas importantes:**",
-        "",
-        "• **Enjoy** **siempre** va seguido de **-ing**. Nunca se dice *'I enjoy to read'*.",
-        "• **Like, love y hate** pueden usarse con **to + infinitivo** en algunos contextos (especialmente en inglés británico), pero **con -ing es más común y natural** cuando hablas de actividades generales o hábitos.",
-        "",
-        "---",
-        "",
-        "**✅ Ejemplos correctos:**",
-        "",
-        "• *I **like swimming**.* → Me gusta nadar.",
-        "• *She **loves cooking**.* → A ella le encanta cocinar.",
-        "• *They **hate waiting** in line.* → Odian esperar en fila.",
-        "• *We **enjoy watching** movies.* → Disfrutamos ver películas.",
-        "• *He **likes reading** books.* → A él le gusta leer libros.",
-        "• *I **love dancing** salsa.* → Me encanta bailar salsa.",
-        "• *Do you **enjoy running**?* → ¿Disfrutas correr?",
-        "• *She **hates cleaning** the house.* → Ella odia limpiar la casa.",
-        "",
-        "---",
-        "",
-        "**❌ Errores comunes:**",
-        "",
-        "• ❌ *'I like to swim'* → **no es incorrecto**, pero suena más como una elección puntual (*'Hoy prefiero nadar en vez de correr'*).",
-        "• ❌ *'I enjoy to swim'* → **incorrecto**. Siempre es *'I enjoy swimming'*.",
-        "• ❌ *'She loves to cook'* → No está mal, pero *'She loves cooking'* es más natural para hablar de un gusto general.",
-        "",
-        "---",
-        "",
-        "**💡 Regla práctica:**",
-        "",
-        "Cuando hablas de **actividades que te gustan en general** (como un hobby o preferencia), usa **verbo + -ing**:",
-        "",
-        "• *I like **swimming**.* (Como actividad en general)",
-        "• *I like **to swim** today.* (Decisión específica de hoy)",
-        "",
-        "Para **enjoy**, **siempre** usa **-ing**:",
-        "",
-        "• ✅ *I enjoy swimming.*",
-        "• ❌ *I enjoy to swim.*"
+        {
+          type: 'title',
+          text: 'Verbos más comunes',
+          emoji: '📘',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Los verbos más comunes para expresar gustos son:' }]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [{ text: 'like', bold: true }, { text: ' → gustar' }],
+            [{ text: 'love', bold: true }, { text: ' → encantar' }],
+            [{ text: 'hate', bold: true }, { text: ' → odiar' }],
+            [{ text: 'enjoy', bold: true }, { text: ' → disfrutar' }]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Reglas importantes',
+          emoji: '⚠️',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Enjoy', bold: true },
+              { text: ' ' },
+              { text: 'siempre', bold: true },
+              { text: ' va seguido de ' },
+              { text: '-ing', code: true },
+              { text: '. Nunca se dice ' },
+              { text: "'I enjoy to read'", italic: true },
+              { text: '.' }
+            ],
+            [
+              { text: 'Like, love y hate', bold: true },
+              { text: ' pueden usarse con ' },
+              { text: 'to + infinitivo', code: true },
+              { text: ' en algunos contextos (especialmente en inglés británico), pero ' },
+              { text: 'con -ing es más común y natural', bold: true },
+              { text: ' cuando hablas de actividades generales o hábitos.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos correctos',
+          emoji: '✅',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I ', italic: true },
+              { text: 'like swimming', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' → Me gusta nadar.' }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: 'loves cooking', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' → A ella le encanta cocinar.' }
+            ],
+            [
+              { text: 'They ', italic: true },
+              { text: 'hate waiting', bold: true, italic: true },
+              { text: ' in line.', italic: true },
+              { text: ' → Odian esperar en fila.' }
+            ],
+            [
+              { text: 'We ', italic: true },
+              { text: 'enjoy watching', bold: true, italic: true },
+              { text: ' movies.', italic: true },
+              { text: ' → Disfrutamos ver películas.' }
+            ],
+            [
+              { text: 'He ', italic: true },
+              { text: 'likes reading', bold: true, italic: true },
+              { text: ' books.', italic: true },
+              { text: ' → A él le gusta leer libros.' }
+            ],
+            [
+              { text: 'I ', italic: true },
+              { text: 'love dancing', bold: true, italic: true },
+              { text: ' salsa.', italic: true },
+              { text: ' → Me encanta bailar salsa.' }
+            ],
+            [
+              { text: 'Do you ', italic: true },
+              { text: 'enjoy running', bold: true, italic: true },
+              { text: '?', italic: true },
+              { text: ' → ¿Disfrutas correr?' }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: 'hates cleaning', bold: true, italic: true },
+              { text: ' the house.', italic: true },
+              { text: ' → Ella odia limpiar la casa.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Errores comunes',
+          emoji: '❌',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I like to swim'", italic: true },
+              { text: ' → ' },
+              { text: 'no es incorrecto', bold: true },
+              { text: ', pero suena más como una elección puntual (' },
+              { text: "'Hoy prefiero nadar en vez de correr'", italic: true },
+              { text: ').' }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I enjoy to swim'", italic: true },
+              { text: ' → ' },
+              { text: 'incorrecto', bold: true },
+              { text: '. Siempre es ' },
+              { text: "'I enjoy swimming'", italic: true },
+              { text: '.' }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'She loves to cook'", italic: true },
+              { text: ' → No está mal, pero ' },
+              { text: "'She loves cooking'", italic: true },
+              { text: ' es más natural para hablar de un gusto general.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Regla práctica',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Cuando hablas de ', bold: true },
+            { text: 'actividades que te gustan en general', bold: true },
+            { text: ' (como un hobby o preferencia), usa ' },
+            { text: 'verbo + -ing', code: true },
+            { text: ':' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I like ', italic: true },
+              { text: 'swimming', bold: true, italic: true },
+              { text: '.', italic: true },
+              { text: ' (Como actividad en general)' }
+            ],
+            [
+              { text: 'I like ', italic: true },
+              { text: 'to swim', bold: true, italic: true },
+              { text: ' today.', italic: true },
+              { text: ' (Decisión específica de hoy)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Para ', bold: true },
+            { text: 'enjoy', bold: true },
+            { text: ', ' },
+            { text: 'siempre', bold: true },
+            { text: ' usa ' },
+            { text: '-ing', code: true },
+            { text: ':' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '✅ ', emoji: '✅' },
+              { text: 'I enjoy swimming.', italic: true }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: 'I enjoy to swim.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Hábitos Pasados: used to + infinitivo",
       explanation: "La estructura **used to + verbo en infinitivo** se usa **exclusivamente para hablar de hábitos, rutinas o situaciones que eran verdaderas en el pasado pero que ya NO lo son**. No se refiere a una acción única, sino a algo que **ocurría repetidamente** o era **una condición permanente** en el pasado.",
       examples: [
-        "**📘 Características de 'used to':**",
-        "",
-        "• **Solo existe en pasado**. No hay forma en presente (*'I use to...'* es incorrecto).",
-        "• La forma negativa es **didn't use to** (o en inglés británico formal: *used not to*).",
-        "• La forma interrogativa: **Did you use to...?**",
-        "• Se pronuncia /juːst tuː/ (la 'd' al final suena como 't').",
-        "",
-        "---",
-        "",
-        "**💡 Pista mental:**",
-        "",
-        "Si puedes reemplazar en español por **'solía...'**, entonces usa **used to**.",
-        "",
-        "---",
-        "",
-        "**✅ Ejemplos en afirmativo:**",
-        "",
-        "• *I **used to play** soccer every weekend.* → Solía jugar fútbol cada fin de semana. (Pero ahora no lo hago)",
-        "• *She **used to live** in London.* → Ella solía vivir en Londres. (Ya no vive allí)",
-        "• *We **used to eat** together every day.* → Solíamos comer juntos todos los días.",
-        "• *He **used to work** in a bank.* → Él solía trabajar en un banco.",
-        "• *They **used to be** best friends.* → Ellos solían ser mejores amigos.",
-        "",
-        "---",
-        "",
-        "**❓ Ejemplos en interrogativo:**",
-        "",
-        "• ***Did you use to** play sports?* → ¿Solías hacer deportes?",
-        "• ***Did she use to** live here?* → ¿Ella solía vivir aquí?",
-        "• ***Did they use to** have a dog?* → ¿Ellos solían tener un perro?",
-        "• *Where **did you use to** work?* → ¿Dónde solías trabajar?",
-        "",
-        "⚠️ **Nota:** En preguntas, se usa **use to** (sin 'd') porque el 'did' ya indica pasado.",
-        "",
-        "---",
-        "",
-        "**🚫 Ejemplos en negativo:**",
-        "",
-        "• *I **didn't use to** like coffee.* → No solía gustarme el café. (Ahora sí me gusta)",
-        "• *She **didn't use to** exercise.* → Ella no solía hacer ejercicio.",
-        "• *They **didn't use to** have a car.* → No solían tener auto.",
-        "• *We **didn't use to** go out much.* → No solíamos salir mucho.",
-        "",
-        "⚠️ **Nota:** En negativas, también se usa **use to** (sin 'd') porque el 'didn't' ya indica pasado.",
-        "",
-        "---",
-        "",
-        "**❌ Errores comunes:**",
-        "",
-        "• ❌ *'I use to play...'* → Incorrecto. Es **used to** en afirmativo.",
-        "• ❌ *'Did you used to...?'* → Incorrecto. Es **Did you use to...?** (sin 'd').",
-        "• ❌ *'I didn't used to...'* → Incorrecto. Es **didn't use to** (sin 'd').",
-        "• ❌ *'I used to go to Paris last year.'* → Incorrecto para una acción única. Mejor: *'I went to Paris last year.'*",
-        "",
-        "---",
-        "",
-        "**⚖️ Comparación: 'used to' vs pasado simple:**",
-        "",
-        "| Used to | Pasado simple |",
-        "| ------- | ------------- |",
-        "| Hábitos repetidos en el pasado | Acciones específicas completadas |",
-        "| *I **used to play** tennis.* (Ya no juego) | *I **played** tennis yesterday.* (Acción única) |",
-        "| *She **used to live** here.* (Ya no vive aquí) | *She **lived** here for 3 years.* (Período específico terminado) |"
+        {
+          type: 'title',
+          text: "Características de 'used to'",
+          emoji: '📘',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Solo existe en pasado', bold: true },
+              { text: '. No hay forma en presente (' },
+              { text: "'I use to...'", italic: true },
+              { text: ' es incorrecto).' }
+            ],
+            [
+              { text: 'La forma negativa es ', bold: true },
+              { text: "didn't use to", code: true, bold: true },
+              { text: ' (o en inglés británico formal: ' },
+              { text: 'used not to', italic: true },
+              { text: ').' }
+            ],
+            [
+              { text: 'La forma interrogativa: ', bold: true },
+              { text: 'Did you use to...?', code: true, bold: true }
+            ],
+            [
+              { text: 'Se pronuncia ', bold: true },
+              { text: '/juːst tuː/', code: true },
+              { text: ' (la \'d\' al final suena como \'t\').' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Pista mental',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Si puedes reemplazar en español por ', bold: true },
+            { text: "'solía...'", code: true, bold: true },
+            { text: ', entonces usa ' },
+            { text: 'used to', code: true, bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos en afirmativo',
+          emoji: '✅',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I ', italic: true },
+              { text: 'used to play', bold: true, italic: true },
+              { text: ' soccer every weekend.', italic: true },
+              { text: ' → Solía jugar fútbol cada fin de semana. (Pero ahora no lo hago)' }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: 'used to live', bold: true, italic: true },
+              { text: ' in London.', italic: true },
+              { text: ' → Ella solía vivir en Londres. (Ya no vive allí)' }
+            ],
+            [
+              { text: 'We ', italic: true },
+              { text: 'used to eat', bold: true, italic: true },
+              { text: ' together every day.', italic: true },
+              { text: ' → Solíamos comer juntos todos los días.' }
+            ],
+            [
+              { text: 'He ', italic: true },
+              { text: 'used to work', bold: true, italic: true },
+              { text: ' in a bank.', italic: true },
+              { text: ' → Él solía trabajar en un banco.' }
+            ],
+            [
+              { text: 'They ', italic: true },
+              { text: 'used to be', bold: true, italic: true },
+              { text: ' best friends.', italic: true },
+              { text: ' → Ellos solían ser mejores amigos.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos en interrogativo',
+          emoji: '❓',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Did you use to', bold: true, italic: true },
+              { text: ' play sports?', italic: true },
+              { text: ' → ¿Solías hacer deportes?' }
+            ],
+            [
+              { text: 'Did she use to', bold: true, italic: true },
+              { text: ' live here?', italic: true },
+              { text: ' → ¿Ella solía vivir aquí?' }
+            ],
+            [
+              { text: 'Did they use to', bold: true, italic: true },
+              { text: ' have a dog?', italic: true },
+              { text: ' → ¿Ellos solían tener un perro?' }
+            ],
+            [
+              { text: 'Where ', italic: true },
+              { text: 'did you use to', bold: true, italic: true },
+              { text: ' work?', italic: true },
+              { text: ' → ¿Dónde solías trabajar?' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '⚠️ ', emoji: '⚠️' },
+            { text: 'Nota: ', bold: true },
+            { text: 'En preguntas, se usa ' },
+            { text: 'use to', code: true, bold: true },
+            { text: ' (sin \'d\') porque el \'did\' ya indica pasado.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos en negativo',
+          emoji: '🚫',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I ', italic: true },
+              { text: "didn't use to", bold: true, italic: true },
+              { text: ' like coffee.', italic: true },
+              { text: ' → No solía gustarme el café. (Ahora sí me gusta)' }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: "didn't use to", bold: true, italic: true },
+              { text: ' exercise.', italic: true },
+              { text: ' → Ella no solía hacer ejercicio.' }
+            ],
+            [
+              { text: 'They ', italic: true },
+              { text: "didn't use to", bold: true, italic: true },
+              { text: ' have a car.', italic: true },
+              { text: ' → No solían tener auto.' }
+            ],
+            [
+              { text: 'We ', italic: true },
+              { text: "didn't use to", bold: true, italic: true },
+              { text: ' go out much.', italic: true },
+              { text: ' → No solíamos salir mucho.' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '⚠️ ', emoji: '⚠️' },
+            { text: 'Nota: ', bold: true },
+            { text: 'En negativas, también se usa ' },
+            { text: 'use to', code: true, bold: true },
+            { text: ' (sin \'d\') porque el \'didn\'t\' ya indica pasado.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Errores comunes',
+          emoji: '❌',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I use to play...'", italic: true },
+              { text: ' → Incorrecto. Es ' },
+              { text: 'used to', code: true, bold: true },
+              { text: ' en afirmativo.' }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'Did you used to...?'", italic: true },
+              { text: ' → Incorrecto. Es ' },
+              { text: 'Did you use to...?', code: true, bold: true },
+              { text: ' (sin \'d\').' }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I didn't used to...'", italic: true },
+              { text: ' → Incorrecto. Es ' },
+              { text: "didn't use to", code: true, bold: true },
+              { text: ' (sin \'d\').' }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I used to go to Paris last year.'", italic: true },
+              { text: ' → Incorrecto para una acción única. Mejor: ' },
+              { text: "'I went to Paris last year.'", italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: "Comparación: 'used to' vs pasado simple",
+          emoji: '⚖️',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Used to', 'Pasado simple'],
+          rows: [
+            ['Hábitos repetidos en el pasado', 'Acciones específicas completadas'],
+            ['*I **used to play** tennis.* (Ya no juego)', '*I **played** tennis yesterday.* (Acción única)'],
+            ['*She **used to live** here.* (Ya no vive aquí)', '*She **lived** here for 3 years.* (Período específico terminado)']
+          ]
+        } as TableData
       ]
     },
     {
       topic: "Sustantivos Contables e Incontables + Cantidad",
       explanation: "En inglés, los sustantivos se dividen en dos tipos: **contables** (cosas que puedes contar una por una) e **incontables** (cosas que no se pueden contar individualmente). Esto afecta qué palabras usas para indicar cantidad.",
       examples: [
-        "**📘 Tipos de sustantivos:**",
-        "",
-        "**1. Contables (countable nouns):**",
-        "",
-        "• Cosas que puedes contar una por una: *apple, book, idea, car, friend*",
-        "• Tienen forma singular y plural: *one apple, two apples*",
-        "• Puedes usar números directamente: *three books, five cars*",
-        "",
-        "**2. Incontables (uncountable nouns):**",
-        "",
-        "• Cosas que **no se pueden contar individualmente**: *water, information, rice, advice, money, furniture*",
-        "• **No tienen plural**: ❌ *waters, informations, advices*",
-        "• No puedes usar números directamente: ❌ *three waters* (pero sí: *three bottles of water*)",
-        "",
-        "---",
-        "",
-        "**📊 Tabla de palabras de cantidad:**",
-        "",
-        "| Palabra | Contables | Incontables | Uso típico | Ejemplo |",
-        "| ------- | --------- | ----------- | ---------- | ------- |",
-        "| **many** | ✅ | ❌ | Preguntas/negativas | *How many books? / I don't have many friends.* |",
-        "| **much** | ❌ | ✅ | Preguntas/negativas | *How much sugar? / I don't have much time.* |",
-        "| **few** | ✅ | ❌ | Negativo (casi ninguno) | *I have few options.* |",
-        "| **a few** | ✅ | ❌ | Positivo (algunos) | *I have a few friends.* |",
-        "| **little** | ❌ | ✅ | Negativo (casi nada) | *There's little hope.* |",
-        "| **a little** | ❌ | ✅ | Positivo (algo) | *I have a little money.* |",
-        "| **some** | ✅ | ✅ | Afirmativas | *I bought some apples / some water.* |",
-        "| **any** | ✅ | ✅ | Negativas/interrogativas | *Do you have any questions? / I don't have any patience.* |",
-        "| **a lot of / lots of** | ✅ | ✅ | Ambos (afirmativas) | *She has a lot of friends / a lot of homework.* |",
-        "",
-        "---",
-        "",
-        "**⚠️ Puntos importantes:**",
-        "",
-        "• **Some** también se usa en preguntas cuando ofreces o pides algo: *'Would you like some tea?'*",
-        "• **Any** puede usarse en afirmativas con significado de 'cualquiera': *'You can choose any book.'*",
-        "• **A lot of / Lots of** son intercambiables y se usan principalmente en afirmativas.",
-        "• **Much** y **Many** raramente se usan en afirmativas (excepto con 'too', 'so', 'as'): *'too much work', 'so many people'*",
-        "",
-        "---",
-        "",
-        "**✅ Ejemplos con contables:**",
-        "",
-        "• *I have **a few** friends in Madrid.* → Tengo algunos amigos (positivo)",
-        "• *I have **few** friends in Madrid.* → Tengo pocos amigos (casi ninguno, negativo)",
-        "• *How **many** books do you have?* → ¿Cuántos libros tienes?",
-        "• *I don't have **many** books.* → No tengo muchos libros.",
-        "• *Do you have **any** brothers?* → ¿Tienes hermanos?",
-        "• *I have **some** questions.* → Tengo algunas preguntas.",
-        "• *She has **a lot of** ideas.* → Tiene muchas ideas.",
-        "",
-        "---",
-        "",
-        "**✅ Ejemplos con incontables:**",
-        "",
-        "• *There's **a little** milk left.* → Queda un poco de leche (suficiente, positivo)",
-        "• *There's **little** milk left.* → Queda poca leche (casi nada, negativo)",
-        "• *How **much** sugar do you need?* → ¿Cuánta azúcar necesitas?",
-        "• *I don't have **much** time.* → No tengo mucho tiempo.",
-        "• *I don't have **any** money.* → No tengo dinero.",
-        "• *Would you like **some** coffee?* → ¿Quieres café? (ofrecimiento)",
-        "• *She has **a lot of** experience.* → Tiene mucha experiencia.",
-        "",
-        "---",
-        "",
-        "**💡 Diferencia clave: 'a few/a little' vs 'few/little':**",
-        "",
-        "**Con 'a' = tono positivo o neutro:**",
-        "",
-        "• *I have **a few** friends.* → Tengo algunos amigos (está bien, son suficientes)",
-        "• *I have **a little** money.* → Tengo un poco de dinero (suficiente para lo que necesito)",
-        "",
-        "**Sin 'a' = tono negativo:**",
-        "",
-        "• *I have **few** friends.* → Tengo pocos amigos (casi ninguno, me siento solo)",
-        "• *I have **little** money.* → Tengo poco dinero (casi nada, no me alcanza)",
-        "",
-        "---",
-        "",
-        "**❌ Errores comunes:**",
-        "",
-        "• ❌ *'I don't have many money.'* → **Incorrecto.** *Money* es incontable. Debe ser: *'I don't have much money.'*",
-        "• ❌ *'How much books?'* → **Incorrecto.** *Books* es contable. Debe ser: *'How many books?'*",
-        "• ❌ *'I have few time.'* → **Incorrecto.** *Time* es incontable. Debe ser: *'I have little time.'*",
-        "• ❌ *'There are a lot of informations.'* → **Incorrecto.** *Information* es incontable (sin plural). Debe ser: *'There is a lot of information.'*",
-        "• ❌ *'I need some advices.'* → **Incorrecto.** *Advice* es incontable. Debe ser: *'I need some advice.'* o *'I need a piece of advice.'*"
+        {
+          type: 'title',
+          text: 'Tipos de sustantivos',
+          emoji: '📘',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '1. Contables (countable nouns):', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Cosas que puedes contar una por una: ', italic: true },
+              { text: 'apple, book, idea, car, friend', italic: true }
+            ],
+            [
+              { text: 'Tienen forma singular y plural: ', italic: true },
+              { text: 'one apple, two apples', italic: true }
+            ],
+            [
+              { text: 'Puedes usar números directamente: ', italic: true },
+              { text: 'three books, five cars', italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '2. Incontables (uncountable nouns):', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Cosas que ', italic: true },
+              { text: 'no se pueden contar individualmente', bold: true, italic: true },
+              { text: ': ', italic: true },
+              { text: 'water, information, rice, advice, money, furniture', italic: true }
+            ],
+            [
+              { text: 'No tienen plural', bold: true, italic: true },
+              { text: ': ❌ ', italic: true },
+              { text: 'waters, informations, advices', italic: true }
+            ],
+            [
+              { text: 'No puedes usar números directamente: ❌ ', italic: true },
+              { text: 'three waters', italic: true },
+              { text: ' (pero sí: ', italic: true },
+              { text: 'three bottles of water', italic: true },
+              { text: ')', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Tabla de palabras de cantidad',
+          emoji: '📊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Palabra', 'Contables', 'Incontables', 'Uso típico', 'Ejemplo'],
+          rows: [
+            ['**many**', '✅', '❌', 'Preguntas/negativas', '*How many books? / I don\'t have many friends.*'],
+            ['**much**', '❌', '✅', 'Preguntas/negativas', '*How much sugar? / I don\'t have much time.*'],
+            ['**few**', '✅', '❌', 'Negativo (casi ninguno)', '*I have few options.*'],
+            ['**a few**', '✅', '❌', 'Positivo (algunos)', '*I have a few friends.*'],
+            ['**little**', '❌', '✅', 'Negativo (casi nada)', '*There\'s little hope.*'],
+            ['**a little**', '❌', '✅', 'Positivo (algo)', '*I have a little money.*'],
+            ['**some**', '✅', '✅', 'Afirmativas', '*I bought some apples / some water.*'],
+            ['**any**', '✅', '✅', 'Negativas/interrogativas', '*Do you have any questions? / I don\'t have any patience.*'],
+            ['**a lot of / lots of**', '✅', '✅', 'Ambos (afirmativas)', '*She has a lot of friends / a lot of homework.*']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Puntos importantes',
+          emoji: '⚠️',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Some', bold: true },
+              { text: ' también se usa en preguntas cuando ofreces o pides algo: ' },
+              { text: "'Would you like some tea?'", italic: true }
+            ],
+            [
+              { text: 'Any', bold: true },
+              { text: ' puede usarse en afirmativas con significado de \'cualquiera\': ' },
+              { text: "'You can choose any book.'", italic: true }
+            ],
+            [
+              { text: 'A lot of / Lots of', bold: true },
+              { text: ' son intercambiables y se usan principalmente en afirmativas.' }
+            ],
+            [
+              { text: 'Much', bold: true },
+              { text: ' y ' },
+              { text: 'Many', bold: true },
+              { text: ' raramente se usan en afirmativas (excepto con \'too\', \'so\', \'as\'): ' },
+              { text: "'too much work', 'so many people'", italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos con contables',
+          emoji: '✅',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I have ', italic: true },
+              { text: 'a few', bold: true, italic: true },
+              { text: ' friends in Madrid.', italic: true },
+              { text: ' → Tengo algunos amigos (positivo)' }
+            ],
+            [
+              { text: 'I have ', italic: true },
+              { text: 'few', bold: true, italic: true },
+              { text: ' friends in Madrid.', italic: true },
+              { text: ' → Tengo pocos amigos (casi ninguno, negativo)' }
+            ],
+            [
+              { text: 'How ', italic: true },
+              { text: 'many', bold: true, italic: true },
+              { text: ' books do you have?', italic: true },
+              { text: ' → ¿Cuántos libros tienes?' }
+            ],
+            [
+              { text: "I don't have ", italic: true },
+              { text: 'many', bold: true, italic: true },
+              { text: ' books.', italic: true },
+              { text: ' → No tengo muchos libros.' }
+            ],
+            [
+              { text: 'Do you have ', italic: true },
+              { text: 'any', bold: true, italic: true },
+              { text: ' brothers?', italic: true },
+              { text: ' → ¿Tienes hermanos?' }
+            ],
+            [
+              { text: 'I have ', italic: true },
+              { text: 'some', bold: true, italic: true },
+              { text: ' questions.', italic: true },
+              { text: ' → Tengo algunas preguntas.' }
+            ],
+            [
+              { text: 'She has ', italic: true },
+              { text: 'a lot of', bold: true, italic: true },
+              { text: ' ideas.', italic: true },
+              { text: ' → Tiene muchas ideas.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos con incontables',
+          emoji: '✅',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "There's ", italic: true },
+              { text: 'a little', bold: true, italic: true },
+              { text: ' milk left.', italic: true },
+              { text: ' → Queda un poco de leche (suficiente, positivo)' }
+            ],
+            [
+              { text: "There's ", italic: true },
+              { text: 'little', bold: true, italic: true },
+              { text: ' milk left.', italic: true },
+              { text: ' → Queda poca leche (casi nada, negativo)' }
+            ],
+            [
+              { text: 'How ', italic: true },
+              { text: 'much', bold: true, italic: true },
+              { text: ' sugar do you need?', italic: true },
+              { text: ' → ¿Cuánta azúcar necesitas?' }
+            ],
+            [
+              { text: "I don't have ", italic: true },
+              { text: 'much', bold: true, italic: true },
+              { text: ' time.', italic: true },
+              { text: ' → No tengo mucho tiempo.' }
+            ],
+            [
+              { text: "I don't have ", italic: true },
+              { text: 'any', bold: true, italic: true },
+              { text: ' money.', italic: true },
+              { text: ' → No tengo dinero.' }
+            ],
+            [
+              { text: 'Would you like ', italic: true },
+              { text: 'some', bold: true, italic: true },
+              { text: ' coffee?', italic: true },
+              { text: ' → ¿Quieres café? (ofrecimiento)' }
+            ],
+            [
+              { text: 'She has ', italic: true },
+              { text: 'a lot of', bold: true, italic: true },
+              { text: ' experience.', italic: true },
+              { text: ' → Tiene mucha experiencia.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: "Diferencia clave: 'a few/a little' vs 'few/little'",
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: "Con 'a' = tono positivo o neutro:", bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I have ', italic: true },
+              { text: 'a few', bold: true, italic: true },
+              { text: ' friends.', italic: true },
+              { text: ' → Tengo algunos amigos (está bien, son suficientes)' }
+            ],
+            [
+              { text: 'I have ', italic: true },
+              { text: 'a little', bold: true, italic: true },
+              { text: ' money.', italic: true },
+              { text: ' → Tengo un poco de dinero (suficiente para lo que necesito)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: "Sin 'a' = tono negativo:", bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I have ', italic: true },
+              { text: 'few', bold: true, italic: true },
+              { text: ' friends.', italic: true },
+              { text: ' → Tengo pocos amigos (casi ninguno, me siento solo)' }
+            ],
+            [
+              { text: 'I have ', italic: true },
+              { text: 'little', bold: true, italic: true },
+              { text: ' money.', italic: true },
+              { text: ' → Tengo poco dinero (casi nada, no me alcanza)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Errores comunes',
+          emoji: '❌',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I don't have many money.'", italic: true },
+              { text: ' → ' },
+              { text: 'Incorrecto', bold: true },
+              { text: '. ' },
+              { text: 'Money', italic: true },
+              { text: ' es incontable. Debe ser: ' },
+              { text: "'I don't have much money.'", italic: true }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'How much books?'", italic: true },
+              { text: ' → ' },
+              { text: 'Incorrecto', bold: true },
+              { text: '. ' },
+              { text: 'Books', italic: true },
+              { text: ' es contable. Debe ser: ' },
+              { text: "'How many books?'", italic: true }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I have few time.'", italic: true },
+              { text: ' → ' },
+              { text: 'Incorrecto', bold: true },
+              { text: '. ' },
+              { text: 'Time', italic: true },
+              { text: ' es incontable. Debe ser: ' },
+              { text: "'I have little time.'", italic: true }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'There are a lot of informations.'", italic: true },
+              { text: ' → ' },
+              { text: 'Incorrecto', bold: true },
+              { text: '. ' },
+              { text: 'Information', italic: true },
+              { text: ' es incontable (sin plural). Debe ser: ' },
+              { text: "'There is a lot of information.'", italic: true }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: "'I need some advices.'", italic: true },
+              { text: ' → ' },
+              { text: 'Incorrecto', bold: true },
+              { text: '. ' },
+              { text: 'Advice', italic: true },
+              { text: ' es incontable. Debe ser: ' },
+              { text: "'I need some advice.'", italic: true },
+              { text: ' o ' },
+              { text: "'I need a piece of advice.'", italic: true }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

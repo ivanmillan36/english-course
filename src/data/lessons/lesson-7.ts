@@ -1,6 +1,6 @@
 import type { LessonData } from '../lessons';
 
-export const lesson11: LessonData = {
+export const lesson7: LessonData = {
   id: 7,
   title: "Sustantivos y Artículos — Cómo nombrar, contar y expresar posesión correctamente",
   description: "Los sustantivos (nouns) son las palabras que usamos para nombrar personas, lugares, cosas o ideas. Son el corazón de casi todas las oraciones. Aprende a usar artículos, formar plurales y expresar posesión correctamente.",

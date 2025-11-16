@@ -1,6 +1,6 @@
 import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
-export const lesson17: LessonData = {
+export const lesson13: LessonData = {
   id: 13,
   title: "Verbos Modales (Modal Verbs)",
   description: "Los verbos modales (modal verbs) son auxiliares que modifican el significado del verbo principal y expresan habilidad, posibilidad, permiso, consejo u obligación. No cambian según el sujeto (no se les agrega '-s' en tercera persona) y siempre van seguidos de un verbo en forma base (sin 'to' ni terminaciones).",

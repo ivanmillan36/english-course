@@ -1,6 +1,6 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
-export const lesson9: LessonData = {
+export const lesson19: LessonData = {
   id: 19,
   title: "Reported Speech (Estilo Indirecto)",
   description: "En esta lección aprenderás el Reported Speech o Estilo Indirecto, fundamental para contar lo que otra persona dijo sin repetir sus palabras exactas. Dominarás los cambios de tiempo verbal (backshift), la transformación de pronombres y expresiones de tiempo/lugar, y cómo reportar preguntas, órdenes y solicitudes. Esta habilidad es esencial para redactar narraciones, conversaciones, artículos o reportes en inglés con fluidez y naturalidad.",
@@ -20,115 +20,490 @@ export const lesson9: LessonData = {
       topic: "¿Qué es el Reported Speech?",
       explanation: "El **Reported Speech (estilo indirecto)** se usa para **informar lo que alguien dijo**, **sin citar sus palabras exactas**. En lugar de repetir entre comillas lo dicho, transformamos la oración para integrarla a nuestro discurso. La palabra **that** se puede omitir sin cambiar el significado. En el estilo directo, citamos textualmente; en el indirecto, **transformamos la oración** ajustando tiempos verbales, pronombres y marcadores temporales según el contexto.",
       examples: [
-        "**Comparación básica:**",
-        "• **Estilo directo:** He said, \"I'm tired.\"",
-        "• **Estilo indirecto:** He said (that) he was tired.",
-        "",
-        "**Más ejemplos:**",
-        "• **Directo:** \"I work here,\" she said.",
-        "• **Indirecto:** She said she worked there.",
-        "",
-        "• **Directo:** \"We will arrive soon,\" they said.",
-        "• **Indirecto:** They said they would arrive soon.",
-        "",
-        "**Nota importante:**",
-        "• He said he was tired. ✅ (sin 'that')",
-        "• He said that he was tired. ✅ (con 'that')"
+        {
+          type: 'title',
+          text: 'Comparación básica',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Estilo directo: ', bold: true },
+              { text: 'He said, "I\'m tired."', italic: true }
+            ],
+            [
+              { text: 'Estilo indirecto: ', bold: true },
+              { text: 'He said (that) he was tired.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Más ejemplos',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"I work here," she said.', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'She said she worked there.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"We will arrive soon," they said.', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'They said they would arrive soon.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Nota importante',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'He said he was tired.', italic: true },
+              { text: ' ✅ (sin \'that\')' }
+            ],
+            [
+              { text: 'He said that he was tired.', italic: true },
+              { text: ' ✅ (con \'that\')' }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Cambios de tiempo verbal (Backshift)",
       explanation: "Cuando el verbo introductorio (por ejemplo, *said*, *told*, *asked*) está en **pasado**, los tiempos verbales del discurso **retroceden un tiempo** en inglés. Esto se llama **\"backshift\"**. Si el verbo introductorio está en **presente** (*He says he is tired*), o si el hecho sigue siendo cierto, el tiempo puede mantenerse igual. El backshift es automático cuando reportamos algo dicho en el pasado.",
       examples: [
-        "**Tabla de cambios de tiempo:**",
-        "",
-        "| **Estilo directo** | **Reported Speech** | **Traducción** |",
-        "|-------------------|-------------------|----------------|",
-        "| \"I am tired.\" | He said he **was** tired. | Dijo que **estaba** cansado. |",
-        "| \"I work here.\" | He said he **worked** there. | Dijo que **trabajaba** allí. |",
-        "| \"I have finished.\" | He said he **had finished**. | Dijo que **había terminado**. |",
-        "| \"I will go.\" | He said he **would go**. | Dijo que **iría**. |",
-        "| \"I can swim.\" | He said he **could swim**. | Dijo que **podía** nadar. |",
-        "",
-        "**Ejemplos adicionales:**",
-        "• \"She is happy.\" → He said she **was** happy.",
-        "• \"They have arrived.\" → He said they **had arrived**.",
-        "• \"I must leave.\" → She said she **had to leave**."
+        {
+          type: 'title',
+          text: 'Tabla de cambios de tiempo',
+          emoji: '📊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Estilo directo', 'Reported Speech', 'Traducción'],
+          rows: [
+            ['"I am tired."', 'He said he was tired.', 'Dijo que estaba cansado.'],
+            ['"I work here."', 'He said he worked there.', 'Dijo que trabajaba allí.'],
+            ['"I have finished."', 'He said he had finished.', 'Dijo que había terminado.'],
+            ['"I will go."', 'He said he would go.', 'Dijo que iría.'],
+            ['"I can swim."', 'He said he could swim.', 'Dijo que podía nadar.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos adicionales',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '"She is happy." → ', italic: true },
+              { text: 'He said she ', italic: true },
+              { text: 'was', bold: true },
+              { text: ' happy.', italic: true }
+            ],
+            [
+              { text: '"They have arrived." → ', italic: true },
+              { text: 'He said they ', italic: true },
+              { text: 'had arrived', bold: true },
+              { text: '.', italic: true }
+            ],
+            [
+              { text: '"I must leave." → ', italic: true },
+              { text: 'She said she ', italic: true },
+              { text: 'had to leave', bold: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Cambios de pronombres y marcadores de tiempo/lugar",
       explanation: "Cuando transformamos una oración al estilo indirecto, debemos **ajustar los pronombres personales** y las **expresiones de tiempo o lugar** para que tengan sentido desde la perspectiva del hablante. Los pronombres cambian según quién habla y de quién se habla. Las expresiones temporales y espaciales se ajustan al momento y lugar desde donde se reporta la información.",
       examples: [
-        "**Cambios de pronombres:**",
-        "• I → he / she",
-        "• my → his / her",
-        "• we → they",
-        "• our → their",
-        "",
-        "**Cambios de tiempo y lugar:**",
-        "• today → that day",
-        "• tomorrow → the next day / the following day",
-        "• yesterday → the previous day / the day before",
-        "• now → then",
-        "• here → there",
-        "• this → that",
-        "",
-        "**Ejemplo completo:**",
-        "• **Directo:** \"I will call you tomorrow.\"",
-        "• **Indirecto:** She said she would call me **the next day**.",
-        "",
-        "• **Directo:** \"I live here now.\"",
-        "• **Indirecto:** He said he lived **there then**."
+        {
+          type: 'title',
+          text: 'Cambios de pronombres',
+          emoji: '👤',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I → ', code: true },
+              { text: 'he / she', bold: true }
+            ],
+            [
+              { text: 'my → ', code: true },
+              { text: 'his / her', bold: true }
+            ],
+            [
+              { text: 'we → ', code: true },
+              { text: 'they', bold: true }
+            ],
+            [
+              { text: 'our → ', code: true },
+              { text: 'their', bold: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Cambios de tiempo y lugar',
+          emoji: '🕐',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'today → ', code: true },
+              { text: 'that day', bold: true }
+            ],
+            [
+              { text: 'tomorrow → ', code: true },
+              { text: 'the next day / the following day', bold: true }
+            ],
+            [
+              { text: 'yesterday → ', code: true },
+              { text: 'the previous day / the day before', bold: true }
+            ],
+            [
+              { text: 'now → ', code: true },
+              { text: 'then', bold: true }
+            ],
+            [
+              { text: 'here → ', code: true },
+              { text: 'there', bold: true }
+            ],
+            [
+              { text: 'this → ', code: true },
+              { text: 'that', bold: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo completo',
+          emoji: '💬',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"I will call you tomorrow."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'She said she would call me ', italic: true },
+              { text: 'the next day', bold: true },
+              { text: '.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"I live here now."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'He said he lived ', italic: true },
+              { text: 'there then', bold: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Reportar preguntas",
       explanation: "Al reportar preguntas, **no usamos signos de interrogación** ni invertimos el orden (sujeto + verbo). Para **preguntas cerradas (yes/no)** usamos *if* o *whether*. Para **preguntas con palabra interrogativa (wh-)** mantenemos la palabra interrogativa (*what, where, who, when, why, how*), pero cambiamos los tiempos y pronombres. El orden se vuelve afirmativo: sujeto + verbo.",
       examples: [
-        "**Preguntas cerradas (yes/no):**",
-        "• **Directo:** \"Are you happy?\"",
-        "• **Indirecto:** He asked me **if I was happy**.",
-        "",
-        "• **Directo:** \"Do you like coffee?\"",
-        "• **Indirecto:** She asked me **if I liked coffee**.",
-        "",
-        "**Preguntas con wh- (what, where, who, etc.):**",
-        "• **Directo:** \"Where do you live?\"",
-        "• **Indirecto:** She asked me **where I lived**.",
-        "",
-        "• **Directo:** \"What time is it?\"",
-        "• **Indirecto:** He asked **what time it was**.",
-        "",
-        "• **Directo:** \"Why are you late?\"",
-        "• **Indirecto:** The teacher asked **why I was late**."
+        {
+          type: 'title',
+          text: 'Preguntas cerradas (yes/no)',
+          emoji: '❓',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Usamos ', bold: true },
+            { text: 'if', code: true },
+            { text: ' o ', bold: true },
+            { text: 'whether', code: true },
+            { text: ' para introducir preguntas cerradas.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Are you happy?"', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'He asked me ', italic: true },
+              { text: 'if I was happy', bold: true },
+              { text: '.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Do you like coffee?"', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'She asked me ', italic: true },
+              { text: 'if I liked coffee', bold: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Preguntas con wh- (what, where, who, etc.)',
+          emoji: '❓',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Mantenemos la palabra interrogativa (', bold: true },
+            { text: 'what', code: true },
+            { text: ', ', bold: true },
+            { text: 'where', code: true },
+            { text: ', ', bold: true },
+            { text: 'who', code: true },
+            { text: ', ', bold: true },
+            { text: 'when', code: true },
+            { text: ', ', bold: true },
+            { text: 'why', code: true },
+            { text: ', ', bold: true },
+            { text: 'how', code: true },
+            { text: ') pero el orden se vuelve afirmativo: sujeto + verbo.', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Where do you live?"', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'She asked me ', italic: true },
+              { text: 'where I lived', bold: true },
+              { text: '.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"What time is it?"', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'He asked ', italic: true },
+              { text: 'what time it was', bold: true },
+              { text: '.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Why are you late?"', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'The teacher asked ', italic: true },
+              { text: 'why I was late', bold: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Reportar órdenes, consejos y solicitudes",
       explanation: "Para reportar **órdenes o peticiones**, usamos la estructura: **told / asked + objeto + to + verbo base**. Para reportar **órdenes negativas**, usamos: **told / asked + objeto + not to + verbo base**. Usamos **told** para órdenes directas y **asked** para peticiones corteses. También podemos usar **ordered** para órdenes muy formales o autoritarias.",
       examples: [
-        "**Órdenes afirmativas:**",
-        "• **Directo:** \"Close the door.\"",
-        "• **Indirecto:** He **told me to close** the door.",
-        "",
-        "• **Directo:** \"Study harder.\"",
-        "• **Indirecto:** The teacher **told us to study** harder.",
-        "",
-        "**Peticiones corteses:**",
-        "• **Directo:** \"Please help me.\"",
-        "• **Indirecto:** She **asked me to help** her.",
-        "",
-        "**Órdenes negativas:**",
-        "• **Directo:** \"Don't be late.\"",
-        "• **Indirecto:** He **told me not to be** late.",
-        "",
-        "• **Directo:** \"Don't touch that!\"",
-        "• **Indirecto:** She **told me not to touch** that.",
-        "",
-        "**Consejos:**",
-        "• **Directo:** \"You should rest.\"",
-        "• **Indirecto:** The doctor **advised me to rest**."
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: "told / asked + objeto + to + verbo base",
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Para órdenes negativas: ', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: "told / asked + objeto + not to + verbo base",
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Órdenes afirmativas',
+          emoji: '📢',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '🔑 ', emoji: '🔑' },
+            { text: 'Usamos ', bold: true },
+            { text: 'told', code: true },
+            { text: ' para órdenes directas.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Close the door."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'He ', italic: true },
+              { text: 'told me to close', bold: true },
+              { text: ' the door.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Study harder."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'The teacher ', italic: true },
+              { text: 'told us to study', bold: true },
+              { text: ' harder.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Peticiones corteses',
+          emoji: '🙏',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '🔑 ', emoji: '🔑' },
+            { text: 'Usamos ', bold: true },
+            { text: 'asked', code: true },
+            { text: ' para peticiones corteses.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Please help me."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'She ', italic: true },
+              { text: 'asked me to help', bold: true },
+              { text: ' her.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Órdenes negativas',
+          emoji: '🚫',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Don\'t be late."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'He ', italic: true },
+              { text: 'told me not to be', bold: true },
+              { text: ' late.', italic: true }
+            ],
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"Don\'t touch that!"', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'She ', italic: true },
+              { text: 'told me not to touch', bold: true },
+              { text: ' that.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Consejos',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Directo: ', bold: true },
+              { text: '"You should rest."', italic: true }
+            ],
+            [
+              { text: 'Indirecto: ', bold: true },
+              { text: 'The doctor ', italic: true },
+              { text: 'advised me to rest', bold: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

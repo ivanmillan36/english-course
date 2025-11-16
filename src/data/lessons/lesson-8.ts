@@ -1,6 +1,6 @@
 import type { LessonData } from '../lessons';
 
-export const lesson12: LessonData = {
+export const lesson8: LessonData = {
   id: 8,
   title: "Adjetivos y Pronombres — Cómo describir, poseer y reemplazar palabras correctamente",
   description: "Los adjetivos y pronombres son esenciales para comunicarse con claridad. Mientras los adjetivos describen o califican sustantivos, los pronombres reemplazan a un sustantivo para evitar repeticiones. Aprende a usarlos correctamente según el contexto.",

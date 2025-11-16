@@ -1,6 +1,6 @@
 import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
-export const lesson16: LessonData = {
+export const lesson12: LessonData = {
   id: 12,
   title: "Tiempos Verbales del Futuro",
   description: "Aprende a expresar el futuro en inglés de tres formas diferentes y precisas. Domina el uso de 'will' para predicciones y decisiones espontáneas, 'be going to' para planes e intenciones, y el presente continuo con sentido de futuro para eventos confirmados. Comprende cuándo usar cada forma según el contexto y la intención comunicativa.",

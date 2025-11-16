@@ -1,6 +1,6 @@
 import type { LessonData } from '../lessons';
 
-export const lesson10: LessonData = {
+export const lesson20: LessonData = {
   id: 20,
   title: "Condicionales en inglés — Cómo hablar de lo que es, lo que podría ser y lo que pudo haber sido",
   description: "Los condicionales en inglés son estructuras que usamos para hablar de causas y consecuencias: qué pasa si algo ocurre, qué pasaría si algo ocurriera o qué habría pasado si algo hubiera ocurrido. Aprenderlos es esencial para poder expresarte con precisión, especialmente al hablar de posibilidades, hipótesis, deseos o arrepentimientos.",
