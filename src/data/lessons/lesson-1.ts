@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson1: LessonData = {
   id: 1,
@@ -17,32 +17,450 @@ export const lesson1: LessonData = {
       topic: "El Alfabeto Inglés (The English Alphabet)",
       explanation: "El alfabeto inglés contiene 26 letras, cada una con una forma mayúscula (uppercase) y una minúscula (lowercase). Es la base para formar palabras y oraciones.",
       examples: [
-        "**Mayúsculas (Uppercase):** A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z",
-        "**Minúsculas (Lowercase):** a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z",
-        "**Ejemplo de palabra:** \"Hello\" = H (mayúscula) + e (minúscula) + l (minúscula) + l (minúscula) + o (minúscula)"
+        {
+          type: 'title',
+          text: 'Las 26 letras del alfabeto',
+          emoji: '🔤',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'El alfabeto inglés tiene ', bold: true },
+            { text: '26 letras', code: true },
+            { text: ', cada una con dos formas:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Mayúsculas (Uppercase):', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: 'A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z',
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Minúsculas (Lowercase):', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplo práctico',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'En una palabra, normalmente solo la primera letra es mayúscula:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '"Hello"', code: true },
+              { text: ' = ' },
+              { text: 'H', bold: true },
+              { text: ' (mayúscula) + ' },
+              { text: 'e', italic: true },
+              { text: ' (minúscula) + ' },
+              { text: 'l', italic: true },
+              { text: ' (minúscula) + ' },
+              { text: 'l', italic: true },
+              { text: ' (minúscula) + ' },
+              { text: 'o', italic: true },
+              { text: ' (minúscula)' }
+            ],
+            [
+              { text: '"English"', code: true },
+              { text: ' = ' },
+              { text: 'E', bold: true },
+              { text: ' (mayúscula) + ' },
+              { text: 'nglish', italic: true },
+              { text: ' (minúsculas)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'Las mayúsculas se usan al inicio de oraciones y para nombres propios (nombres de personas, lugares, etc.).' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "Regla Ortográfica: \"I before E except after C\"",
       explanation: "Esta es una regla mnemotécnica muy útil para recordar cómo escribir palabras que contienen las vocales \"i\" e \"e\" juntas. La regla dice: escribe \"i\" antes de \"e\" (ej: friend), excepto cuando va después de la letra \"c\" (ej: receive), donde se invierte a \"e\" antes de \"i\".",
       examples: [
-        "**\"I\" antes de \"E\":** believe, field, piece, friend",
-        "**Excepto después de \"C\":** receive, ceiling, deceive, conceive",
-        "**Excepciones importantes:** La regla no es perfecta. Algunas palabras comunes no la siguen, como: weird, height, science, species, leisure"
+        {
+          type: 'title',
+          text: 'La regla básica',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Escribe ', bold: true },
+            { text: '"i"', code: true },
+            { text: ' antes de ', bold: true },
+            { text: '"e"', code: true },
+            { text: ', excepto cuando va después de ', bold: true },
+            { text: '"c"', code: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: '"I" antes de "E"',
+          emoji: '✅',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Cuando NO va después de "c", normalmente escribimos "i" antes de "e":' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'believe', code: true },
+              { text: ' (creer)' }
+            ],
+            [
+              { text: 'field', code: true },
+              { text: ' (campo)' }
+            ],
+            [
+              { text: 'piece', code: true },
+              { text: ' (pieza)' }
+            ],
+            [
+              { text: 'friend', code: true },
+              { text: ' (amigo)' }
+            ],
+            [
+              { text: 'thief', code: true },
+              { text: ' (ladrón)' }
+            ],
+            [
+              { text: 'achieve', code: true },
+              { text: ' (lograr)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Excepto después de "C"',
+          emoji: '⚠️',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Cuando va después de "c", se invierte: ', bold: true },
+            { text: '"e"', code: true },
+            { text: ' antes de ', bold: true },
+            { text: '"i"', code: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'receive', code: true },
+              { text: ' (recibir)' }
+            ],
+            [
+              { text: 'ceiling', code: true },
+              { text: ' (techo)' }
+            ],
+            [
+              { text: 'deceive', code: true },
+              { text: ' (engañar)' }
+            ],
+            [
+              { text: 'conceive', code: true },
+              { text: ' (concebir)' }
+            ],
+            [
+              { text: 'perceive', code: true },
+              { text: ' (percibir)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Excepciones importantes',
+          emoji: '❌',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '⚠️ ', emoji: '⚠️' },
+            { text: 'La regla no es perfecta. Algunas palabras comunes no la siguen:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'weird', code: true },
+              { text: ' (extraño) - es "e" antes de "i"' }
+            ],
+            [
+              { text: 'height', code: true },
+              { text: ' (altura) - es "e" antes de "i"' }
+            ],
+            [
+              { text: 'science', code: true },
+              { text: ' (ciencia) - es "e" antes de "i" aunque va después de "c"' }
+            ],
+            [
+              { text: 'species', code: true },
+              { text: ' (especies) - es "e" antes de "i"' }
+            ],
+            [
+              { text: 'leisure', code: true },
+              { text: ' (ocio) - es "e" antes de "i"' }
+            ],
+            [
+              { text: 'seize', code: true },
+              { text: ' (agarrar) - es "e" antes de "i"' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Consejo: ', bold: true },
+            { text: 'Esta regla es una guía útil, pero no es absoluta. Con la práctica, aprenderás las excepciones más comunes.' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "Signos de Puntuación Básicos",
       explanation: "Los signos de puntuación son símbolos que se utilizan para dar estructura y significado a las oraciones, indicando pausas, preguntas o énfasis.",
       examples: [
-        "**Punto (Period - .):** Marca el final de una oración afirmativa.",
-        "*Ejemplo:* \"I like to read books.\" (Me gusta leer libros.)",
-        "**Coma (Comma - ,):** Indica una pausa breve en una oración, separa items en una lista o une cláusulas.",
-        "*Ejemplo:* \"I need to buy apples, bread, and milk.\" (Necesito comprar manzanas, pan y leche.)",
-        "**Signo de Interrogación (Question Mark - ?):** Se coloca al final de una oración para formar una pregunta.",
-        "*Ejemplo:* \"What is your name?\" (¿Cuál es tu nombre?)",
-        "**Signo de Exclamación (Exclamation Mark - !):** Expresa emoción, sorpresa, énfasis o un comando fuerte.",
-        "*Ejemplo:* \"That's amazing!\" (¡Eso es increíble!)"
+        {
+          type: 'title',
+          text: 'Los cuatro signos esenciales',
+          emoji: '📌',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Los signos de puntuación ayudan a dar estructura y claridad a tus escritos. Estos son los cuatro más importantes:' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Punto (Period - .)',
+          emoji: '🔴',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Marca el final de una oración afirmativa o declarativa.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '"I like to read books."', italic: true },
+              { text: ' (Me gusta leer libros.)' }
+            ],
+            [
+              { text: '"She is a teacher."', italic: true },
+              { text: ' (Ella es profesora.)' }
+            ],
+            [
+              { text: '"The sun is bright."', italic: true },
+              { text: ' (El sol es brillante.)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Coma (Comma - ,)',
+          emoji: '🔵',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Indica una pausa breve, separa elementos en una lista o une cláusulas.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Separar elementos en una lista:' }
+            ],
+            [
+              { text: '"I need to buy apples, bread, and milk."', italic: true },
+              { text: ' (Necesito comprar manzanas, pan y leche.)' }
+            ],
+            [
+              { text: 'Indicar una pausa:' }
+            ],
+            [
+              { text: '"Hello, how are you?"', italic: true },
+              { text: ' (Hola, ¿cómo estás?)' }
+            ],
+            [
+              { text: 'Unir cláusulas:' }
+            ],
+            [
+              { text: '"I like coffee, but she prefers tea."', italic: true },
+              { text: ' (Me gusta el café, pero ella prefiere té.)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Signo de Interrogación (Question Mark - ?)',
+          emoji: '❓',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Se coloca al final de una oración para formar una pregunta.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '"What is your name?"', italic: true },
+              { text: ' (¿Cuál es tu nombre?)' }
+            ],
+            [
+              { text: '"How old are you?"', italic: true },
+              { text: ' (¿Cuántos años tienes?)' }
+            ],
+            [
+              { text: '"Where do you live?"', italic: true },
+              { text: ' (¿Dónde vives?)' }
+            ],
+            [
+              { text: '"Are you ready?"', italic: true },
+              { text: ' (¿Estás listo?)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'En inglés solo se usa un signo de interrogación al final, no al inicio como en español.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Signo de Exclamación (Exclamation Mark - !)',
+          emoji: '❗',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Expresa emoción, sorpresa, énfasis o un comando fuerte.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '"That\'s amazing!"', italic: true },
+              { text: ' (¡Eso es increíble!)' }
+            ],
+            [
+              { text: '"Watch out!"', italic: true },
+              { text: ' (¡Ten cuidado!)' }
+            ],
+            [
+              { text: '"I can\'t believe it!"', italic: true },
+              { text: ' (¡No puedo creerlo!)' }
+            ],
+            [
+              { text: '"Stop!"', italic: true },
+              { text: ' (¡Alto!)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'Al igual que con el signo de interrogación, en inglés solo se usa un signo de exclamación al final.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos combinados',
+          emoji: '📚',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Veamos cómo se usan juntos en una oración:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '"I love reading books, magazines, and newspapers."', italic: true },
+              { text: ' (Uso de coma para separar lista)' }
+            ],
+            [
+              { text: '"What are your favorite hobbies?"', italic: true },
+              { text: ' (Signo de interrogación para pregunta)' }
+            ],
+            [
+              { text: '"Wow, that\'s incredible!"', italic: true },
+              { text: ' (Coma para pausa y signo de exclamación para emoción)' }
+            ],
+            [
+              { text: '"I study English every day. Do you?"', italic: true },
+              { text: ' (Punto para terminar oración y signo de interrogación para pregunta)' }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson3: LessonData = {
   id: 3,
@@ -16,23 +16,284 @@ export const lesson3: LessonData = {
       topic: "El Orden SVO: Sujeto + Verbo + Objeto",
       explanation: "En español, a menudo podemos cambiar el orden de las palabras porque las terminaciones nos indican quién hace la acción. Por ejemplo, \"El perro come pan\" y \"Pan come el perro\" significan básicamente lo mismo (aunque la segunda suena extraña), porque la terminación \"-e\" en \"come\" nos dice que el sujeto es \"él/ella/usted\". En inglés, esto **NO** es posible. Las palabras no tienen esas terminaciones, por lo que el **orden** de las palabras es el que nos dice el significado. El orden casi siempre es: 1. **Sujeto (Subject):** ¿Quién o qué realiza la acción? 2. **Verbo (Verb):** ¿Qué acción realiza? 3. **Objeto (Object):** ¿Qué recibe la acción? Si cambias este orden, la oración se vuelve confusa o directamente incorrecta.",
       examples: [
-        "The dog / eats / a bone. (El perro / come / un hueso.) - `Sujeto: The dog` | `Verbo: eats` | `Objeto: a bone`",
-        "Maria / reads / a book. (María / lee / un libro.) - `Sujeto: Maria` | `Verbo: reads` | `Objeto: a book`",
-        "They / play / soccer. (Ellos / juegan / fútbol.) - `Sujeto: They` | `Verbo: play` | `Objeto: soccer`"
+        {
+          type: 'title',
+          text: 'Estructura básica',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: "Sujeto + Verbo + Objeto (SVO)",
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'El orden de las palabras en inglés es muy estricto. Casi siempre seguimos este patrón:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '1. ', bold: true },
+              { text: 'Sujeto (Subject): ', bold: true },
+              { text: '¿Quién o qué realiza la acción?' }
+            ],
+            [
+              { text: '2. ', bold: true },
+              { text: 'Verbo (Verb): ', bold: true },
+              { text: '¿Qué acción realiza?' }
+            ],
+            [
+              { text: '3. ', bold: true },
+              { text: 'Objeto (Object): ', bold: true },
+              { text: '¿Qué recibe la acción?' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos de estructura SVO',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The dog ', bold: true },
+              { text: '/ ', code: true },
+              { text: 'eats ', bold: true },
+              { text: '/ ', code: true },
+              { text: 'a bone.', italic: true },
+              { text: ' (El perro / come / un hueso.)' }
+            ],
+            [
+              { text: 'Sujeto: ', bold: true },
+              { text: 'The dog', code: true },
+              { text: ' | ' },
+              { text: 'Verbo: ', bold: true },
+              { text: 'eats', code: true },
+              { text: ' | ' },
+              { text: 'Objeto: ', bold: true },
+              { text: 'a bone', code: true }
+            ],
+            [
+              { text: 'Maria ', bold: true },
+              { text: '/ ', code: true },
+              { text: 'reads ', bold: true },
+              { text: '/ ', code: true },
+              { text: 'a book.', italic: true },
+              { text: ' (María / lee / un libro.)' }
+            ],
+            [
+              { text: 'Sujeto: ', bold: true },
+              { text: 'Maria', code: true },
+              { text: ' | ' },
+              { text: 'Verbo: ', bold: true },
+              { text: 'reads', code: true },
+              { text: ' | ' },
+              { text: 'Objeto: ', bold: true },
+              { text: 'a book', code: true }
+            ],
+            [
+              { text: 'They ', bold: true },
+              { text: '/ ', code: true },
+              { text: 'play ', bold: true },
+              { text: '/ ', code: true },
+              { text: 'soccer.', italic: true },
+              { text: ' (Ellos / juegan / fútbol.)' }
+            ],
+            [
+              { text: 'Sujeto: ', bold: true },
+              { text: 'They', code: true },
+              { text: ' | ' },
+              { text: 'Verbo: ', bold: true },
+              { text: 'play', code: true },
+              { text: ' | ' },
+              { text: 'Objeto: ', bold: true },
+              { text: 'soccer', code: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '⚠️ ', emoji: '⚠️' },
+            { text: 'Importante: ', bold: true },
+            { text: 'Si cambias este orden, la oración se vuelve confusa o directamente incorrecta. En inglés, el orden de las palabras es fundamental para entender el significado.' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "Los Pronombres Personales de Sujeto (Subject Pronouns)",
       explanation: "Los pronombres personales son palabras que usamos para reemplazar un sustantivo (nombre de una persona, animal o cosa) y así evitar repetirlo constantemente. Siempre funcionan como el **sujeto** de la oración (la persona o cosa que hace la acción del verbo). Es crucial memorizarlos y saber cuándo usar cada uno.",
       examples: [
-        "**I** (Yo) - **I** eat an apple. (Yo como una manzana.)",
-        "**You** (Tú, Usted, Vosotros, Ustedes) - **You** are my friend. (Tú eres mi amigo.)",
-        "**He** (Él) - **He** works here. (Él trabaja aquí.)",
-        "**She** (Ella) - **She** loves music. (Ella ama la música.)",
-        "**It** (Ello/Eso para animales y cosas) - **It** is a book. (Es un libro.) *The dog? -> **It** is big.* (¿El perro? -> Es grande.)",
-        "**We** (Nosotros/Nosotras) - **We** study English. (Nosotros estudiamos inglés.)",
-        "**They** (Ellos/Ellas) - **They** live in Madrid. (Ellos viven en Madrid.)",
-        "**Nota importante sobre \"You\":** \"You\" se usa para \"tú\", \"usted\", \"vosotros\" y \"ustedes\". La diferencia se entiende por el contexto."
+        {
+          type: 'title',
+          text: '¿Qué son los pronombres personales?',
+          emoji: '❓',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Los pronombres personales son palabras que usamos para reemplazar un sustantivo (nombre de una persona, animal o cosa) y así evitar repetirlo constantemente. Siempre funcionan como el ' },
+            { text: 'sujeto', bold: true },
+            { text: ' de la oración (la persona o cosa que hace la acción del verbo).' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Es crucial memorizarlos y saber cuándo usar cada uno.', bold: true }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Tabla de pronombres personales',
+          emoji: '📊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Pronombre', 'Traducción', 'Ejemplo'],
+          rows: [
+            ['I', 'Yo', 'I eat an apple. (Yo como una manzana.)'],
+            ['You', 'Tú, Usted, Vosotros, Ustedes', 'You are my friend. (Tú eres mi amigo.)'],
+            ['He', 'Él', 'He works here. (Él trabaja aquí.)'],
+            ['She', 'Ella', 'She loves music. (Ella ama la música.)'],
+            ['It', 'Ello/Eso (animales y cosas)', 'It is a book. (Es un libro.)'],
+            ['We', 'Nosotros/Nosotras', 'We study English. (Nosotros estudiamos inglés.)'],
+            ['They', 'Ellos/Ellas', 'They live in Madrid. (Ellos viven en Madrid.)']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos detallados',
+          emoji: '📚',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I ', bold: true },
+              { text: '(Yo) - ', italic: true },
+              { text: 'I eat an apple.', italic: true },
+              { text: ' (Yo como una manzana.)' }
+            ],
+            [
+              { text: 'You ', bold: true },
+              { text: '(Tú, Usted, Vosotros, Ustedes) - ', italic: true },
+              { text: 'You are my friend.', italic: true },
+              { text: ' (Tú eres mi amigo.)' }
+            ],
+            [
+              { text: 'He ', bold: true },
+              { text: '(Él) - ', italic: true },
+              { text: 'He works here.', italic: true },
+              { text: ' (Él trabaja aquí.)' }
+            ],
+            [
+              { text: 'She ', bold: true },
+              { text: '(Ella) - ', italic: true },
+              { text: 'She loves music.', italic: true },
+              { text: ' (Ella ama la música.)' }
+            ],
+            [
+              { text: 'It ', bold: true },
+              { text: '(Ello/Eso para animales y cosas) - ', italic: true },
+              { text: 'It is a book.', italic: true },
+              { text: ' (Es un libro.)' }
+            ],
+            [
+              { text: 'The dog? → ', italic: true },
+              { text: 'It ', bold: true },
+              { text: 'is big.', italic: true },
+              { text: ' (¿El perro? → Es grande.)' }
+            ],
+            [
+              { text: 'We ', bold: true },
+              { text: '(Nosotros/Nosotras) - ', italic: true },
+              { text: 'We study English.', italic: true },
+              { text: ' (Nosotros estudiamos inglés.)' }
+            ],
+            [
+              { text: 'They ', bold: true },
+              { text: '(Ellos/Ellas) - ', italic: true },
+              { text: 'They live in Madrid.', italic: true },
+              { text: ' (Ellos viven en Madrid.)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Nota importante sobre "You"',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '"You" se usa para "tú", "usted", "vosotros" y "ustedes". La diferencia se entiende por el contexto.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'You are my friend.', italic: true },
+              { text: ' (Tú eres mi amigo.)' }
+            ],
+            [
+              { text: 'You are very kind.', italic: true },
+              { text: ' (Usted es muy amable.)' }
+            ],
+            [
+              { text: 'You are students.', italic: true },
+              { text: ' (Vosotros/Ustedes son estudiantes.)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Cuándo usar "It"',
+          emoji: '🔍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Usamos "it" para:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [{ text: 'Objetos y cosas: ', bold: true }, { text: 'The car → It is red.', italic: true }],
+            [{ text: 'Animales (en general): ', bold: true }, { text: 'The dog → It is big.', italic: true }],
+            [{ text: 'Conceptos abstractos: ', bold: true }, { text: 'The idea → It is good.', italic: true }]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'Solo usamos "he" o "she" para animales si estamos humanizando a la mascota y queriendo especificar claramente su sexo.' }
+          ]
+        } as ParagraphData
       ]
     }
   ],

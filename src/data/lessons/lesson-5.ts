@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson5: LessonData = {
   id: 5,
@@ -18,50 +18,340 @@ export const lesson5: LessonData = {
       topic: "Cómo empezar y terminar un mensaje: El saludo y la despedida",
       explanation: "El saludo y la despedida son el marco de tu mensaje. Marcan el tono (formal o informal) y muestran tu educación. En inglés, la elección depende de qué tan bien conoces a la persona con la que estás hablando.",
       examples: [
-        "**Saludos (Greetings):**",
-        "**Hi / Hello**: Son los saludos estándar y neutros. Se usan en contextos **informales** (con amigos, familiares, compañeros de trabajo con confianza) o **neutrales** (en un email profesional si ya hay cierta familiaridad). Hi es ligeramente más informal que Hello, pero ambos son perfectamente aceptables en la mayoría de situaciones.",
-        "*Ejemplo:* Hi Carlos, Hello Maria,",
-        "**Dear [Name]**: Este es el saludo **formal**. Se utiliza principalmente en emails profesionales, cartas de trabajo, quejas, o cuando te diriges a alguien por primera vez y no hay confianza.",
-        "*Ejemplo:* Dear Mr. Smith, (Señor Smith), Dear Dr. Johnson, (Doctor/Doctora Johnson).",
-        "**Despedidas (Goodbyes / Closings):**",
-        "**Bye / See you soon / See you later**: Despedidas **informales**. Ideales para chats con amigos o correos rápidos con personas cercanas.",
-        "*Ejemplo:* Bye!, See you tomorrow!, Talk to you later.",
-        "**Best regards / Kind regards / Regards**: Despedidas **formales o neutrales**. Son las más comunes y seguras para usar en emails profesionales o con personas que no conoces bien. Son el equivalente a 'Saludos cordiales' o 'Atentamente'.",
-        "*Ejemplo:* Best regards, Ana López.",
-        "**Sincerely**: Muy **formal**. Se usa típicamente en cartas formales de negocios o de carácter oficial.",
-        "*Ejemplo:* Sincerely, The Marketing Team."
+        {
+          type: 'title',
+          text: 'Saludos (Greetings)',
+          emoji: '👋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Hi / Hello: ', bold: true },
+            { text: 'Son los saludos estándar y neutros. Se usan en contextos ' },
+            { text: 'informales', bold: true },
+            { text: ' (con amigos, familiares, compañeros de trabajo con confianza) o ' },
+            { text: 'neutrales', bold: true },
+            { text: ' (en un email profesional si ya hay cierta familiaridad). Hi es ligeramente más informal que Hello, pero ambos son perfectamente aceptables en la mayoría de situaciones.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: 'Hi Carlos, Hello Maria,', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Dear [Name]: ', bold: true },
+            { text: 'Este es el saludo ' },
+            { text: 'formal', bold: true },
+            { text: '. Se utiliza principalmente en emails profesionales, cartas de trabajo, quejas, o cuando te diriges a alguien por primera vez y no hay confianza.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Dear Mr. Smith,', italic: true },
+              { text: ' (Señor Smith)' }
+            ],
+            [
+              { text: 'Dear Dr. Johnson,', italic: true },
+              { text: ' (Doctor/Doctora Johnson)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Despedidas (Goodbyes / Closings)',
+          emoji: '👋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Bye / See you soon / See you later: ', bold: true },
+            { text: 'Despedidas ' },
+            { text: 'informales', bold: true },
+            { text: '. Ideales para chats con amigos o correos rápidos con personas cercanas.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Bye!', italic: true }
+            ],
+            [
+              { text: 'See you tomorrow!', italic: true }
+            ],
+            [
+              { text: 'Talk to you later.', italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Best regards / Kind regards / Regards: ', bold: true },
+            { text: 'Despedidas ' },
+            { text: 'formales o neutrales', bold: true },
+            { text: '. Son las más comunes y seguras para usar en emails profesionales o con personas que no conoces bien. Son el equivalente a \'Saludos cordiales\' o \'Atentamente\'.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: 'Best regards, Ana López.', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Sincerely: ', bold: true },
+            { text: 'Muy ' },
+            { text: 'formal', bold: true },
+            { text: '. Se usa típicamente en cartas formales de negocios o de carácter oficial.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: 'Sincerely, The Marketing Team.', italic: true }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "Frases clave para presentarte (Key Phrases to Introduce Yourself)",
       explanation: "Una vez que has saludado, es momento de decir quién eres. Estas frases son esenciales y siguen una estructura simple.",
       examples: [
-        "**My name is [Tu nombre].** (Mi nombre es...)",
-        "*Ejemplo:* My name is Sofia.",
-        "*Nota:* También puedes usar la versión más corta: **I'm [Tu nombre].** (I'm es la contracción de I am). My name is... es un poco más formal que I'm...",
-        "**I am from [Tu país/ciudad].** (Soy de...)",
-        "*Ejemplo:* I am from Mexico. I'm from Madrid.",
-        "*Nota:* Si quieres ser más específico, puedes decir: I'm from Barcelona, Spain.",
-        "**I am [age] years old.** (Tengo [edad] años.)",
-        "*Ejemplo:* I am 25 years old. I'm 30 years old.",
-        "*Nota:* En conversaciones informales, a menudo se omite years old y solo se dice I'm 25.",
-        "**Nice to meet you.** (Encantado/a de conocerte.)",
-        "*Ejemplo:* Después de que alguien te dice su nombre, respondes: Nice to meet you, John.",
-        "*Nota:* Es una frase de cortesía muy importante en las presentaciones."
+        {
+          type: 'title',
+          text: 'My name is [Tu nombre]',
+          emoji: '👤',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Mi nombre es...' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: 'My name is Sofia.', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'También puedes usar la versión más corta: ' },
+            { text: "I'm [Tu nombre].", code: true },
+            { text: ' (I\'m es la contracción de I am). My name is... es un poco más formal que I\'m...' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'I am from [Tu país/ciudad]',
+          emoji: '🌍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Soy de...' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I am from Mexico.', italic: true }
+            ],
+            [
+              { text: "I'm from Madrid.", italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'Si quieres ser más específico, puedes decir: ' },
+            { text: "I'm from Barcelona, Spain.", italic: true }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'I am [age] years old',
+          emoji: '🎂',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Tengo [edad] años.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I am 25 years old.', italic: true }
+            ],
+            [
+              { text: "I'm 30 years old.", italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'En conversaciones informales, a menudo se omite years old y solo se dice ' },
+            { text: "I'm 25.", italic: true }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Nice to meet you',
+          emoji: '🤝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Encantado/a de conocerte.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: 'Después de que alguien te dice su nombre, respondes: ' },
+            { text: 'Nice to meet you, John.', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: 'Es una frase de cortesía muy importante en las presentaciones.' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "Preguntas básicas para conocer a alguien (Basic Questions to Get to Know Someone)",
       explanation: "Una conversación es una calle de dos sentidos. Estas preguntas te permiten mostrar interés en la otra persona.",
       examples: [
-        "**What's your name?** (¿Cuál es tu nombre?)",
-        "*Ejemplo:* Hello! What's your name?",
-        "*Nota:* What's es la contracción de What is.",
-        "**Where are you from?** (¿De dónde eres?)",
-        "*Ejemplo:* Your English is great! Where are you from?",
-        "**How are you?** (¿Cómo estás?)",
-        "*Ejemplo:* Hi Mark! How are you?",
-        "*Respuestas comunes:* I'm fine, thanks. And you? (Estoy bien, gracias. ¿Y tú?), I'm great! (¡Estoy genial!), Not bad. (No está mal)."
+        {
+          type: 'title',
+          text: "What's your name?",
+          emoji: '❓',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '¿Cuál es tu nombre?' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: "Hello! What's your name?", italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: "What's es la contracción de What is." }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Where are you from?',
+          emoji: '🌍',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '¿De dónde eres?' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: "Your English is great! Where are you from?", italic: true }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'How are you?',
+          emoji: '😊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '¿Cómo estás?' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplo: ', bold: true },
+            { text: 'Hi Mark! How are you?', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Respuestas comunes:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "I'm fine, thanks. And you?", italic: true },
+              { text: ' (Estoy bien, gracias. ¿Y tú?)' }
+            ],
+            [
+              { text: "I'm great!", italic: true },
+              { text: ' (¡Estoy genial!)' }
+            ],
+            [
+              { text: 'Not bad.', italic: true },
+              { text: ' (No está mal)' }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

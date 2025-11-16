@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson6: LessonData = {
   id: 6,
@@ -19,78 +19,234 @@ export const lesson6: LessonData = {
       topic: "La Forma Afirmativa: Identificando y Describiendo",
       explanation: "El verbo \"To Be\" significa \"Ser\" o \"Estar\" en español. Su forma cambia radicalmente dependiendo del sujeto (la persona que realiza la acción). No decimos \"I be\" o \"he be\". Es irregular y debemos memorizar sus formas. La clave está en asociar cada pronombre personal (I, you, he, she, it, we, they) con su forma correspondiente de \"To Be\".",
       examples: [
-        "**Tabla de Conjugación y Explicación:**",
-        "",
-        "| Pronombre (Sujeto) | Verbo \"To Be\" | Explicación y Traducción |",
-        "| :--- | :--- | :--- |",
-        "| **I** | **am** | **Yo soy** o **yo estoy**. Ej: Yo soy alto. Yo estoy feliz. |",
-        "| **You** | **are** | **Tú eres**, **tú estás**, **usted es**, **usted está**. (Forma singular y formal). |",
-        "| **He / She / It** | **is** | **Él es / está**, **Ella es / está**, **Ello es / está** (para objetos, animales, conceptos). |",
-        "| **We** | **are** | **Nosotros somos / estamos**. |",
-        "| **You** | **are** | **Vosotros sois / estáis** (España) o **Ustedes son / están** (Latinoamérica). |",
-        "| **They** | **are** | **Ellos/Ellas son / están**. |",
-        "",
-        "**Ejemplos:**",
-        "• **I am** a teacher. → **Yo soy** un profesor. (Identidad)",
-        "• **You are** happy. → **Tú estás** feliz. (Estado emocional)",
-        "• **He is** in the kitchen. → **Él está** en la cocina. (Ubicación)",
-        "• **She is** intelligent. → **Ella es** inteligente. (Característica)",
-        "• **It is** a dog. → **Es** un perro. (Identificación)",
-        "• **We are** friends. → **Nosotros somos** amigos. (Relación)",
-        "• **They are** at the cinema. → **Ellos están** en el cine. (Ubicación)",
-        "",
-        "**Nota sobre \"It\":** \"It\" se usa para cosas, animales o ideas. No tiene género.",
-        "• **It is** cold today. (Hace frío hoy → \"El clima\" está frío).",
-        "• **It is** a big house. (Es una casa grande)."
+        {
+          type: 'title',
+          text: 'Tabla de Conjugación y Explicación',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Pronombre (Sujeto)', 'Verbo "To Be"', 'Explicación y Traducción'],
+          rows: [
+            ['I', 'am', 'Yo soy o yo estoy. Ej: Yo soy alto. Yo estoy feliz.'],
+            ['You', 'are', 'Tú eres, tú estás, usted es, usted está. (Forma singular y formal).'],
+            ['He / She / It', 'is', 'Él es / está, Ella es / está, Ello es / está (para objetos, animales, conceptos).'],
+            ['We', 'are', 'Nosotros somos / estamos.'],
+            ['You', 'are', 'Vosotros sois / estáis (España) o Ustedes son / están (Latinoamérica).'],
+            ['They', 'are', 'Ellos/Ellas son / están.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I am', bold: true },
+              { text: ' a teacher. → ' },
+              { text: 'Yo soy', bold: true },
+              { text: ' un profesor. (Identidad)' }
+            ],
+            [
+              { text: 'You are', bold: true },
+              { text: ' happy. → ' },
+              { text: 'Tú estás', bold: true },
+              { text: ' feliz. (Estado emocional)' }
+            ],
+            [
+              { text: 'He is', bold: true },
+              { text: ' in the kitchen. → ' },
+              { text: 'Él está', bold: true },
+              { text: ' en la cocina. (Ubicación)' }
+            ],
+            [
+              { text: 'She is', bold: true },
+              { text: ' intelligent. → ' },
+              { text: 'Ella es', bold: true },
+              { text: ' inteligente. (Característica)' }
+            ],
+            [
+              { text: 'It is', bold: true },
+              { text: ' a dog. → ' },
+              { text: 'Es', bold: true },
+              { text: ' un perro. (Identificación)' }
+            ],
+            [
+              { text: 'We are', bold: true },
+              { text: ' friends. → ' },
+              { text: 'Nosotros somos', bold: true },
+              { text: ' amigos. (Relación)' }
+            ],
+            [
+              { text: 'They are', bold: true },
+              { text: ' at the cinema. → ' },
+              { text: 'Ellos están', bold: true },
+              { text: ' en el cine. (Ubicación)' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Nota sobre "It": ', bold: true },
+            { text: '"It" se usa para cosas, animales o ideas. No tiene género.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'It is', bold: true },
+              { text: ' cold today. (Hace frío hoy → "El clima" está frío).', italic: true }
+            ],
+            [
+              { text: 'It is', bold: true },
+              { text: ' a big house. (Es una casa grande).', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "La Forma Negativa: Negando con \"Not\"",
       explanation: "Para decir que algo no es o no está, simplemente añadimos la palabra \"not\" (no) después del verbo \"To Be\". Es muy común usar contracciones (fusionar el verbo con \"not\") en el lenguaje hablado y escrito informal.",
       examples: [
-        "**Tabla de Conjugación Negativa:**",
-        "",
-        "| Forma Larga (Formal) | Forma Contraída (Común) | Pronunciación |",
-        "| :--- | :--- | :--- |",
-        "| I am **not** | I'm **not** | /aɪm nɒt/ |",
-        "| You are **not** | You **aren't** | /jʊɑːrnt/ |",
-        "| He/She/It is **not** | He/She/It **isn't** | /ˈɪzənt/ |",
-        "| We are **not** | We **aren't** | /wɪɑːrnt/ |",
-        "| You are **not** | You **aren't** | /jʊɑːrnt/ |",
-        "| They are **not** | They **aren't** | /ðeɪɑːrnt/ |",
-        "",
-        "**¡OJO!** La única contracción que es diferente es para \"I\". Decimos **I'm not**. La contracción *ain't* es incorrecta y no debe usarse.",
-        "",
-        "**Ejemplos:**",
-        "• I **am not** tired. / I'm not tired. → Yo no estoy cansado.",
-        "• You **are not** late. / You **aren't** late. → Tú no estás tarde.",
-        "• She **is not** from Italy. / She **isn't** from Italy. → Ella no es de Italia.",
-        "• It **is not** cold. / It **isn't** cold. → No hace frío.",
-        "• We **are not** ready. / We **aren't** ready. → Nosotros no estamos listos."
+        {
+          type: 'title',
+          text: 'Tabla de Conjugación Negativa',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Forma Larga (Formal)', 'Forma Contraída (Común)', 'Pronunciación'],
+          rows: [
+            ['I am not', "I'm not", '/aɪm nɒt/'],
+            ['You are not', "You aren't", '/jʊɑːrnt/'],
+            ['He/She/It is not', "He/She/It isn't", '/ˈɪzənt/'],
+            ['We are not', "We aren't", '/wɪɑːrnt/'],
+            ['You are not', "You aren't", '/jʊɑːrnt/'],
+            ['They are not', "They aren't", '/ðeɪɑːrnt/']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '⚠️ ', emoji: '⚠️' },
+            { text: '¡OJO! ', bold: true },
+            { text: 'La única contracción que es diferente es para "I". Decimos ' },
+            { text: "I'm not", bold: true },
+            { text: '. La contracción ' },
+            { text: "ain't", italic: true },
+            { text: ' es incorrecta y no debe usarse.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I am not tired. / I\'m not tired.', italic: true },
+              { text: ' → Yo no estoy cansado.' }
+            ],
+            [
+              { text: 'You are not late. / You aren\'t late.', italic: true },
+              { text: ' → Tú no estás tarde.' }
+            ],
+            [
+              { text: 'She is not from Italy. / She isn\'t from Italy.', italic: true },
+              { text: ' → Ella no es de Italia.' }
+            ],
+            [
+              { text: 'It is not cold. / It isn\'t cold.', italic: true },
+              { text: ' → No hace frío.' }
+            ],
+            [
+              { text: 'We are not ready. / We aren\'t ready.', italic: true },
+              { text: ' → Nosotros no estamos listos.' }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "La Forma Interrogativa: Haciendo Preguntas",
       explanation: "Hacer preguntas con \"To Be\" es muy fácil. No necesitamos verbos auxiliares como \"do\" o \"does\". Simplemente invertimos el orden: el verbo \"To Be\" va al principio de la oración, seguido del sujeto.",
       examples: [
-        "**Estructura:**",
-        "**`Am / Is / Are` + `Sujeto` + `Complemento` + `?`**",
-        "",
-        "**Tabla de Ejemplos de Preguntas:**",
-        "",
-        "| Pregunta | Posible Respuesta Corta | Traducción de la Pregunta |",
-        "| :--- | :--- | :--- |",
-        "| **Am I** late? | No, you **aren't**. | ¿Estoy tarde (yo)? |",
-        "| **Are you** okay? | Yes, I **am**. | ¿Estás bien? |",
-        "| **Is he** a doctor? | Yes, he **is**. | ¿Es él un doctor? |",
-        "| **Is she** at home? | No, she **isn't**. | ¿Está ella en casa? |",
-        "| **Is it** expensive? | Yes, it **is**. | ¿Es caro? |",
-        "| **Are we** lost? | I think we **are**. | ¿Estamos perdidos? |",
-        "| **Are they** students? | No, they **aren't**. | ¿Son ellos estudiantes? |",
-        "",
-        "**Respuestas Cortas:** Son muy comunes. No repetimos toda la información, solo usamos el pronombre + el verbo (en afirmativo o negativo).",
-        "• **Is Maria sick?** → Yes, **she is**. / No, **she isn't**.",
-        "• **Are Peter and John here?** → Yes, **they are**. / No, **they aren't**."
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: "Am / Is / Are + Sujeto + Complemento + ?",
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Tabla de Ejemplos de Preguntas',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Pregunta', 'Posible Respuesta Corta', 'Traducción de la Pregunta'],
+          rows: [
+            ['Am I late?', "No, you aren't.", '¿Estoy tarde (yo)?'],
+            ['Are you okay?', 'Yes, I am.', '¿Estás bien?'],
+            ['Is he a doctor?', 'Yes, he is.', '¿Es él un doctor?'],
+            ['Is she at home?', "No, she isn't.", '¿Está ella en casa?'],
+            ['Is it expensive?', 'Yes, it is.', '¿Es caro?'],
+            ['Are we lost?', 'I think we are.', '¿Estamos perdidos?'],
+            ['Are they students?', "No, they aren't.", '¿Son ellos estudiantes?']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Respuestas Cortas: ', bold: true },
+            { text: 'Son muy comunes. No repetimos toda la información, solo usamos el pronombre + el verbo (en afirmativo o negativo).' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Is Maria sick?', bold: true },
+              { text: ' → Yes, ' },
+              { text: 'she is', bold: true },
+              { text: '. / No, ' },
+              { text: "she isn't", bold: true },
+              { text: '.' }
+            ],
+            [
+              { text: 'Are Peter and John here?', bold: true },
+              { text: ' → Yes, ' },
+              { text: 'they are', bold: true },
+              { text: '. / No, ' },
+              { text: "they aren't", bold: true },
+              { text: '.' }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

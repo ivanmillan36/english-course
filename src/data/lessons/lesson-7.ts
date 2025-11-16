@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson7: LessonData = {
   id: 7,
@@ -20,131 +20,613 @@ export const lesson7: LessonData = {
       topic: "Artículos en inglés: a / an / the",
       explanation: "En inglés, los **artículos** son palabras que acompañan a los sustantivos para indicar si estamos hablando de **algo general o algo específico**. Hay dos tipos: artículos indefinidos (a/an) y el artículo definido (the).",
       examples: [
-        "**1. Artículos indefinidos (a / an)**",
-        "",
-        "Se usan cuando **mencionamos algo por primera vez** o **no es específico**.",
-        "",
-        "• **'A'** se usa antes de palabras que **empiezan con sonido consonante**.",
-        "• **'An'** se usa antes de palabras que **empiezan con sonido vocal** (a, e, i, o, u).",
-        "",
-        "👉 **Estructura:** `a / an + sustantivo singular contable`",
-        "",
-        "**Ejemplos:**",
-        "• a cat → *un gato*",
-        "• an apple → *una manzana*",
-        "• a university → *una universidad* (empieza con sonido /ju/, no con vocal)",
-        "• an hour → *una hora* (empieza con sonido vocálico /aʊ/)",
-        "",
-        "💡 **Nota:** 'A' y 'an' **solo se usan con sustantivos singulares contables.**",
-        "No se dicen cosas como ❌ *an information* o ❌ *a water*.",
-        "",
-        "**2. Artículo definido (the)**",
-        "",
-        "Se usa cuando hablamos de **algo específico o conocido** por el hablante y el oyente.",
-        "Funciona igual en singular y plural.",
-        "",
-        "**Ejemplos:**",
-        "• The cat is sleeping. → *El gato está durmiendo.*",
-        "• The apples are fresh. → *Las manzanas están frescas.*",
-        "• The sun is bright today. → *El sol brilla hoy.*",
-        "",
-        "💡 **Casos donde no se usa 'the':**",
-        "• Antes de nombres propios: ❌ *The Maria*",
-        "• Antes de idiomas o comidas en general: ❌ *The English is hard*, ✅ *English is hard.*",
-        "• Antes de países (salvo excepciones como *the United States*, *the Netherlands*)."
+        {
+          type: 'title',
+          text: '1. Artículos indefinidos (a / an)',
+          emoji: '🔤',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Se usan cuando ' },
+            { text: 'mencionamos algo por primera vez', bold: true },
+            { text: ' o ' },
+            { text: 'no es específico', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "'A'", bold: true },
+              { text: ' se usa antes de palabras que ' },
+              { text: 'empiezan con sonido consonante', bold: true },
+              { text: '.' }
+            ],
+            [
+              { text: "'An'", bold: true },
+              { text: ' se usa antes de palabras que ' },
+              { text: 'empiezan con sonido vocal', bold: true },
+              { text: ' (a, e, i, o, u).' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '👉 ', emoji: '👉' },
+            { text: 'Estructura: ', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: "a / an + sustantivo singular contable",
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplos:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'a cat', code: true },
+              { text: ' → ' },
+              { text: 'un gato', italic: true }
+            ],
+            [
+              { text: 'an apple', code: true },
+              { text: ' → ' },
+              { text: 'una manzana', italic: true }
+            ],
+            [
+              { text: 'a university', code: true },
+              { text: ' → ' },
+              { text: 'una universidad', italic: true },
+              { text: ' (empieza con sonido /ju/, no con vocal)' }
+            ],
+            [
+              { text: 'an hour', code: true },
+              { text: ' → ' },
+              { text: 'una hora', italic: true },
+              { text: ' (empieza con sonido vocálico /aʊ/)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota: ', bold: true },
+            { text: "'A' y 'an' " },
+            { text: 'solo se usan con sustantivos singulares contables', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'No se dicen cosas como ' },
+            { text: '❌ ', emoji: '❌' },
+            { text: 'an information', italic: true },
+            { text: ' o ' },
+            { text: '❌ ', emoji: '❌' },
+            { text: 'a water', italic: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: '2. Artículo definido (the)',
+          emoji: '🎯',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Se usa cuando hablamos de ' },
+            { text: 'algo específico o conocido', bold: true },
+            { text: ' por el hablante y el oyente.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Funciona igual en singular y plural.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplos:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The cat is sleeping.', italic: true },
+              { text: ' → ' },
+              { text: 'El gato está durmiendo.', italic: true }
+            ],
+            [
+              { text: 'The apples are fresh.', italic: true },
+              { text: ' → ' },
+              { text: 'Las manzanas están frescas.', italic: true }
+            ],
+            [
+              { text: 'The sun is bright today.', italic: true },
+              { text: ' → ' },
+              { text: 'El sol brilla hoy.', italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Casos donde no se usa \'the\':', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Antes de nombres propios: ' },
+              { text: '❌ ', emoji: '❌' },
+              { text: 'The Maria', italic: true }
+            ],
+            [
+              { text: 'Antes de idiomas o comidas en general: ' },
+              { text: '❌ ', emoji: '❌' },
+              { text: 'The English is hard', italic: true },
+              { text: ', ' },
+              { text: '✅ ', emoji: '✅' },
+              { text: 'English is hard.', italic: true }
+            ],
+            [
+              { text: 'Antes de países (salvo excepciones como ' },
+              { text: 'the United States', italic: true },
+              { text: ', ' },
+              { text: 'the Netherlands', italic: true },
+              { text: ').' }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Plurales regulares",
       explanation: "La mayoría de los sustantivos forman el plural **añadiendo una terminación al final**. Sin embargo, hay pequeñas variaciones según cómo termina la palabra.",
       examples: [
-        "**Reglas principales:**",
-        "",
-        "**1. Palabras que terminan en consonante + nada especial:**",
-        "➜ Agregamos **-s**",
-        "• cat → cats",
-        "• car → cars",
-        "• table → tables",
-        "",
-        "**2. Palabras que terminan en -s, -ss, -sh, -ch, -x, o -z:**",
-        "➜ Agregamos **-es**",
-        "• bus → buses",
-        "• box → boxes",
-        "• watch → watches",
-        "",
-        "**3. Palabras que terminan en consonante + 'y':**",
-        "➜ Cambiamos la 'y' por 'ies'",
-        "• city → cities",
-        "• baby → babies",
-        "",
-        "**4. Palabras que terminan en vocal + 'y':**",
-        "➜ Solo agregamos 's'",
-        "• boy → boys",
-        "• day → days",
-        "",
-        "💡 **Importante:**",
-        "En inglés **no se agrega un artículo plural indefinido** (no existe *a cats*). Solo se usa **'some'** o **nada**:",
-        "> I have **some cats**. / I have **cats**."
+        {
+          type: 'title',
+          text: 'Reglas principales',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '1. Palabras que terminan en consonante + nada especial:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '➜ Agregamos ', emoji: '➜' },
+            { text: '-s', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'cat', code: true },
+              { text: ' → ' },
+              { text: 'cats', code: true }
+            ],
+            [
+              { text: 'car', code: true },
+              { text: ' → ' },
+              { text: 'cars', code: true }
+            ],
+            [
+              { text: 'table', code: true },
+              { text: ' → ' },
+              { text: 'tables', code: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '2. Palabras que terminan en -s, -ss, -sh, -ch, -x, o -z:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '➜ Agregamos ', emoji: '➜' },
+            { text: '-es', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'bus', code: true },
+              { text: ' → ' },
+              { text: 'buses', code: true }
+            ],
+            [
+              { text: 'box', code: true },
+              { text: ' → ' },
+              { text: 'boxes', code: true }
+            ],
+            [
+              { text: 'watch', code: true },
+              { text: ' → ' },
+              { text: 'watches', code: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '3. Palabras que terminan en consonante + \'y\':', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '➜ Cambiamos la \'y\' por ', emoji: '➜' },
+            { text: '\'ies\'', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'city', code: true },
+              { text: ' → ' },
+              { text: 'cities', code: true }
+            ],
+            [
+              { text: 'baby', code: true },
+              { text: ' → ' },
+              { text: 'babies', code: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '4. Palabras que terminan en vocal + \'y\':', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '➜ Solo agregamos ', emoji: '➜' },
+            { text: '\'s\'', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'boy', code: true },
+              { text: ' → ' },
+              { text: 'boys', code: true }
+            ],
+            [
+              { text: 'day', code: true },
+              { text: ' → ' },
+              { text: 'days', code: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Importante: ', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'En inglés ' },
+            { text: 'no se agrega un artículo plural indefinido', bold: true },
+            { text: ' (no existe ' },
+            { text: 'a cats', italic: true },
+            { text: '). Solo se usa ' },
+            { text: "'some'", bold: true },
+            { text: ' o ' },
+            { text: 'nada', bold: true },
+            { text: ':' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: "I have some cats. / I have cats.",
+          inline: true
+        } as CodeData
       ]
     },
     {
       topic: "Plurales irregulares",
       explanation: "Algunos sustantivos **no siguen las reglas regulares** y cambian completamente su forma en plural. Estos son muy frecuentes, por lo que conviene memorizarlos.",
       examples: [
-        "**Tabla de plurales irregulares comunes:**",
-        "",
-        "| Singular | Plural   | Ejemplo                               |",
-        "| -------- | -------- | ------------------------------------- |",
-        "| man      | men      | The men are working.                  |",
-        "| woman    | women    | The women are doctors.                |",
-        "| child    | children | There are three children in the park. |",
-        "| foot     | feet     | My feet hurt.                         |",
-        "| tooth    | teeth    | I brush my teeth every day.           |",
-        "| person   | people   | People are friendly here.             |",
-        "",
-        "**Ejemplos en contexto:**",
-        "• The **men** are working. → *Los hombres están trabajando.*",
-        "• The **women** are doctors. → *Las mujeres son doctoras.*",
-        "• There are three **children** in the park. → *Hay tres niños en el parque.*",
-        "• My **feet** hurt. → *Me duelen los pies.*",
-        "• I brush my **teeth** every day. → *Me lavo los dientes todos los días.*",
-        "• **People** are friendly here. → *La gente es amable aquí.*",
-        "",
-        "💡 **Tip:**",
-        "La palabra **'people'** es plural de 'person', aunque muchas veces se usa como plural general ('personas' en español)."
+        {
+          type: 'title',
+          text: 'Tabla de plurales irregulares comunes',
+          emoji: '📊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Singular', 'Plural', 'Ejemplo'],
+          rows: [
+            ['man', 'men', 'The men are working.'],
+            ['woman', 'women', 'The women are doctors.'],
+            ['child', 'children', 'There are three children in the park.'],
+            ['foot', 'feet', 'My feet hurt.'],
+            ['tooth', 'teeth', 'I brush my teeth every day.'],
+            ['person', 'people', 'People are friendly here.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplos en contexto:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The ', italic: true },
+              { text: 'men', bold: true, italic: true },
+              { text: ' are working.', italic: true },
+              { text: ' → ' },
+              { text: 'Los hombres están trabajando.', italic: true }
+            ],
+            [
+              { text: 'The ', italic: true },
+              { text: 'women', bold: true, italic: true },
+              { text: ' are doctors.', italic: true },
+              { text: ' → ' },
+              { text: 'Las mujeres son doctoras.', italic: true }
+            ],
+            [
+              { text: 'There are three ', italic: true },
+              { text: 'children', bold: true, italic: true },
+              { text: ' in the park.', italic: true },
+              { text: ' → ' },
+              { text: 'Hay tres niños en el parque.', italic: true }
+            ],
+            [
+              { text: 'My ', italic: true },
+              { text: 'feet', bold: true, italic: true },
+              { text: ' hurt.', italic: true },
+              { text: ' → ' },
+              { text: 'Me duelen los pies.', italic: true }
+            ],
+            [
+              { text: 'I brush my ', italic: true },
+              { text: 'teeth', bold: true, italic: true },
+              { text: ' every day.', italic: true },
+              { text: ' → ' },
+              { text: 'Me lavo los dientes todos los días.', italic: true }
+            ],
+            [
+              { text: '', italic: true },
+              { text: 'People', bold: true, italic: true },
+              { text: ' are friendly here.', italic: true },
+              { text: ' → ' },
+              { text: 'La gente es amable aquí.', italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Tip: ', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'La palabra ' },
+            { text: "'people'", bold: true },
+            { text: ' es plural de \'person\', aunque muchas veces se usa como plural general (\'personas\' en español).' }
+          ]
+        } as ParagraphData
       ]
     },
     {
       topic: "El Genitivo Sajón ('s) — Posesión",
       explanation: "El **genitivo sajón** es una forma muy natural en inglés de expresar **pertenencia** o **relación**. En español usamos 'de': *el libro de María*. En inglés, cambiamos el orden: *Maria's book* → 'el libro de María'.",
       examples: [
-        "**Estructura:**",
-        "👉 `Sujeto + 's + objeto poseído`",
-        "",
-        "**Ejemplos básicos:**",
-        "• Maria's book → *el libro de María*",
-        "• The company's website → *el sitio web de la empresa*",
-        "• My brother's car → *el auto de mi hermano*",
-        "",
-        "**Reglas especiales:**",
-        "",
-        "**1. Si el sustantivo termina en -s (como 'James'):**",
-        "Se puede escribir de dos formas:",
-        "• James's car ✅ o James' car ✅ (ambas son aceptadas).",
-        "",
-        "**2. Si hay varios poseedores:**",
-        "El apóstrofo va **después de la 's' plural**:",
-        "• The teachers' lounge → *el salón de los profesores*.",
-        "",
-        "**3. También puede encadenarse para varias posesiones:**",
-        "• My sister's friend's house → *la casa del amigo de mi hermana*.",
-        "",
-        "💡 **Comparación con 'of':**",
-        "Usamos ''s' generalmente con **personas, animales o grupos vivos**.",
-        "Usamos **of** con **cosas o conceptos inanimados**:",
-        "",
-        "> The door of the car ✅ / The car's door ✅ (ambos posibles)",
-        "> The name of the book ✅ / ❌ The book's name (poco común)"
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: "Sujeto + 's + objeto poseído",
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Ejemplos básicos:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "Maria's book", code: true },
+              { text: ' → ' },
+              { text: 'el libro de María', italic: true }
+            ],
+            [
+              { text: "The company's website", code: true },
+              { text: ' → ' },
+              { text: 'el sitio web de la empresa', italic: true }
+            ],
+            [
+              { text: "My brother's car", code: true },
+              { text: ' → ' },
+              { text: 'el auto de mi hermano', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Reglas especiales',
+          emoji: '📝',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '1. Si el sustantivo termina en -s (como \'James\'):', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Se puede escribir de dos formas:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "James's car", code: true },
+              { text: ' ' },
+              { text: '✅', emoji: '✅' },
+              { text: ' o ' },
+              { text: "James' car", code: true },
+              { text: ' ' },
+              { text: '✅', emoji: '✅' },
+              { text: ' (ambas son aceptadas).' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '2. Si hay varios poseedores:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'El apóstrofe va ' },
+            { text: 'después de la \'s\' plural', bold: true },
+            { text: ':' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "The teachers' lounge", code: true },
+              { text: ' → ' },
+              { text: 'el salón de los profesores', italic: true },
+              { text: '.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '3. También puede encadenarse para varias posesiones:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "My sister's friend's house", code: true },
+              { text: ' → ' },
+              { text: 'la casa del amigo de mi hermana', italic: true },
+              { text: '.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Comparación con \'of\':', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Usamos \'\'s\' generalmente con ' },
+            { text: 'personas, animales o grupos vivos', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Usamos ' },
+            { text: 'of', bold: true },
+            { text: ' con ' },
+            { text: 'cosas o conceptos inanimados', bold: true },
+            { text: ':' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The door of the car', code: true },
+              { text: ' ' },
+              { text: '✅', emoji: '✅' },
+              { text: ' / ' },
+              { text: "The car's door", code: true },
+              { text: ' ' },
+              { text: '✅', emoji: '✅' },
+              { text: ' (ambos posibles)' }
+            ],
+            [
+              { text: 'The name of the book', code: true },
+              { text: ' ' },
+              { text: '✅', emoji: '✅' },
+              { text: ' / ' },
+              { text: "❌ ", emoji: '❌' },
+              { text: "The book's name", code: true },
+              { text: ' (poco común)' }
+            ]
+          ]
+        } as ListData
       ]
     }
   ],

@@ -1,4 +1,4 @@
-import type { LessonData } from '../lessons';
+import type { LessonData, TableData, TitleData, ParagraphData, CodeData, ListData, SeparatorData, TextPart } from '../lessons';
 
 export const lesson8: LessonData = {
   id: 8,
@@ -20,131 +20,372 @@ export const lesson8: LessonData = {
       topic: "Adjetivos posesivos (my, your, his, her, its, our, their)",
       explanation: "Los **adjetivos posesivos** se usan **para mostrar a quién pertenece algo**, y **siempre acompañan a un sustantivo**. No se usan solos: **necesitan un nombre después**.",
       examples: [
-        "**Estructura:**",
-        "👉 `adjetivo posesivo + sustantivo`",
-        "",
-        "**Lista completa:**",
-        "",
-        "| Persona | Adjetivo posesivo | Ejemplo                       |",
-        "| ------- | ----------------- | ----------------------------- |",
-        "| I       | my                | This is **my** house.         |",
-        "| You     | your              | Where is **your** bag?        |",
-        "| He      | his               | **His** car is fast.          |",
-        "| She     | her               | I like **her** dress.         |",
-        "| It      | its               | The dog wagged **its** tail.  |",
-        "| We      | our               | **Our** teacher is kind.      |",
-        "| They    | their             | **Their** children are smart. |",
-        "",
-        "💡 **Importante:**",
-        "• 'Its' **no lleva apóstrofe** (no confundir con 'it's' = *it is*).",
-        "• Se usa 'its' solo para **animales o cosas**, no personas.",
-        "",
-        "**Ejemplos:**",
-        "• My phone is new. → *Mi teléfono es nuevo.*",
-        "• Their house is big. → *Su casa es grande.*",
-        "• The cat is licking its paw. → *El gato está lamiendo su pata.*"
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'adjetivo posesivo + sustantivo',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Lista completa',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Persona', 'Adjetivo posesivo', 'Ejemplo'],
+          rows: [
+            ['I', 'my', 'This is my house.'],
+            ['You', 'your', 'Where is your bag?'],
+            ['He', 'his', 'His car is fast.'],
+            ['She', 'her', 'I like her dress.'],
+            ['It', 'its', 'The dog wagged its tail.'],
+            ['We', 'our', 'Our teacher is kind.'],
+            ['They', 'their', 'Their children are smart.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Importante: ', bold: true },
+            { text: "'Its' " },
+            { text: 'no lleva apóstrofe', bold: true },
+            { text: ' (no confundir con ' },
+            { text: "'it's'", code: true },
+            { text: ' = ' },
+            { text: 'it is', italic: true },
+            { text: ').' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'Se usa ' },
+            { text: "'its'", code: true },
+            { text: ' solo para ' },
+            { text: 'animales o cosas', bold: true },
+            { text: ', no personas.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Ejemplos:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'My phone is new.', italic: true },
+              { text: ' → ' },
+              { text: 'Mi teléfono es nuevo.', italic: true }
+            ],
+            [
+              { text: 'Their house is big.', italic: true },
+              { text: ' → ' },
+              { text: 'Su casa es grande.', italic: true }
+            ],
+            [
+              { text: 'The cat is licking its paw.', italic: true },
+              { text: ' → ' },
+              { text: 'El gato está lamiendo su pata.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Pronombres posesivos (mine, yours, his, hers, its, ours, theirs)",
       explanation: "Los **pronombres posesivos** **reemplazan** al sustantivo para **evitar repetirlo**. A diferencia de los adjetivos posesivos, **no van seguidos de un nombre**.",
       examples: [
-        "**Estructura:**",
-        "👉 `pronombre posesivo` (sin sustantivo después)",
-        "",
-        "**Lista completa:**",
-        "",
-        "| Persona | Pronombre posesivo | Ejemplo                   |",
-        "| ------- | ------------------ | ------------------------- |",
-        "| I       | mine               | The book is **mine**.     |",
-        "| You     | yours              | This seat is **yours**.   |",
-        "| He      | his                | That jacket is **his**.   |",
-        "| She     | hers               | The blue one is **hers**. |",
-        "| It      | its                | (raro, casi no se usa)    |",
-        "| We      | ours               | The victory was **ours**. |",
-        "| They    | theirs             | The house is **theirs**.  |",
-        "",
-        "💡 **Comparación clave:**",
-        "",
-        "| Adjetivo posesivo | Pronombre posesivo | Ejemplo                                                |",
-        "| ----------------- | ------------------ | ------------------------------------------------------ |",
-        "| my book           | mine               | This is **my book**. / This book is **mine**.          |",
-        "| your car          | yours              | That is **your car**. / That car is **yours**.         |",
-        "| their house       | theirs             | **Their** house is big. / The big house is **theirs**. |",
-        "",
-        "**Ejemplos adicionales:**",
-        "• The blue jacket is mine. → *La chaqueta azul es mía.*",
-        "• This seat is yours. → *Este asiento es tuyo.*",
-        "• The victory was ours. → *La victoria fue nuestra.*"
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'pronombre posesivo (sin sustantivo después)',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Lista completa',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Persona', 'Pronombre posesivo', 'Ejemplo'],
+          rows: [
+            ['I', 'mine', 'The book is mine.'],
+            ['You', 'yours', 'This seat is yours.'],
+            ['He', 'his', 'That jacket is his.'],
+            ['She', 'hers', 'The blue one is hers.'],
+            ['It', 'its', '(raro, casi no se usa)'],
+            ['We', 'ours', 'The victory was ours.'],
+            ['They', 'theirs', 'The house is theirs.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Comparación clave:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'table',
+          headers: ['Adjetivo posesivo', 'Pronombre posesivo', 'Ejemplo'],
+          rows: [
+            ['my book', 'mine', 'This is my book. / This book is mine.'],
+            ['your car', 'yours', 'That is your car. / That car is yours.'],
+            ['their house', 'theirs', 'Their house is big. / The big house is theirs.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Ejemplos adicionales:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'The blue jacket is mine.', italic: true },
+              { text: ' → ' },
+              { text: 'La chaqueta azul es mía.', italic: true }
+            ],
+            [
+              { text: 'This seat is yours.', italic: true },
+              { text: ' → ' },
+              { text: 'Este asiento es tuyo.', italic: true }
+            ],
+            [
+              { text: 'The victory was ours.', italic: true },
+              { text: ' → ' },
+              { text: 'La victoria fue nuestra.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Pronombres de objeto (me, you, him, her, it, us, them)",
       explanation: "Los **pronombres de objeto** se usan para **reemplazar al sustantivo que recibe la acción** del verbo. Mientras que los **pronombres de sujeto** (I, you, he, she, etc.) hacen la acción, los **de objeto** la reciben.",
       examples: [
-        "**Estructura:**",
-        "👉 `Sujeto + verbo + pronombre de objeto`",
-        "",
-        "**Lista completa:**",
-        "",
-        "| Sujeto | Objeto | Ejemplo                     |",
-        "| ------ | ------ | --------------------------- |",
-        "| I      | me     | He loves **me**.            |",
-        "| You    | you    | I see **you**.              |",
-        "| He     | him    | She knows **him**.          |",
-        "| She    | her    | I called **her** yesterday. |",
-        "| It     | it     | We found **it**.            |",
-        "| We     | us     | They invited **us**.        |",
-        "| They   | them   | I saw **them** at the park. |",
-        "",
-        "💡 **Ejemplos comparativos:**",
-        "• **He** calls **me** every day. → *Él me llama todos los días.*",
-        "• **We** love **them** very much. → *Los amamos mucho.*",
-        "• **I** gave **her** the keys. → *Le di las llaves.*",
-        "",
-        "💬 **Nota práctica:**",
-        "En inglés, los pronombres de objeto **siempre van después del verbo o preposición**, nunca antes:",
-        "",
-        "> ✅ She is looking at **him**.",
-        "> ❌ She is looking **he**."
+        {
+          type: 'title',
+          text: 'Estructura',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'Sujeto + verbo + pronombre de objeto',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Lista completa',
+          emoji: '📋',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Sujeto', 'Objeto', 'Ejemplo'],
+          rows: [
+            ['I', 'me', 'He loves me.'],
+            ['You', 'you', 'I see you.'],
+            ['He', 'him', 'She knows him.'],
+            ['She', 'her', 'I called her yesterday.'],
+            ['It', 'it', 'We found it.'],
+            ['We', 'us', 'They invited us.'],
+            ['They', 'them', 'I saw them at the park.']
+          ]
+        } as TableData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Ejemplos comparativos:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'He', bold: true },
+              { text: ' calls ' },
+              { text: 'me', bold: true },
+              { text: ' every day.', italic: true },
+              { text: ' → ' },
+              { text: 'Él me llama todos los días.', italic: true }
+            ],
+            [
+              { text: 'We', bold: true },
+              { text: ' love ' },
+              { text: 'them', bold: true },
+              { text: ' very much.', italic: true },
+              { text: ' → ' },
+              { text: 'Los amamos mucho.', italic: true }
+            ],
+            [
+              { text: 'I', bold: true },
+              { text: ' gave ' },
+              { text: 'her', bold: true },
+              { text: ' the keys.', italic: true },
+              { text: ' → ' },
+              { text: 'Le di las llaves.', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💬 ', emoji: '💬' },
+            { text: 'Nota práctica: ', bold: true },
+            { text: 'En inglés, los pronombres de objeto ' },
+            { text: 'siempre van después del verbo o preposición', bold: true },
+            { text: ', nunca antes:' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '✅ ', emoji: '✅' },
+              { text: 'She is looking at him.', italic: true }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: 'She is looking he.', italic: true }
+            ]
+          ]
+        } as ListData
       ]
     },
     {
       topic: "Orden del adjetivo — Cómo ordenar varios adjetivos",
       explanation: "En inglés, los **adjetivos van siempre antes del sustantivo** (a diferencia del español, donde van después). Además, cuando hay **más de un adjetivo**, existe un **orden específico** que los hablantes nativos siguen de manera natural.",
       examples: [
-        "**Estructura general:**",
-        "👉 `Cantidad → Opinión → Tamaño → Edad → Forma → Color → Origen → Material → Propósito + Sustantivo`",
-        "",
-        "**Ejemplo completo:**",
-        "> a beautiful small old round red Italian wooden dining table",
-        "",
-        "(una **hermosa mesa de comedor italiana, redonda, vieja, pequeña y de madera roja**)",
-        "",
-        "No es obligatorio usar tantos adjetivos, pero **mantener el orden** hace que la frase suene natural.",
-        "",
-        "**Ejemplos más comunes:**",
-        "• a big red car → *un auto rojo grande*",
-        "• an interesting new movie → *una película nueva interesante*",
-        "• a small black dog → *un perro negro pequeño*",
-        "• two beautiful Spanish paintings → *dos pinturas españolas hermosas*",
-        "",
-        "💡 **Consejo:**",
-        "Si no estás seguro del orden, pon primero el **adjetivo más general (opinión)** y luego los más **concretos (color, tamaño, material)**.",
-        "",
-        "**Tabla de orden detallada:**",
-        "",
-        "| Posición | Tipo      | Ejemplo         |",
-        "| -------- | --------- | --------------- |",
-        "| 1        | Cantidad  | two, three, one |",
-        "| 2        | Opinión   | beautiful, nice |",
-        "| 3        | Tamaño    | big, small      |",
-        "| 4        | Edad      | old, new        |",
-        "| 5        | Forma     | round, square   |",
-        "| 6        | Color     | red, blue       |",
-        "| 7        | Origen    | Italian, French |",
-        "| 8        | Material  | wooden, metal   |",
-        "| 9        | Propósito | dining, sports  |"
+        {
+          type: 'title',
+          text: 'Estructura general',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'code',
+          code: 'Cantidad → Opinión → Tamaño → Edad → Forma → Color → Origen → Material → Propósito + Sustantivo',
+          inline: true
+        } as CodeData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Ejemplo completo:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: 'a beautiful small old round red Italian wooden dining table',
+          inline: false
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '(una ', italic: true },
+            { text: 'hermosa mesa de comedor italiana, redonda, vieja, pequeña y de madera roja', bold: true, italic: true },
+            { text: ')', italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'No es obligatorio usar tantos adjetivos, pero ' },
+            { text: 'mantener el orden', bold: true },
+            { text: ' hace que la frase suene natural.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Ejemplos más comunes:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'a big red car', italic: true },
+              { text: ' → ' },
+              { text: 'un auto rojo grande', italic: true }
+            ],
+            [
+              { text: 'an interesting new movie', italic: true },
+              { text: ' → ' },
+              { text: 'una película nueva interesante', italic: true }
+            ],
+            [
+              { text: 'a small black dog', italic: true },
+              { text: ' → ' },
+              { text: 'un perro negro pequeño', italic: true }
+            ],
+            [
+              { text: 'two beautiful Spanish paintings', italic: true },
+              { text: ' → ' },
+              { text: 'dos pinturas españolas hermosas', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Consejo: ', bold: true },
+            { text: 'Si no estás seguro del orden, pon primero el ' },
+            { text: 'adjetivo más general (opinión)', bold: true },
+            { text: ' y luego los más ' },
+            { text: 'concretos (color, tamaño, material)', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Tabla de orden detallada',
+          emoji: '📊',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Posición', 'Tipo', 'Ejemplo'],
+          rows: [
+            ['1', 'Cantidad', 'two, three, one'],
+            ['2', 'Opinión', 'beautiful, nice'],
+            ['3', 'Tamaño', 'big, small'],
+            ['4', 'Edad', 'old, new'],
+            ['5', 'Forma', 'round, square'],
+            ['6', 'Color', 'red, blue'],
+            ['7', 'Origen', 'Italian, French'],
+            ['8', 'Material', 'wooden, metal'],
+            ['9', 'Propósito', 'dining, sports']
+          ]
+        } as TableData
       ]
     }
   ],
