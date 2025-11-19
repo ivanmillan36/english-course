@@ -10,6 +10,7 @@ export const lesson14: LessonData = {
   learningPoints: [
     "Formar y usar los comparativos con adjetivos cortos, largos e irregulares",
     "Expresar igualdad o diferencia entre cosas o personas con 'as...as'",
+    "Usar 'rather than' y 'would rather' para expresar preferencias y alternativas",
     "Formar y usar los superlativos correctamente con 'the + -est' y 'the most'",
     "Distinguir cuándo usar 'more', '-er', 'most' y '-est' según el tipo de adjetivo",
     "Reconocer y usar correctamente las formas irregulares (better, best, worse, worst)",
@@ -586,6 +587,327 @@ export const lesson14: LessonData = {
               { text: 'as sunny as', bold: true },
               { text: ' yesterday!', italic: true },
               { text: ' (¡Está tan soleado como ayer!)' }
+            ]
+          ]
+        } as ListData
+      ]
+    },
+    {
+      topic: "Uso de 'rather' en comparaciones",
+      explanation: "**'Rather'** es una palabra muy útil en inglés que se usa principalmente para expresar **preferencias** y **alternativas** en comparaciones. La estructura más común es **'rather than'**, que significa 'en lugar de' o 'más bien que'. También se usa **'would rather'** para expresar preferencias personales.",
+      examples: [
+        {
+          type: 'title',
+          text: '"Rather than" - Expresar preferencia o alternativa',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: "'Rather than'", bold: true },
+            { text: ' se usa para indicar que ' },
+            { text: 'preferimos una cosa sobre otra', bold: true },
+            { text: ' o para mostrar una ' },
+            { text: 'alternativa', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: 'Subject + verb + rather than + alternative',
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Significado: ', bold: true },
+            { text: 'En lugar de / Más bien que' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos con "rather than"',
+          emoji: '📘',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I prefer tea ', italic: true },
+              { text: 'rather than', bold: true },
+              { text: ' coffee.', italic: true },
+              { text: ' (Prefiero té en lugar de café.)' }
+            ],
+            [
+              { text: 'She decided to walk ', italic: true },
+              { text: 'rather than', bold: true },
+              { text: ' take the bus.', italic: true },
+              { text: ' (Ella decidió caminar en lugar de tomar el autobús.)' }
+            ],
+            [
+              { text: 'I would like to stay home ', italic: true },
+              { text: 'rather than', bold: true },
+              { text: ' go out tonight.', italic: true },
+              { text: ' (Preferiría quedarme en casa en lugar de salir esta noche.)' }
+            ],
+            [
+              { text: 'He chose to study ', italic: true },
+              { text: 'rather than', bold: true },
+              { text: ' watch TV.', italic: true },
+              { text: ' (Él eligió estudiar en lugar de ver televisión.)' }
+            ],
+            [
+              { text: 'We should save money ', italic: true },
+              { text: 'rather than', bold: true },
+              { text: ' spend it all.', italic: true },
+              { text: ' (Deberíamos ahorrar dinero en lugar de gastarlo todo.)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '🔑 ', emoji: '🔑' },
+            { text: 'Nota importante: ', bold: true },
+            { text: "Después de 'rather than' puedes usar un verbo en infinitivo (to + verbo) o un gerundio (-ing), dependiendo del contexto. Ambas formas son correctas." }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: '"Would rather" - Expresar preferencias personales',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: "'Would rather'", bold: true },
+            { text: ' se usa para expresar ' },
+            { text: 'preferencias personales', bold: true },
+            { text: '. Significa "preferiría" o "preferiría más".' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: 'Subject + would rather + verb (infinitive without "to") + than + alternative',
+          inline: true
+        } as CodeData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Importante: ', bold: true },
+            { text: "Después de 'would rather' NO se usa 'to' antes del verbo." }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Ejemplos con "would rather"',
+          emoji: '📘',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I ', italic: true },
+              { text: 'would rather', bold: true },
+              { text: ' stay home ', italic: true },
+              { text: 'than', bold: true },
+              { text: ' go to the party.', italic: true },
+              { text: ' (Preferiría quedarme en casa que ir a la fiesta.)' }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: 'would rather', bold: true },
+              { text: ' read a book ', italic: true },
+              { text: 'than', bold: true },
+              { text: ' watch a movie.', italic: true },
+              { text: ' (Ella preferiría leer un libro que ver una película.)' }
+            ],
+            [
+              { text: 'We ', italic: true },
+              { text: 'would rather', bold: true },
+              { text: ' eat Italian food ', italic: true },
+              { text: 'than', bold: true },
+              { text: ' Chinese food.', italic: true },
+              { text: ' (Preferiríamos comer comida italiana que comida china.)' }
+            ],
+            [
+              { text: 'They ', italic: true },
+              { text: 'would rather', bold: true },
+              { text: ' travel by train ', italic: true },
+              { text: 'than', bold: true },
+              { text: ' by plane.', italic: true },
+              { text: ' (Ellos preferirían viajar en tren que en avión.)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '⚠️ ', emoji: '⚠️' },
+            { text: 'Errores comunes:', bold: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: 'I would rather ', italic: true },
+              { text: 'to go', bold: true },
+              { text: ' home.', italic: true }
+            ],
+            [
+              { text: '✅ ', emoji: '✅' },
+              { text: 'I would rather ', italic: true },
+              { text: 'go', bold: true },
+              { text: ' home.', italic: true },
+              { text: ' (No se usa "to" después de "would rather")' }
+            ],
+            [
+              { text: '❌ ', emoji: '❌' },
+              { text: 'I would ', italic: true },
+              { text: 'rather to', bold: true },
+              { text: ' study.', italic: true }
+            ],
+            [
+              { text: '✅ ', emoji: '✅' },
+              { text: 'I would ', italic: true },
+              { text: 'rather study', bold: true },
+              { text: '.', italic: true },
+              { text: ' (No se usa "to" después de "would rather")' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: '"Rather" como adverbio de grado',
+          emoji: '🔧',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: "'Rather'", bold: true },
+            { text: ' también puede usarse como ' },
+            { text: 'adverbio', bold: true },
+            { text: ' para expresar un ' },
+            { text: 'grado moderado', bold: true },
+            { text: ', similar a "bastante" o "algo" en español.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'It\'s ', italic: true },
+              { text: 'rather', bold: true },
+              { text: ' cold today.', italic: true },
+              { text: ' (Hace bastante frío hoy.)' }
+            ],
+            [
+              { text: 'She is ', italic: true },
+              { text: 'rather', bold: true },
+              { text: ' intelligent.', italic: true },
+              { text: ' (Ella es bastante inteligente.)' }
+            ],
+            [
+              { text: 'That movie was ', italic: true },
+              { text: 'rather', bold: true },
+              { text: ' boring.', italic: true },
+              { text: ' (Esa película fue bastante aburrida.)' }
+            ],
+            [
+              { text: 'The test was ', italic: true },
+              { text: 'rather', bold: true },
+              { text: ' difficult.', italic: true },
+              { text: ' (El examen fue bastante difícil.)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '🔑 ', emoji: '🔑' },
+            { text: 'Uso: ', bold: true },
+            { text: "'Rather' como adverbio se coloca antes del adjetivo y expresa un grado moderado, más fuerte que 'a bit' pero menos fuerte que 'very'." }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Resumen: Diferencia entre "rather than" y "would rather"',
+          emoji: '💡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'table',
+          headers: ['Estructura', 'Uso', 'Ejemplo'],
+          rows: [
+            ['rather than', 'Expresar alternativa o preferencia en general', 'I prefer tea rather than coffee.'],
+            ['would rather...than', 'Expresar preferencia personal específica', 'I would rather stay home than go out.'],
+            ['rather + adjetivo', 'Expresar grado moderado (bastante)', 'It\'s rather cold today.']
+          ]
+        } as TableData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Ejemplos en contexto:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Conversación 1:', bold: true }
+            ],
+            [
+              { text: 'A: ', bold: true },
+              { text: 'Would you like to go to the cinema or stay home?', italic: true }
+            ],
+            [
+              { text: 'B: ', bold: true },
+              { text: 'I ', italic: true },
+              { text: 'would rather', bold: true },
+              { text: ' stay home ', italic: true },
+              { text: 'than', bold: true },
+              { text: ' go to the cinema.', italic: true },
+              { text: ' (Preferiría quedarme en casa que ir al cine.)' }
+            ],
+            [
+              { text: 'Conversación 2:', bold: true }
+            ],
+            [
+              { text: 'A: ', bold: true },
+              { text: 'How was the exam?', italic: true }
+            ],
+            [
+              { text: 'B: ', bold: true },
+              { text: 'It was ', italic: true },
+              { text: 'rather', bold: true },
+              { text: ' difficult, but I think I passed.', italic: true },
+              { text: ' (Fue bastante difícil, pero creo que aprobé.)' }
+            ],
+            [
+              { text: 'Conversación 3:', bold: true }
+            ],
+            [
+              { text: 'A: ', bold: true },
+              { text: 'Do you want to drive or take the train?', italic: true }
+            ],
+            [
+              { text: 'B: ', bold: true },
+              { text: 'I prefer to take the train ', italic: true },
+              { text: 'rather than', bold: true },
+              { text: ' drive.', italic: true },
+              { text: ' (Prefiero tomar el tren en lugar de conducir.)' }
             ]
           ]
         } as ListData
