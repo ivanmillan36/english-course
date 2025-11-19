@@ -183,13 +183,17 @@ export const lesson19: LessonData = {
         } as ParagraphData,
         {
           type: 'table',
-          headers: ['Estilo directo', 'Reported Speech', 'Cambio aplicado'],
+          headers: ['Estilo directo', 'Reported Speech', 'Cambio aplicado', 'Traducción'],
           rows: [
-            ['"I am tired."', 'He said he was tired.', 'Presente → Pasado (am → was)'],
-            ['"I work here."', 'He said he worked there.', 'Presente → Pasado (work → worked)'],
-            ['"I have finished."', 'He said he had finished.', 'Presente Perfecto → Pasado Perfecto'],
-            ['"I will go."', 'He said he would go.', 'Futuro → Condicional (will → would)'],
-            ['"I can swim."', 'He said he could swim.', 'Presente → Pasado (can → could)']
+            ['"I am tired."', 'He said he was tired.', 'Presente → Pasado (am → was)', '"Estoy cansado." → Dijo que estaba cansado.'],
+            ['"I work here."', 'He said he worked there.', 'Presente → Pasado (work → worked)', '"Trabajo aquí." → Dijo que trabajaba allí.'],
+            ['"I went home."', 'He said he had gone home.', 'Pasado → Pasado Perfecto (went → had gone)', '"Fui a casa." → Dijo que había ido a casa.'],
+            ['"I was studying."', 'He said he had been studying.', 'Pasado Continuo → Pasado Perfecto Continuo', '"Estaba estudiando." → Dijo que había estado estudiando.'],
+            ['"I have finished."', 'He said he had finished.', 'Presente Perfecto → Pasado Perfecto', '"He terminado." → Dijo que había terminado.'],
+            ['"I will go."', 'He said he would go.', 'Futuro → Condicional (will → would)', '"Iré." → Dijo que iría.'],
+            ['"I can swim."', 'He said he could swim.', 'Presente → Pasado (can → could)', '"Puedo nadar." → Dijo que podía nadar.'],
+            ['"I may leave."', 'He said he might leave.', 'Presente → Pasado (may → might)', '"Puedo irme." → Dijo que podría irse.'],
+            ['"I must go."', 'He said he had to go.', 'Presente → Pasado (must → had to)', '"Debo ir." → Dijo que tenía que ir.']
           ]
         } as TableData,
         { type: 'separator' } as SeparatorData,
