@@ -91,29 +91,111 @@ export const lesson19: LessonData = {
     },
     {
       topic: "Cambios de tiempo verbal (Backshift)",
-      explanation: "Cuando el verbo introductorio (por ejemplo, *said*, *told*, *asked*) está en **pasado**, los tiempos verbales del discurso **retroceden un tiempo** en inglés. Esto se llama **\"backshift\"**. Si el verbo introductorio está en **presente** (*He says he is tired*), o si el hecho sigue siendo cierto, el tiempo puede mantenerse igual. El backshift es automático cuando reportamos algo dicho en el pasado.",
+      explanation: "El **backshift** es una regla simple pero muy importante: cuando el verbo que introduce el discurso reportado está en **pasado** (como *said*, *told*, *asked*), los tiempos verbales **retroceden un paso hacia el pasado**. Es como si estuviéramos contando algo que ya pasó, por eso los tiempos se ajustan. **Regla clave**: Presente → Pasado, Pasado → Pasado Perfecto, Futuro → Condicional. Si el verbo introductorio está en **presente** (como *says*, *tells*), NO hay backshift y mantenemos el tiempo original.",
       examples: [
         {
           type: 'title',
-          text: 'Tabla de cambios de tiempo',
+          text: '¿Cuándo aplicamos el backshift?',
+          emoji: '🔑',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '✅ ', emoji: '✅' },
+            { text: 'Verbo introductorio en PASADO → ', bold: true },
+            { text: 'SÍ aplicamos backshift', bold: true, italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'He ', italic: true },
+              { text: 'said', bold: true },
+              { text: ' (pasado) → ', italic: true },
+              { text: '"I am tired"', italic: true },
+              { text: ' → ', bold: true },
+              { text: 'He said he ', italic: true },
+              { text: 'was', bold: true },
+              { text: ' tired.', italic: true }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: 'told', bold: true },
+              { text: ' (pasado) → ', italic: true },
+              { text: '"I will come"', italic: true },
+              { text: ' → ', bold: true },
+              { text: 'She told me she ', italic: true },
+              { text: 'would come', bold: true },
+              { text: '.', italic: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '❌ ', emoji: '❌' },
+            { text: 'Verbo introductorio en PRESENTE → ', bold: true },
+            { text: 'NO aplicamos backshift', bold: true, italic: true }
+          ]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'He ', italic: true },
+              { text: 'says', bold: true },
+              { text: ' (presente) → ', italic: true },
+              { text: '"I am tired"', italic: true },
+              { text: ' → ', bold: true },
+              { text: 'He says he ', italic: true },
+              { text: 'is', bold: true },
+              { text: ' tired.', italic: true },
+              { text: ' (sin cambio)', italic: true }
+            ],
+            [
+              { text: 'She ', italic: true },
+              { text: 'tells', bold: true },
+              { text: ' (presente) → ', italic: true },
+              { text: '"I will come"', italic: true },
+              { text: ' → ', bold: true },
+              { text: 'She tells me she ', italic: true },
+              { text: 'will come', bold: true },
+              { text: '.', italic: true },
+              { text: ' (sin cambio)', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Tabla de cambios de tiempo (backshift)',
           emoji: '📊',
           level: 3
         } as TitleData,
         {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Estos cambios ocurren cuando el verbo introductorio está en PASADO:', bold: true }
+          ]
+        } as ParagraphData,
+        {
           type: 'table',
-          headers: ['Estilo directo', 'Reported Speech', 'Traducción'],
+          headers: ['Estilo directo', 'Reported Speech', 'Cambio aplicado'],
           rows: [
-            ['"I am tired."', 'He said he was tired.', 'Dijo que estaba cansado.'],
-            ['"I work here."', 'He said he worked there.', 'Dijo que trabajaba allí.'],
-            ['"I have finished."', 'He said he had finished.', 'Dijo que había terminado.'],
-            ['"I will go."', 'He said he would go.', 'Dijo que iría.'],
-            ['"I can swim."', 'He said he could swim.', 'Dijo que podía nadar.']
+            ['"I am tired."', 'He said he was tired.', 'Presente → Pasado (am → was)'],
+            ['"I work here."', 'He said he worked there.', 'Presente → Pasado (work → worked)'],
+            ['"I have finished."', 'He said he had finished.', 'Presente Perfecto → Pasado Perfecto'],
+            ['"I will go."', 'He said he would go.', 'Futuro → Condicional (will → would)'],
+            ['"I can swim."', 'He said he could swim.', 'Presente → Pasado (can → could)']
           ]
         } as TableData,
         { type: 'separator' } as SeparatorData,
         {
           type: 'title',
-          text: 'Ejemplos adicionales',
+          text: 'Ejemplos paso a paso',
           emoji: '📝',
           level: 3
         } as TitleData,
@@ -121,22 +203,85 @@ export const lesson19: LessonData = {
           type: 'list',
           items: [
             [
-              { text: '"She is happy." → ', italic: true },
+              { text: '1️⃣ Directo: ', bold: true },
+              { text: '"She ', italic: true },
+              { text: 'is', bold: true },
+              { text: ' happy."', italic: true }
+            ],
+            [
+              { text: '   Verbo introductorio: ', italic: true },
+              { text: 'He said', bold: true },
+              { text: ' (pasado) → aplicamos backshift', italic: true }
+            ],
+            [
+              { text: '   Indirecto: ', bold: true },
               { text: 'He said she ', italic: true },
               { text: 'was', bold: true },
-              { text: ' happy.', italic: true }
+              { text: ' happy.', italic: true },
+              { text: ' (is → was)', italic: true }
             ],
             [
-              { text: '"They have arrived." → ', italic: true },
+              { text: '2️⃣ Directo: ', bold: true },
+              { text: '"They ', italic: true },
+              { text: 'have arrived', bold: true },
+              { text: '."', italic: true }
+            ],
+            [
+              { text: '   Verbo introductorio: ', italic: true },
+              { text: 'He said', bold: true },
+              { text: ' (pasado) → aplicamos backshift', italic: true }
+            ],
+            [
+              { text: '   Indirecto: ', bold: true },
               { text: 'He said they ', italic: true },
               { text: 'had arrived', bold: true },
-              { text: '.', italic: true }
+              { text: '.', italic: true },
+              { text: ' (have → had)', italic: true }
             ],
             [
-              { text: '"I must leave." → ', italic: true },
+              { text: '3️⃣ Directo: ', bold: true },
+              { text: '"I ', italic: true },
+              { text: 'must leave', bold: true },
+              { text: '."', italic: true }
+            ],
+            [
+              { text: '   Verbo introductorio: ', italic: true },
+              { text: 'She said', bold: true },
+              { text: ' (pasado) → aplicamos backshift', italic: true }
+            ],
+            [
+              { text: '   Indirecto: ', bold: true },
               { text: 'She said she ', italic: true },
               { text: 'had to leave', bold: true },
-              { text: '.', italic: true }
+              { text: '.', italic: true },
+              { text: ' (must → had to)', italic: true }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'Resumen rápido',
+          emoji: '⚡',
+          level: 3
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: '🔹 ', emoji: '🔹' },
+              { text: 'Verbo introductorio en PASADO (said, told, asked) = ', bold: true },
+              { text: 'SÍ hay backshift', bold: true, italic: true }
+            ],
+            [
+              { text: '🔹 ', emoji: '🔹' },
+              { text: 'Verbo introductorio en PRESENTE (says, tells, asks) = ', bold: true },
+              { text: 'NO hay backshift', bold: true, italic: true }
+            ],
+            [
+              { text: '🔹 ', emoji: '🔹' },
+              { text: 'El backshift hace que los tiempos retrocedan un paso: ', bold: true },
+              { text: 'presente → pasado, pasado → pasado perfecto, futuro → condicional', italic: true }
             ]
           ]
         } as ListData
