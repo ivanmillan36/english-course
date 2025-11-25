@@ -1,0 +1,29 @@
+---
+import LessonPage from '../components/LessonPage.astro';
+import { getLessonById, generateLessonNavigation, getTotalLessons } from '../data/lessons';
+
+const LESSON_NUMBER = 24;
+const lessonData = getLessonById(LESSON_NUMBER);
+const navigation = generateLessonNavigation(LESSON_NUMBER);
+const totalLessons = getTotalLessons();
+
+if (!lessonData) {
+  throw new Error(`Lesson ${LESSON_NUMBER} not found`);
+}
+---
+
+<LessonPage
+  lessonNumber={LESSON_NUMBER}
+  totalLessons={totalLessons}
+  title={lessonData.title}
+  description={lessonData.description}
+  learningPoints={lessonData.learningPoints}
+  content={lessonData.content}
+  quiz={lessonData.quiz}
+  previousLesson={navigation.previousLesson}
+  nextLesson={navigation.nextLesson}
+  welcomeEmoji={lessonData.welcomeEmoji}
+  pageTitle={lessonData.pageTitle}
+  metaDescription={lessonData.metaDescription}
+/>
+
