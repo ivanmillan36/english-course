@@ -77,6 +77,150 @@ export const lesson11: LessonData = {
         { type: 'separator' } as SeparatorData,
         {
           type: 'title',
+          text: 'El verbo "to be" en Past Simple',
+          emoji: '⭐',
+          level: 3
+        } as TitleData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: 'El verbo ' },
+            { text: '"to be"', bold: true },
+            { text: ' (ser/estar) es especial porque ' },
+            { text: 'NO usa "did"', bold: true },
+            { text: ' para formar negativas e interrogativas. Tiene sus propias formas: ' },
+            { text: 'was', bold: true },
+            { text: ' y ' },
+            { text: 'were', bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Formas del verbo "to be" en pasado:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I, he, she, it', bold: true },
+              { text: ' → ', italic: true },
+              { text: 'was', bold: true }
+            ],
+            [
+              { text: 'you, we, they', bold: true },
+              { text: ' → ', italic: true },
+              { text: 'were', bold: true }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Afirmativa:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: "Subject + was/were",
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'I was happy yesterday.', italic: true },
+              { text: ' (Yo estaba feliz ayer.)' }
+            ],
+            [
+              { text: 'She was at home last night.', italic: true },
+              { text: ' (Ella estaba en casa anoche.)' }
+            ],
+            [
+              { text: 'They were students in 2020.', italic: true },
+              { text: ' (Ellos eran estudiantes en 2020.)' }
+            ],
+            [
+              { text: 'We were friends when we were children.', italic: true },
+              { text: ' (Éramos amigos cuando éramos niños.)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Negativa:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: "Subject + was not (wasn't) / were not (weren't)",
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: "I wasn't tired yesterday.", italic: true },
+              { text: ' (No estaba cansado ayer.)' }
+            ],
+            [
+              { text: "She wasn't at the party.", italic: true },
+              { text: ' (Ella no estaba en la fiesta.)' }
+            ],
+            [
+              { text: "They weren't happy about the news.", italic: true },
+              { text: ' (No estaban contentos con la noticia.)' }
+            ],
+            [
+              { text: "We weren't ready for the exam.", italic: true },
+              { text: ' (No estábamos listos para el examen.)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [{ text: 'Interrogativa:', bold: true }]
+        } as ParagraphData,
+        {
+          type: 'code',
+          code: "Was/Were + subject?",
+          inline: true
+        } as CodeData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'Was she at home?', italic: true },
+              { text: ' (¿Estaba ella en casa?)' }
+            ],
+            [
+              { text: 'Were you happy?', italic: true },
+              { text: ' (¿Estabas feliz?)' }
+            ],
+            [
+              { text: 'Were they students?', italic: true },
+              { text: ' (¿Eran estudiantes?)' }
+            ],
+            [
+              { text: 'Was it cold yesterday?', italic: true },
+              { text: ' (¿Hacía frío ayer?)' }
+            ]
+          ]
+        } as ListData,
+        {
+          type: 'paragraph',
+          content: [
+            { text: '💡 ', emoji: '💡' },
+            { text: 'Nota importante: ', bold: true },
+            { text: 'El verbo "to be" es el único que ' },
+            { text: 'NO necesita "did"', bold: true },
+            { text: ' para negativas e interrogativas. Usa directamente ' },
+            { text: 'was/were', bold: true },
+            { text: ' o ' },
+            { text: "wasn't/weren't", bold: true },
+            { text: '.' }
+          ]
+        } as ParagraphData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
           text: 'Verbos regulares',
           emoji: '🔤',
           level: 3
