@@ -21,6 +21,7 @@ import { lesson19 } from './lesson-19';
 import { lesson20 } from './lesson-20';
 import { lesson21 } from './lesson-21';
 import { lesson22 } from './lesson-22';
+import { lesson23 } from './lesson-23';
 
 import type { LessonData } from '../lessons';
 
@@ -47,5 +48,6 @@ export const allLessons: LessonData[] = [
   lesson19,
   lesson20,
   lesson21,
-  lesson22
+  lesson22,
+  lesson23
 ];
