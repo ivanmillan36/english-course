@@ -365,9 +365,15 @@ export const lesson24: LessonData = {
             ],
             [
               { text: 'Fill in: ', bold: true },
-              { text: 'Completar (formulario)', italic: true },
+              { text: 'Completar (campos específicos, BrE)', italic: true },
               { text: ' → ', bold: true },
-              { text: 'Please fill in this form.', code: true }
+              { text: 'Please fill in your name and address.', code: true }
+            ],
+            [
+              { text: 'Fill out: ', bold: true },
+              { text: 'Completar (formulario completo, AmE)', italic: true },
+              { text: ' → ', bold: true },
+              { text: 'Please fill out this application form completely.', code: true }
             ]
           ]
         } as ListData,
