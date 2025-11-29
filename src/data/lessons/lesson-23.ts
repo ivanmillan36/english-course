@@ -60,6 +60,15 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Esta situación afecta directamente a la familia Elliot.' }
+            ],
+            [
+              { text: 'La violencia es extrema: la policía a caballo lleva palos largos y golpea a los piquetes en la espalda y la cabeza, causando sangre.' }
+            ],
+            [
+              { text: 'Tony es arrestado específicamente porque lanzó gasolina a la cola de un caballo de la policía y le prendió fuego con una cerilla.' }
+            ],
+            [
+              { text: 'En un encuentro tenso, Tony y Jackie ven a Gary Stewart (un amigo de Tony que se volvió esquirol) comprando una bolsa grande de comida en el supermercado. Tony lo confronta llamándolo "scab" porque los huelguistas apenas tienen para comer pan.' }
             ]
           ]
         } as ListData,
@@ -208,6 +217,12 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Le propone prepararlo para una audición en la Royal Ballet School en Londres.' }
+            ],
+            [
+              { text: 'La primera vez que Billy se prueba las zapatillas de ballet, Mrs. Wilkinson le dice que tiene los pies grandes y le hace quitarse las botas de boxeo.' }
+            ],
+            [
+              { text: 'Cuando Mrs. Wilkinson va a casa de los Elliot para confrontarlos porque Billy faltó a la audición, se revela que el padre de Debbie (el Sr. Wilkinson) ha perdido su trabajo también, pero no es minero. Tony se burla de ellos diciendo que son "clase media" y no entienden la lucha.' }
             ]
           ]
         } as ListData,
@@ -232,6 +247,18 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Billy descubre que Michael es gay, pero lo acepta sin problemas.' }
+            ],
+            [
+              { text: 'En una escena clave, cuando Billy visita a Michael, este lleva puesto un vestido púrpura, los zapatos rojos de su madre y la chaqueta de su hermana. Michael le confiesa que le gusta vestirse con la ropa de su hermana y su madre.' }
+            ],
+            [
+              { text: 'Billy, aunque dice "no soy gay", participa jugando y le pone lápiz labial a Michael.' }
+            ],
+            [
+              { text: 'En la escena del gimnasio en Navidad, Michael le pregunta a Billy si sus manos están frías sobre su piel y luego lo besa brevemente. Billy le dice que le gusta el ballet, pero que no es gay, aunque le pide que no se lo cuente a nadie.' }
+            ],
+            [
+              { text: 'Billy le regala un tutú a Michael en el gimnasio para que se lo pruebe, y Michael dice que no es una chica, pero que le gusta.' }
             ]
           ]
         } as ListData
@@ -261,6 +288,9 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Billy deja de ir a boxeo y usa el dinero (50 peniques) para pagar las clases de ballet en secreto.' }
+            ],
+            [
+              { text: 'Billy practica obsesivamente una pirueta ("spin") en el baño y en su habitación. Es el movimiento que intenta perfeccionar para demostrar su valía.' }
             ]
           ]
         } as ListData,
@@ -291,12 +321,35 @@ export const lesson23: LessonData = {
             [
               { text: 'Billy tiene una carta de su madre fallecida que debía abrir a los 18 años, pero ya la ha leído.' }
             ],
-            [
-              { text: 'La carta le dice que siempre sea él mismo.' }
-            ],
-            [
-              { text: 'Billy lleva esta carta y un casete de música de su madre para preparar su baile de la audición.' }
-            ]
+            {
+              type: 'title',
+              text: 'La Carta de la Madre (Texto Específico)',
+              emoji: '💌',
+              level: 4
+            } as TitleData,
+            {
+              type: 'list',
+              items: [
+                [
+                  { text: 'La madre escribe: ', bold: true },
+                  { text: '"I missed you crying and laughing. I missed you shouting."', code: true },
+                  { text: ' (Me perdí verte llorar y reír. Me perdí tus gritos).' }
+                ],
+                [
+                  { text: '"But please know that I was always with you. I always will be."', code: true },
+                  { text: ' (Pero por favor sabe que siempre estuve contigo. Siempre lo estaré).' }
+                ],
+                [
+                  { text: 'Termina diciendo que está muy orgullosa de él.' }
+                ],
+                [
+                  { text: 'El mensaje central de la carta es que siempre sea él mismo.' }
+                ],
+                [
+                  { text: 'Billy lleva esta carta y un casete de música de su madre para preparar su baile de la audición.' }
+                ]
+              ]
+            } as ListData,
           ]
         } as ListData,
         { type: 'separator' } as SeparatorData,
@@ -313,7 +366,7 @@ export const lesson23: LessonData = {
               { text: 'El día de la audición coincide con un momento violento de la huelga.' }
             ],
             [
-              { text: 'Tony es arrestado por herir a un caballo de la policía.' }
+              { text: 'Tony es arrestado específicamente porque lanzó gasolina a la cola de un caballo de la policía y le prendió fuego con una cerilla ("I lit a match").' }
             ],
             [
               { text: 'Billy pierde la audición porque tiene que ir al juicio de Tony.' }
@@ -382,6 +435,9 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Los vecinos y compañeros mineros hacen una colecta y George (el entrenador de boxeo) organiza una rifa para pagar el viaje a Londres.' }
+            ],
+            [
+              { text: 'Para financiar el viaje, Jackie vende el anillo de bodas de su esposa (Sarah) por 25 libras, aunque él quería 50.' }
             ]
           ]
         } as ListData,
@@ -399,16 +455,27 @@ export const lesson23: LessonData = {
               { text: 'Billy y su padre viajan a Londres.' }
             ],
             [
-              { text: 'Es la primera vez que el padre sale de su zona.' }
+              { text: 'Es la primera vez que el padre sale de su zona. El padre nunca había viajado al sur de Durham antes.' }
             ],
             [
-              { text: 'En la audición, Billy está muy nervioso y golpea a otro niño (Simon) en el vestuario.' }
+              { text: 'En el viaje en autobús, Billy le pregunta a su padre si Londres es un lugar agradable y si hay minas allí. El padre responde que no hay minas y le dice que deje de pensar solo en eso.' }
             ],
             [
-              { text: 'El jurado lo regaña, pero le preguntan qué siente al bailar.' }
+              { text: 'En la audición, los médicos revisan el cuerpo de Billy, le miran la boca y lo miden, lo que le hace sentir como un objeto o un animal.' }
             ],
             [
-              { text: 'Billy responde: "Siento fuego en mi cuerpo. Olvido todo" ("electricity" en otras versiones, "fire" en este texto).' }
+              { text: 'Billy está muy nervioso y golpea a otro niño (Simon) en el vestuario.' }
+            ],
+            [
+              { text: 'El jurado lo regaña, pero le preguntan qué siente al bailar o por qué quiere bailar.' }
+            ],
+            [
+              { text: 'Billy no sabe qué responder al principio. Dice "No lo sé". Luego explica que cuando baila su cuerpo se llena de fuego (', bold: true },
+              { text: '"my body is full of fire"', code: true },
+              { text: ') y olvida todo.' }
+            ],
+            [
+              { text: 'Billy cree que ha fallado la audición no solo por golpear al otro niño, sino porque la música que llevó para su baile (el casete de su madre) era incorrecta ("wrong music"), demasiado moderna y rápida para el ballet clásico.' }
             ]
           ]
         } as ListData,
@@ -431,6 +498,9 @@ export const lesson23: LessonData = {
               { text: 'La familia celebra, pero al mismo tiempo la huelga termina y los mineros pierden; vuelven al trabajo derrotados.' }
             ],
             [
+              { text: 'Cuando Billy se va, su abuela (Nan) le da un billete de 5 libras que tenía escondido. Es un momento tierno porque ella a veces no lo reconoce debido a su senilidad, pero en ese momento sabe exactamente quién es.' }
+            ],
+            [
               { text: 'Billy se va a Londres.' }
             ],
             [
@@ -443,6 +513,11 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Billy salta al escenario y "vuela".' }
+            ],
+            [
+              { text: 'Aunque Billy triunfa, la vida en el pueblo sigue siendo dura. Tony ', bold: true },
+              { text: 'nunca encuentra otro trabajo', code: true },
+              { text: ' después de que cierran la mina.' }
             ]
           ]
         } as ListData

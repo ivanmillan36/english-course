@@ -98,7 +98,28 @@ function renderCode(data: CodeData): string {
 }
 
 function renderList(data: ListData): string {
+  // Ensure data.items exists and is an array
+  if (!data.items || !Array.isArray(data.items)) {
+    console.error('ListData.items is not an array:', data.items);
+    return '';
+  }
+  
   const items = data.items.map(item => {
+    // Ensure item is an array
+    if (!Array.isArray(item)) {
+      // Handle case where item might be a single TextPart or string
+      if (typeof item === 'string') {
+        return `<li class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">${processInlineMarkdown(item)}</li>`;
+      }
+      // If it's a single TextPart, wrap it in an array
+      if (item && typeof item === 'object' && 'text' in item) {
+        const content = renderTextPart(item as TextPart);
+        return `<li class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">${content}</li>`;
+      }
+      // Fallback: convert to string
+      return `<li class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">${String(item)}</li>`;
+    }
+    // Normal case: item is an array of TextPart
     const content = item.map(part => renderTextPart(part)).join('');
     return `<li class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">${content}</li>`;
   }).join('');
