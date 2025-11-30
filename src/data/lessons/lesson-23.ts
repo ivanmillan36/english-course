@@ -320,36 +320,37 @@ export const lesson23: LessonData = {
             ],
             [
               { text: 'Billy tiene una carta de su madre fallecida que debía abrir a los 18 años, pero ya la ha leído.' }
+            ]
+          ]
+        } as ListData,
+        { type: 'separator' } as SeparatorData,
+        {
+          type: 'title',
+          text: 'La Carta de la Madre (Texto Específico)',
+          emoji: '💌',
+          level: 4
+        } as TitleData,
+        {
+          type: 'list',
+          items: [
+            [
+              { text: 'La madre escribe: ', bold: true },
+              { text: '"I missed you crying and laughing. I missed you shouting."', code: true },
+              { text: ' (Me perdí verte llorar y reír. Me perdí tus gritos).' }
             ],
-            {
-              type: 'title',
-              text: 'La Carta de la Madre (Texto Específico)',
-              emoji: '💌',
-              level: 4
-            } as TitleData,
-            {
-              type: 'list',
-              items: [
-                [
-                  { text: 'La madre escribe: ', bold: true },
-                  { text: '"I missed you crying and laughing. I missed you shouting."', code: true },
-                  { text: ' (Me perdí verte llorar y reír. Me perdí tus gritos).' }
-                ],
-                [
-                  { text: '"But please know that I was always with you. I always will be."', code: true },
-                  { text: ' (Pero por favor sabe que siempre estuve contigo. Siempre lo estaré).' }
-                ],
-                [
-                  { text: 'Termina diciendo que está muy orgullosa de él.' }
-                ],
-                [
-                  { text: 'El mensaje central de la carta es que siempre sea él mismo.' }
-                ],
-                [
-                  { text: 'Billy lleva esta carta y un casete de música de su madre para preparar su baile de la audición.' }
-                ]
-              ]
-            } as ListData,
+            [
+              { text: '"But please know that I was always with you. I always will be."', code: true },
+              { text: ' (Pero por favor sabe que siempre estuve contigo. Siempre lo estaré).' }
+            ],
+            [
+              { text: 'Termina diciendo que está muy orgullosa de él.' }
+            ],
+            [
+              { text: 'El mensaje central de la carta es que siempre sea él mismo.' }
+            ],
+            [
+              { text: 'Billy lleva esta carta y un casete de música de su madre para preparar su baile de la audición.' }
+            ]
           ]
         } as ListData,
         { type: 'separator' } as SeparatorData,
